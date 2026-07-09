@@ -21,7 +21,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3">
-                    <img src="https://i.ibb.co/6wX6p3D/sunmun-logo.png" alt="SUNMUN Logo" class="h-14 w-14 object-contain">
+                    <div class="h-12 w-12 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-amber-500/20">
+                        <i class="fa-solid fa-globe text-2xl text-slate-950 animate-spin-slow"></i>
+                    </div>
                     <div>
                         <span class="font-display font-bold text-xl tracking-wider text-amber-400 block">SUNMUN 2026</span>
                         <span class="text-xs text-slate-400 tracking-tight">Southern Unity Nations</span>
@@ -29,9 +31,10 @@
                 </div>
                 <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
                     <a href="#about" class="hover:text-amber-400 transition-colors">О конференции</a>
-                    <a href="#committees" class="hover:text-amber-400 transition-colors">Комитеты & Агенды</a>
+                    <a href="#committees" class="hover:text-amber-400 transition-colors">Комитеты</a>
                     <a href="#summer-program" class="hover:text-amber-400 transition-colors">Летняя программа</a>
                     <a href="#rules" class="hover:text-amber-400 transition-colors">Правила & Взносы</a>
+                    <a href="#safety" class="hover:text-amber-400 transition-colors">Безопасность</a>
                     <a href="#contacts" class="hover:text-amber-400 transition-colors">Контакты</a>
                 </div>
                 <div>
@@ -48,7 +51,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="lg:w-2/3">
                 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6">
-                    <i class="fa-solid fa-globe animate-spin-slow"></i> Международная модель ООН
+                    <i class="fa-solid fa-graduation-cap"></i> Международная модель ООН
                 </div>
                 <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none mb-6">
                     SOUTHERN UNITY NATIONS <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-teal-400">MODEL UN 2026</span>
@@ -126,100 +129,82 @@
     <section id="committees" class="py-20 bg-slate-100 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-4">Комитеты & Агенды (Повестки)</h2>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-4">Комитеты конференции</h2>
                 <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full mb-4"></div>
-                <p class="text-slate-600 text-sm mb-6">Работа ведется на 3 официальных языках в офлайн и онлайн форматах. Под каждой карточкой доступна кнопка Агенды.</p>
+                <p class="text-slate-600 text-sm">Работа ведется на 3 официальных языках в офлайн и онлайн форматах.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm p-6 flex flex-col justify-between">
                     <div>
-                        <div class="bg-teal-600 text-white px-6 py-4 flex justify-between items-center">
-                            <span class="font-display font-bold tracking-wide">UNHRC</span>
-                            <span class="text-xs px-2 py-1 bg-white/20 rounded font-semibold uppercase">Офлайн</span>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-display font-bold tracking-wide text-teal-600 text-xl">UNHRC</span>
+                            <span class="text-xs px-2.5 py-1 bg-teal-50 text-teal-700 border border-teal-200 rounded font-semibold uppercase">Офлайн</span>
                         </div>
-                        <div class="p-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-teal-600"></i> Тіл: Қазақша</p>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2">БҰҰ Адам құқықтары жөніндегийн кеңесі</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Адам құқықтары мен бостандықтарын қорғау мәселелерін жаһандық деңгейде талқылау алаңы.</p>
-                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-teal-600"></i> Тіл: Қазақша</p>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mb-2">БҰҰ Адам құқықтары жөніндегі кеңесі</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Адам құқықтары мен бостандықтарын қорғау мәселелерін жаһандық деңгейде талқылау алаңы.</p>
                     </div>
-                    <div class="px-6 pb-6"><a href="#" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl text-xs block transition-all"><i class="fa-solid fa-file-pdf mr-1"></i> Посмотреть Агенду</a></div>
                 </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm p-6 flex flex-col justify-between">
                     <div>
-                        <div class="bg-teal-600 text-white px-6 py-4 flex justify-between items-center">
-                            <span class="font-display font-bold tracking-wide">UNGA</span>
-                            <span class="text-xs px-2 py-1 bg-white/20 rounded font-semibold uppercase">Офлайн</span>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-display font-bold tracking-wide text-teal-600 text-xl">UNGA</span>
+                            <span class="text-xs px-2.5 py-1 bg-teal-50 text-teal-700 border border-teal-200 rounded font-semibold uppercase">Офлайн</span>
                         </div>
-                        <div class="p-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-teal-600"></i> Тіл: Қазақша</p>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2">БҰҰ Бас Ассамблеясы</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Халықаралық қауіпсіздік пен ынтымақтастықтың ең маңызды стратегиялық мәселелерін қарастыру.</p>
-                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-teal-600"></i> Тіл: Қазақша</p>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mb-2">БҰҰ Бас Ассамблеясы</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Халықаралық қауіпсіздік пен ынтымақтастықтың ең маңызды стратегиялық мәселелерін қарастыру.</p>
                     </div>
-                    <div class="px-6 pb-6"><a href="#" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl text-xs block transition-all"><i class="fa-solid fa-file-pdf mr-1"></i> Посмотреть Агенду</a></div>
                 </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm p-6 flex flex-col justify-between">
                     <div>
-                        <div class="bg-slate-700 text-white px-6 py-4 flex justify-between items-center">
-                            <span class="font-display font-bold tracking-wide">UNSC</span>
-                            <span class="text-xs px-2 py-1 bg-white/20 rounded font-semibold uppercase">Оффлайн</span>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-display font-bold tracking-wide text-slate-700 text-xl">UNSC</span>
+                            <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 border border-slate-200 rounded font-semibold uppercase">Оффлайн</span>
                         </div>
-                        <div class="p-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-slate-500"></i> Язык: Русский</p>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Совет Безопасности ООН</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Поддержание международного мира и безопасности, урегулирование острых глобальных конфликтов.</p>
-                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-slate-500"></i> Язык: Русский</p>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Совет Безопасности ООН</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Поддержание международного мира и безопасности, урегулирование острых глобальных конфликтов.</p>
                     </div>
-                    <div class="px-6 pb-6"><a href="#" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl text-xs block transition-all"><i class="fa-solid fa-file-pdf mr-1"></i> Посмотреть Агенду</a></div>
                 </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm p-6 flex flex-col justify-between">
                     <div>
-                        <div class="bg-slate-700 text-white px-6 py-4 flex justify-between items-center">
-                            <span class="font-display font-bold tracking-wide">Crisis Committee</span>
-                            <span class="text-xs px-2 py-1 bg-white/20 rounded font-semibold uppercase">Оффлайн</span>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-display font-bold tracking-wide text-slate-700 text-xl">Crisis Committee</span>
+                            <span class="text-xs px-2.5 py-1 bg-slate-100 text-slate-700 border border-slate-200 rounded font-semibold uppercase">Оффлайн</span>
                         </div>
-                        <div class="p-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-slate-500"></i> Язык: Русский</p>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Кризисный комитет</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Динамичная симуляция в условиях постоянно меняющихся критических вводных в реальном времени.</p>
-                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-slate-500"></i> Язык: Русский</p>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Кризисный комитет</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Динамичная симуляция в условиях постоянно меняющихся критических вводных в реальном времени.</p>
                     </div>
-                    <div class="px-6 pb-6"><a href="#" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl text-xs block transition-all"><i class="fa-solid fa-file-pdf mr-1"></i> Посмотреть Агенду</a></div>
                 </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm p-6 flex flex-col justify-between">
                     <div>
-                        <div class="bg-amber-600 text-white px-6 py-4 flex justify-between items-center">
-                            <span class="font-display font-bold tracking-wide">UNICEF</span>
-                            <span class="text-xs px-2 py-1 bg-white/20 rounded font-semibold uppercase">Offline</span>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-display font-bold tracking-wide text-amber-600 text-xl">UNICEF</span>
+                            <span class="text-xs px-2.5 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded font-semibold uppercase">Offline</span>
                         </div>
-                        <div class="p-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-amber-600"></i> Language: English</p>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2">United Nations Children's Fund</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Protecting children's rights, development, and humanitarian aid worldwide.</p>
-                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-amber-600"></i> Language: English</p>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mb-2">United Nations Children's Fund</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">Protecting children's rights, development, and humanitarian aid worldwide.</p>
                     </div>
-                    <div class="px-6 pb-6"><a href="#" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl text-xs block transition-all"><i class="fa-solid fa-file-pdf mr-1"></i> View Agenda</a></div>
                 </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm ring-2 ring-amber-500/20 flex flex-col justify-between">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm p-6 ring-2 ring-amber-500/10 flex flex-col justify-between">
                     <div>
-                        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 flex justify-between items-center">
-                            <span class="font-display font-bold tracking-wide">COPUOS</span>
-                            <span class="text-xs px-2 py-1 bg-emerald-500 rounded font-semibold uppercase">Online</span>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-display font-bold tracking-wide text-blue-600 text-xl">COPUOS</span>
+                            <span class="text-xs px-2.5 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded font-semibold uppercase">Online</span>
                         </div>
-                        <div class="p-6">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-blue-600"></i> Language: English</p>
-                            <h4 class="font-display font-bold text-lg text-slate-900 mb-2">Committee on the Peaceful Uses of Outer Space</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed mb-4">International platform for global and foreign delegates to foster peaceful space cooperation remotely.</p>
-                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase mb-2"><i class="fa-solid fa-language text-blue-600"></i> Language: English</p>
+                        <h4 class="font-display font-bold text-lg text-slate-900 mb-2">COPUOS</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">International platform for global and foreign delegates to foster peaceful space cooperation remotely.</p>
                     </div>
-                    <div class="px-6 pb-6"><a href="#" class="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2 px-4 rounded-xl text-xs block transition-all"><i class="fa-solid fa-file-pdf mr-1"></i> View Agenda</a></div>
                 </div>
             </div>
         </div>
@@ -259,12 +244,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="font-display font-bold text-3xl text-slate-900 mb-4">Регистрация, Взносы & Правила</h2>
+                <h2 class="font-display font-bold text-3xl text-slate-900 mb-4">Регистрация и Взносы</h2>
                 <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full mb-6"></div>
                 
                 <div class="flex flex-wrap justify-center gap-4 mb-10">
-                    <a href="#" class="bg-slate-900 hover:bg-slate-800 text-white font-display font-bold px-6 py-3 rounded-xl transition-all shadow-md text-sm"><i class="fa-solid fa-book mr-2 text-amber-400"></i> Читать Правила Конференции</a>
-                    <a href="#" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-display font-bold px-8 py-3 rounded-xl transition-all shadow-xl shadow-amber-500/20 text-sm"><i class="fa-solid fa-pen-to-square mr-2"></i> Открыть Форму Регистрации</a>
+                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-display font-bold px-6 py-3 rounded-xl transition-all shadow-xl shadow-amber-500/20 text-sm"><i class="fa-solid fa-street-view mr-2"></i> Оффлайн Регистрация</a>
+                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-display font-bold px-6 py-3 rounded-xl transition-all shadow-xl shadow-blue-500/20 text-sm"><i class="fa-solid fa-laptop mr-2"></i> Онлайн Регистрация</a>
                 </div>
             </div>
 
@@ -339,6 +324,37 @@
         </div>
     </section>
 
+    <section id="safety" class="py-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-slate-200">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-12 w-12 rounded-xl bg-red-500/10 text-red-600 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h2 class="font-display font-bold text-2xl sm:text-3xl text-slate-900">Правила безопасности и участия в SUNMUN 2026</h2>
+                </div>
+                <div class="h-0.5 w-full bg-slate-100 mb-8"></div>
+                
+                <ol class="space-y-4 text-sm text-slate-700 leading-relaxed list-none">
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">1.</span> <span>Соблюдайте законодательство Республики Казахстан, правила конференции и нормы академической этики.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">2.</span> <span>Относитесь с уважением ко всем участникам, председателям, организаторам и гостям конференции.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">3.</span> <span>Запрещены нецензурная лексика, оскорбительное поведение, дискриминация и любые формы агрессии.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">4.</span> <span>Соблюдайте установленный дресс-код — Smart Casual.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">5.</span> <span>Используйте телефоны и ноутбуки только для работы, связанной с конференцией.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">6.</span> <span>Следуйте теме и официальному языку своего комитета.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">7.</span> <span>Выполняйте указания Организационного комитета, Chair и Co-Chair.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">8.</span> <span>В случае нарушения правил организаторы вправе вынести предупреждение или отстранить участника без возврата регистрационного взноса.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">9.</span> <span>Организаторы не несут ответственности за утерю личных вещей или происшествия, возникшие по независящим от них причинам.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">10.</span> <span>Во время фото- и видеосъёмки участники дают согласие на использование материалов в информационных целях.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">11.</span> <span>При проживании в хостеле необходимо соблюдать правила проживания, бережно относиться к имуществу и уважать других участников.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">12.</span> <span>Строго запрещаются курение, употребление алкоголя, наркотических веществ, проведение несанкционированных мероприятий и любые действия, угрожающие безопасности участников.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">13.</span> <span>При возникновении чрезвычайной ситуации необходимо немедленно сообщить организаторам и следовать их инструкциям.</span></li>
+                    <li class="flex gap-3"><span class="font-bold text-amber-500">14.</span> <span>Оплачивая регистрационный взнос и участвуя в конференции, участник подтверждает своё согласие со всеми правилами SUNMUN 2026.</span></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
     <footer id="contacts" class="bg-slate-900 text-white pt-16 pb-12 border-t-2 border-amber-500 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -367,11 +383,14 @@
                 </div>
             </div>
 
-            <div class="border-t border-slate-800 pt-8 mt-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="border-t border-slate-800 pt-8 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                 <p>&copy; 2026 SUNMUN. Все права защищены. Положение регулируется законами РК.</p>
-                <p class="font-display font-semibold tracking-wide text-slate-400">
-                    <i class="fa-solid fa-code text-amber-500 mr-1"></i> Made by <span class="text-amber-400">Zhaniya Kydyrbek</span>
-                </p>
+                <div class="bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-800/80 shadow-inner flex items-center gap-2">
+                    <span class="text-slate-400"><i class="fa-solid fa-terminal text-amber-500"></i> Разработка сайта:</span>
+                    <span class="font-display font-extrabold tracking-wider text-sm text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow">
+                        Zhaniya Kydyrbek
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
