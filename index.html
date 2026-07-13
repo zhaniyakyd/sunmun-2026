@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUNMUN 2026 | Southern Unity Nations Model UN</title>
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +13,19 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .font-display { font-family: 'Montserrat', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #070b14 0%, #0f172a 50%, #0d1e30 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #0a0e1f 0%, #141b36 45%, #1e2a52 100%); background-size: 200% 200%; animation: gradientShift 12s ease infinite; }
         .animate-spin-slow { animation: spin 20s linear infinite; }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes floatBlob { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(20px,-30px) scale(1.08); } }
+        .blob-anim { animation: floatBlob 10s ease-in-out infinite; }
+        .blob-anim-slow { animation: floatBlob 14s ease-in-out infinite reverse; }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .text-shimmer { background-size: 200% auto; animation: shimmer 4s linear infinite; }
+        ::selection { background: rgba(245,158,11,0.35); }
+        html { scrollbar-color: #f59e0b #0b1120; }
     </style>
 </head>
 <body class="bg-[#f8fafc] text-slate-800 scroll-smooth antialiased">
@@ -23,8 +34,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3 group cursor-pointer">
-                    <div class="h-12 w-12 rounded-full bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-300 flex items-center justify-center shadow-xl shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
-                        <i class="fa-solid fa-globe text-2xl text-[#0b1120] animate-spin-slow"></i>
+                    <div class="h-12 w-12 rounded-full overflow-hidden shadow-xl shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300 ring-2 ring-amber-400/40">
+                        <img src="assets/logo.jpeg" alt="SUNMUN 2026 логотип" class="h-full w-full object-cover">
                     </div>
                     <div>
                         <span class="font-display font-extrabold text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200 block">SUNMUN 2026</span>
@@ -32,16 +43,16 @@
                     </div>
                 </div>
                 <div class="hidden md:flex items-center gap-8 font-semibold text-xs uppercase tracking-wider text-slate-300">
-                    <a href="#about" class="hover:text-amber-400 transition-colors duration-300">О конференции</a>
-                    <a href="#committees" class="hover:text-amber-400 transition-colors duration-300">Комитеты</a>
-                    <a href="#summer-program" class="hover:text-amber-400 transition-colors duration-300">Летняя программа</a>
-                    <a href="#rules" class="hover:text-amber-400 transition-colors duration-300">Правила & Взносы</a>
-                    <a href="#safety" class="hover:text-amber-400 transition-colors duration-300">Безопасность</a>
-                    <a href="#sponsors" class="hover:text-amber-400 transition-colors duration-300">Спонсоры</a>
-                    <a href="#contacts" class="hover:text-amber-400 transition-colors duration-300">Контакты</a>
+                    <a href="#about" class="relative hover:text-amber-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">О конференции</a>
+                    <a href="#committees" class="relative hover:text-amber-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">Комитеты</a>
+                    <a href="#summer-program" class="relative hover:text-amber-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">Летняя программа</a>
+                    <a href="#rules" class="relative hover:text-amber-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">Правила & Взносы</a>
+                    <a href="#safety" class="relative hover:text-amber-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">Безопасность</a>
+                    <a href="#sponsors" class="relative hover:text-amber-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">Спонсоры</a>
+                    <a href="#contacts" class="relative hover:text-amber-400 transition-colors duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-amber-400 after:transition-all after:duration-300 hover:after:w-full">Контакты</a>
                 </div>
                 <div>
-                    <a href="#rules" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-display font-bold px-6 py-3 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-amber-500/10 text-sm inline-block">
+                    <a href="#rules" class="bg-gradient-to-r from-[#d4af37] to-[#a9812c] hover:from-[#e8c766] hover:to-[#b8902f] text-slate-950 font-display font-bold px-6 py-3 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-500/30 shadow-lg shadow-amber-500/10 text-sm inline-block">
                         Регистрация
                     </a>
                 </div>
@@ -50,38 +61,41 @@
     </nav>
 
     <header class="hero-gradient text-white relative overflow-hidden py-28 lg:py-36 border-b border-slate-800/40">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none blob-anim"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none blob-anim-slow"></div>
         <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="lg:w-2/3">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 backdrop-blur text-amber-400 text-xs font-bold uppercase tracking-widest mb-8 shadow-inner">
-                    <i class="fa-solid fa-graduation-cap text-sm"></i> Международная модель ООН
+                <div class="flex items-center gap-4 mb-8">
+                    <img src="assets/logo.jpeg" alt="SUNMUN 2026" class="h-14 w-14 rounded-full ring-2 ring-amber-400/50 shadow-lg shadow-amber-500/20">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 backdrop-blur text-amber-400 text-xs font-bold uppercase tracking-widest shadow-inner">
+                        <i class="fa-solid fa-graduation-cap text-sm"></i> Международная модель ООН
+                    </div>
                 </div>
                 <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none mb-8">
-                    SOUTHERN UNITY NATIONS <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-teal-400 drop-shadow-sm">MODEL UN 2026</span>
+                    SOUTHERN UNITY NATIONS <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-teal-400 drop-shadow-sm text-shimmer">MODEL UN 2026</span>
                 </h1>
                 <p class="text-lg text-slate-300 max-w-xl mb-12 leading-relaxed font-normal">
                     Премьерная платформа для молодежной дипломатии в самом сердце тюркского мира. Обсуждайте глобальные вызовы, находите компромиссы и меняйте мир.
                 </p>
-                
+
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12 max-w-3xl">
-                    <div class="bg-slate-900/40 border border-slate-800/80 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-amber-500/30">
+                    <div class="bg-slate-900/40 border border-slate-800/80 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-amber-500/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/10">
                         <div class="bg-amber-500/10 p-3.5 rounded-xl text-amber-400 shadow-inner"><i class="fa-solid fa-calendar-days text-xl"></i></div>
                         <div>
                             <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Когда</p>
                             <p class="text-sm font-bold text-white mt-0.5">8-9 августа 2026</p>
                         </div>
                     </div>
-                    <div class="bg-slate-900/40 border border-slate-800/80 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-teal-500/30">
+                    <div class="bg-slate-900/40 border border-slate-800/80 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-teal-500/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-500/10">
                         <div class="bg-teal-500/10 p-3.5 rounded-xl text-teal-400 shadow-inner"><i class="fa-solid fa-location-dot text-xl"></i></div>
                         <div>
                             <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Где</p>
                             <p class="text-sm font-bold text-white mt-0.5">г. Туркестан</p>
                         </div>
                     </div>
-                    <div class="bg-slate-900/40 border border-slate-800/80 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-blue-500/30">
+                    <div class="bg-slate-900/40 border border-slate-800/80 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-blue-500/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10">
                         <div class="bg-blue-500/10 p-3.5 rounded-xl text-blue-400 shadow-inner"><i class="fa-solid fa-building-columns text-xl"></i></div>
                         <div>
                             <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">База</p>
@@ -91,7 +105,7 @@
                 </div>
 
                 <div class="flex flex-wrap gap-4">
-                    <a href="#rules" class="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-slate-950 font-display font-extrabold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 text-base transform hover:-translate-y-0.5">
+                    <a href="#rules" class="bg-gradient-to-r from-[#e8c766] via-[#d4af37] to-[#a9812c] hover:from-[#f0d98a] hover:to-[#c49a3c] text-slate-950 font-display font-extrabold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 hover:shadow-amber-500/40 text-base transform hover:-translate-y-0.5 hover:scale-[1.03]">
                         Подать заявку
                     </a>
                     <a href="#about" class="bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 text-white font-display font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-base flex items-center gap-2 transform hover:-translate-y-0.5">
@@ -104,26 +118,26 @@
 
     <section id="about" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
                 <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-5 tracking-tight">О конференции SUNMUN 2026</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mb-6"></div>
+                <div class="h-1 w-16 bg-gradient-to-r from-[#d4af37] to-[#8a6d1f] mx-auto rounded-full mb-6"></div>
                 <p class="text-slate-500 leading-relaxed text-base font-medium">
                     Настоящее мероприятие регламентируется официальным Положением и представляет собой очную конференцию в формате модели Организации Объединенных Наций.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 bg-slate-50/60 rounded-3xl border border-slate-100 hover:border-amber-500/20 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group">
+                <div class="reveal p-8 bg-slate-50/60 rounded-3xl border border-slate-100 hover:border-amber-500/20 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group">
                     <div class="h-14 w-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform duration-300"><i class="fa-solid fa-comments"></i></div>
                     <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Дипломатия и переговоры</h3>
                     <p class="text-slate-600 text-sm leading-relaxed font-medium">Совершенствование навыков ведения переговорного процесса, публичных выступлений и аргументированного отстаивания позиций.</p>
                 </div>
-                <div class="p-8 bg-slate-50/60 rounded-3xl border border-slate-100 hover:border-teal-500/20 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group">
+                <div class="reveal p-8 bg-slate-50/60 rounded-3xl border border-slate-100 hover:border-teal-500/20 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group" style="transition-delay:0.08s">
                     <div class="h-14 w-14 rounded-2xl bg-teal-500/10 text-teal-600 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform duration-300"><i class="fa-solid fa-seedling"></i></div>
                     <h3 class="font-display font-bold text-xl text-slate-900 mb-3">ЦУР ООН и Глобальные темы</h3>
                     <p class="text-slate-600 text-sm leading-relaxed font-medium">Углубление понимания актуальных проблем устойчивого развития, международной безопасности и прав человека.</p>
                 </div>
-                <div class="p-8 bg-slate-50/60 rounded-3xl border border-slate-100 hover:border-blue-500/20 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group">
+                <div class="reveal p-8 bg-slate-50/60 rounded-3xl border border-slate-100 hover:border-blue-500/20 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 group" style="transition-delay:0.16s">
                     <div class="h-14 w-14 rounded-2xl bg-blue-500/10 text-blue-600 flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform duration-300"><i class="fa-solid fa-users"></i></div>
                     <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Сетевое взаимодействие</h3>
                     <p class="text-slate-600 text-sm leading-relaxed font-medium">Развитие связей между студентами, исследователями и экспертами в области международных отношений Центральной Азии.</p>
@@ -134,14 +148,14 @@
 
     <section id="committees" class="py-24 bg-slate-100/70 border-y border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
                 <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-5 tracking-tight">Комитеты конференции</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mb-5"></div>
+                <div class="h-1 w-16 bg-gradient-to-r from-[#d4af37] to-[#8a6d1f] mx-auto rounded-full mb-5"></div>
                 <p class="text-slate-500 font-semibold text-xs uppercase tracking-wider">Работа ведется на 3 официальных языках в офлайн и онлайн форматах.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1">
+                <div class="reveal bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1">
                     <div>
                         <div class="flex justify-between items-center mb-5">
                             <span class="font-display font-black tracking-wider text-teal-600 text-2xl">UNHRC</span>
@@ -153,7 +167,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1">
+                <div class="reveal bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1" style="transition-delay:0.05s">
                     <div>
                         <div class="flex justify-between items-center mb-5">
                             <span class="font-display font-black tracking-wider text-teal-600 text-2xl">UNGA</span>
@@ -165,7 +179,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1">
+                <div class="reveal bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1" style="transition-delay:0.1s">
                     <div>
                         <div class="flex justify-between items-center mb-5">
                             <span class="font-display font-black tracking-wider text-slate-700 text-2xl">UNSC</span>
@@ -177,7 +191,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1">
+                <div class="reveal bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1" style="transition-delay:0.15s">
                     <div>
                         <div class="flex justify-between items-center mb-5">
                             <span class="font-display font-black tracking-wider text-slate-700 text-2xl">Crisis Committee</span>
@@ -189,7 +203,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1">
+                <div class="reveal bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 flex flex-col justify-between group transform hover:-translate-y-1" style="transition-delay:0.2s">
                     <div>
                         <div class="flex justify-between items-center mb-5">
                             <span class="font-display font-black tracking-wider text-amber-600 text-2xl">UNICEF</span>
@@ -201,7 +215,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 ring-2 ring-amber-500/5 flex flex-col justify-between group transform hover:-translate-y-1">
+                <div class="reveal bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-300/40 transition-all duration-300 p-7 ring-2 ring-amber-500/5 flex flex-col justify-between group transform hover:-translate-y-1" style="transition-delay:0.25s">
                     <div>
                         <div class="flex justify-between items-center mb-5">
                             <span class="font-display font-black tracking-wider text-blue-600 text-2xl">COPUOS</span>
@@ -218,26 +232,26 @@
 
     <section id="summer-program" class="py-24 bg-gradient-to-br from-amber-50/70 via-orange-50/40 to-slate-50 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
                 <h2 class="font-display font-black text-3xl text-slate-900 mb-5 tracking-tight">☀️ Летняя атмосфера и Культурная программа</h2>
                 <div class="h-1 w-16 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto rounded-full mb-6"></div>
                 <p class="text-slate-600 text-sm font-semibold uppercase tracking-wider">SUNMUN 2026 — это не только дебаты, но и яркий незабываемый летний вайб!</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="bg-white p-8 rounded-3xl shadow-md shadow-orange-100/50 border border-orange-100/40 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                <div class="reveal bg-white p-8 rounded-3xl shadow-md shadow-orange-100/50 border border-orange-100/40 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <div class="h-16 w-16 bg-orange-500/10 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl shadow-inner"><i class="fa-solid fa-soccer-ball"></i></div>
                     <h3 class="font-display font-bold text-lg text-slate-900 mb-3">Мини-турнир по футболу</h3>
                     <p class="text-slate-500 text-xs leading-relaxed font-medium">Спортивный интерактив среди делегатов! Покажите свои навыки не только на заседаниях, но и на футбольном поле.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-md shadow-orange-100/50 border border-orange-100/40 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                <div class="reveal bg-white p-8 rounded-3xl shadow-md shadow-orange-100/50 border border-orange-100/40 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style="transition-delay:0.08s">
                     <div class="h-16 w-16 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl shadow-inner"><i class="fa-solid fa-glass-martini-alt"></i></div>
                     <h3 class="font-display font-bold text-lg text-slate-900 mb-3">Освежающие коктейли</h3>
                     <p class="text-slate-500 text-xs leading-relaxed font-medium">Жаркий август мы встретим прохладой! Вас ждут интерактивные летние коктейли и напитки на брейках.</p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl shadow-md shadow-orange-100/50 border border-orange-100/40 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                <div class="reveal bg-white p-8 rounded-3xl shadow-md shadow-orange-100/50 border border-orange-100/40 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" style="transition-delay:0.16s">
                     <div class="h-16 w-16 bg-yellow-500/10 text-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl shadow-inner"><i class="fa-solid fa-masks-theater"></i></div>
                     <h3 class="font-display font-bold text-lg text-slate-900 mb-3">Культурная программа</h3>
                     <p class="text-slate-500 text-xs leading-relaxed font-medium">Насыщенные вечера, увлекательные интерактивы и знакомство с историческим Туркестаном.</p>
@@ -248,44 +262,44 @@
 
     <section id="rules" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
+
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="font-display font-black text-3xl text-slate-900 mb-5 tracking-tight">Регистрация и Взносы</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mb-8"></div>
-                
+                <div class="h-1 w-16 bg-gradient-to-r from-[#d4af37] to-[#8a6d1f] mx-auto rounded-full mb-8"></div>
+
                 <div class="flex flex-wrap justify-center gap-4 mb-4">
-                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 text-sm transform hover:-translate-y-0.5"><i class="fa-solid fa-street-view mr-2"></i> Оффлайн Регистрация</a>
-                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-blue-500/10 text-sm transform hover:-translate-y-0.5"><i class="fa-solid fa-laptop mr-2"></i> Онлайн Регистрация</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" class="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-purple-500/10 text-sm transform hover:-translate-y-0.5"><i class="fa-solid fa-handshake-angle mr-2"></i> Регистрация Волонтёров</a>
+                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="bg-gradient-to-r from-[#d4af37] to-[#a9812c] hover:from-[#e8c766] hover:to-[#b8902f] text-slate-950 font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 hover:shadow-amber-500/40 text-sm transform hover:-translate-y-0.5 hover:scale-[1.03]"><i class="fa-solid fa-street-view mr-2"></i> Оффлайн Регистрация</a>
+                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-blue-500/10 hover:shadow-blue-500/40 text-sm transform hover:-translate-y-0.5 hover:scale-[1.03]"><i class="fa-solid fa-laptop mr-2"></i> Онлайн Регистрация</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" class="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-xl shadow-purple-500/10 hover:shadow-purple-500/40 text-sm transform hover:-translate-y-0.5 hover:scale-[1.03]"><i class="fa-solid fa-handshake-angle mr-2"></i> Регистрация Волонтёров</a>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
-                <div>
+                <div class="reveal">
                     <h3 class="font-display font-bold text-xl text-slate-900 mb-6 border-l-4 border-amber-500 pl-4 tracking-tight">График организационных взносов</h3>
                     <div class="space-y-4">
-                        <div class="p-5 bg-emerald-50/40 border border-emerald-100 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-emerald-50/70">
+                        <div class="p-5 bg-emerald-50/40 border border-emerald-100 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-emerald-50/70 hover:-translate-y-0.5">
                             <div>
                                 <span class="text-[9px] font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Early Bird (до 17 июля)</span>
                                 <h4 class="font-bold text-slate-900 text-base">Оффлайн участие</h4>
                             </div>
                             <div class="text-right font-display font-black text-xl text-emerald-600">4500 тг</div>
                         </div>
-                        <div class="p-5 bg-slate-50/70 border border-slate-200/60 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-slate-100/40">
+                        <div class="p-5 bg-slate-50/70 border border-slate-200/60 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-slate-100/40 hover:-translate-y-0.5">
                             <div>
                                 <span class="text-[9px] font-bold text-slate-500 bg-slate-200/70 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Основной этап (после 17 июля)</span>
                                 <h4 class="font-bold text-slate-900 text-base">Оффлайн участие</h4>
                             </div>
                             <div class="text-right font-display font-black text-xl text-slate-700">6000 тг</div>
                         </div>
-                        <div class="p-5 bg-blue-50/40 border border-blue-100 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-blue-50/70">
+                        <div class="p-5 bg-blue-50/40 border border-blue-100 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-blue-50/70 hover:-translate-y-0.5">
                             <div>
                                 <span class="text-[9px] font-bold text-blue-700 bg-blue-100/70 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Фиксированная цена</span>
                                 <h4 class="font-bold text-slate-900 text-base">Онлайн комитет (COPUOS)</h4>
                             </div>
                             <div class="text-right font-display font-black text-xl text-blue-600">1000 тг</div>
                         </div>
-                        <div class="p-5 bg-purple-50/40 border border-purple-100 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-purple-50/70">
+                        <div class="p-5 bg-purple-50/40 border border-purple-100 rounded-2xl flex justify-between items-center transition-all duration-300 hover:bg-purple-50/70 hover:-translate-y-0.5">
                             <div>
                                 <span class="text-[9px] font-bold text-purple-700 bg-purple-100/70 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Организационный взнос</span>
                                 <h4 class="font-bold text-slate-900 text-base">Волонтерство на SUNMUN</h4>
@@ -296,9 +310,9 @@
                     <p class="text-slate-400 text-xs mt-4 leading-relaxed font-medium"><i class="fa-solid fa-circle-info mr-1 text-amber-500"></i> Взнос покрывает полиграфические материалы, раздаточный инвентарь, брейки с прохладительными коктейлями и кофе.</p>
                 </div>
 
-                <div class="space-y-6">
+                <div class="reveal space-y-6" style="transition-delay:0.1s">
                     <h3 class="font-display font-bold text-xl text-slate-900 mb-4 border-l-4 border-purple-500 pl-4 tracking-tight">Обязанности Волонтёров</h3>
-                    
+
                     <div class="p-6 rounded-2xl bg-purple-50/30 border border-purple-100/70 space-y-4 text-xs text-slate-600 font-medium">
                         <div class="flex gap-3.5">
                             <div class="text-purple-500 text-sm"><i class="fa-solid fa-address-card mt-0.5"></i></div>
@@ -325,11 +339,11 @@
                 </div>
             </div>
 
-            <div class="bg-[#0b1120] text-white rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden max-w-4xl mx-auto border border-slate-800">
+            <div class="reveal bg-[#0b1120] text-white rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden max-w-4xl mx-auto border border-slate-800">
                 <div class="absolute top-0 right-0 p-8 text-slate-800/20 text-9xl font-black opacity-20 pointer-events-none"><i class="fa-solid fa-trophy"></i></div>
                 <h3 class="font-display font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200 mb-4">Номинации и Награды</h3>
                 <p class="text-slate-400 text-sm mb-8 leading-relaxed max-w-xl font-medium">По итогам упорной и конструктивной работы в комитетах, секретариат и президиум наградят лучших участников ценными призами и дипломами:</p>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-200 font-semibold">
                     <div class="space-y-4">
                         <div class="flex items-center gap-3.5"><i class="fa-solid fa-trophy text-amber-400 text-base"></i> <div><strong>Best Delegate</strong> (Лучший делегат)</div></div>
@@ -349,7 +363,7 @@
 
     <section id="safety" class="py-24 bg-slate-100/70 border-t border-slate-200/60">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-slate-200/60">
+            <div class="reveal bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-slate-200/60">
                 <div class="flex items-center gap-4 mb-8">
                     <div class="h-14 w-14 rounded-2xl bg-red-500/10 text-red-600 flex items-center justify-center text-2xl shadow-inner">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -357,7 +371,7 @@
                     <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tight">Правила безопасности и участия</h2>
                 </div>
                 <div class="h-px w-full bg-slate-100 mb-8"></div>
-                
+
                 <ol class="space-y-4 text-sm text-slate-600 font-medium leading-relaxed list-none">
                     <li class="flex gap-3"><span class="font-extrabold text-amber-500">1.</span> <span>Соблюдайте законодательство Республики Казахстан, правила конференции и нормы академической этики.</span></li>
                     <li class="flex gap-3"><span class="font-extrabold text-amber-500">2.</span> <span>Относитесь с уважением ко всем участникам, председателям, организаторам и гостям конференции.</span></li>
@@ -369,8 +383,8 @@
                     <li class="flex gap-3"><span class="font-extrabold text-amber-500">8.</span> <span>В случае нарушения правил организаторы вправе вынести предупреждение или отстранить участника без возврата взноса.</span></li>
                     <li class="flex gap-3"><span class="font-extrabold text-amber-500">9.</span> <span>Организаторы не несут ответственности за утерю личных вещей или происшествия, возникшие по независящим от них причинам.</span></li>
                     <li class="flex gap-3"><span class="font-extrabold text-amber-500">10.</span> <span>Во время фото- и видеосъёмки участники дают согласие на использование материалов в информационных целях.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-amber-500">11.</span> <span>При проживании в хостеле необходимо соблюдать правила проживания, бережно относиться к имуществу.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-amber-500">12.</span> <span>Строго запрещаются курение, употребление алкоголя, наркотических веществ и любые действия, угрожающие безопасности.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-amber-500">11.</span> <span>При проживании в хостеле действует комендантский час: возвращение не позднее установленного времени, режим тишины соблюдается в ночные часы, необходимо бережно относиться к имуществу хостела.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-amber-500">12.</span> <span>Строго запрещаются курение, употребление алкоголя, наркотических веществ, проход посторонних лиц в номера и любые действия, угрожающие безопасности.</span></li>
                     <li class="flex gap-3"><span class="font-extrabold text-amber-500">13.</span> <span>При возникновении чрезвычайной ситуации необходимо немедленно сообщить организаторам.</span></li>
                     <li class="flex gap-3"><span class="font-extrabold text-amber-500">14.</span> <span>Оплачивая регистрационный взнос, участник подтверждает своё согласие со всеми правилами SUNMUN 2026.</span></li>
                 </ol>
@@ -380,12 +394,12 @@
 
     <section id="sponsors" class="py-20 bg-white border-t border-slate-200/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal">
                 <h2 class="font-display font-black text-2xl text-slate-900 mb-3 tracking-tight">Спонсоры & Партнеры</h2>
-                <div class="h-1 w-12 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full"></div>
+                <div class="h-1 w-12 bg-gradient-to-r from-[#d4af37] to-[#8a6d1f] mx-auto rounded-full"></div>
             </div>
-            
-            <div class="flex flex-wrap justify-center items-center gap-8">
+
+            <div class="flex flex-wrap justify-center items-center gap-8 reveal">
                 <div class="bg-slate-50 border border-amber-500/20 rounded-2xl px-12 py-6 text-center shadow-sm hover:shadow-xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1 group">
                     <div class="text-amber-500 text-2xl mb-2 group-hover:scale-110 transition-transform duration-300"><i class="fa-solid fa-handshake"></i></div>
                     <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Официальный Спонсор</p>
@@ -399,7 +413,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                 <div>
-                    <span class="font-display font-black text-xl tracking-wider text-amber-400 block mb-5">SUNMUN 2026</span>
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="assets/logo.jpeg" alt="SUNMUN 2026" class="h-10 w-10 rounded-full ring-2 ring-amber-400/40">
+                        <span class="font-display font-black text-xl tracking-wider text-amber-400 block">SUNMUN 2026</span>
+                    </div>
                     <p class="text-slate-400 text-xs leading-relaxed font-medium">
                         Southern Unity Nations Model United Nations. Woosong University Kazakhstan, город Туркестан.
                     </p>
@@ -434,6 +451,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const revealEls = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => io.observe(el));
+    </script>
 
 </body>
 </html>
