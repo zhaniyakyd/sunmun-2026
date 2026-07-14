@@ -9,36 +9,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0B1F4D',
+                        deepBlue: '#1E3A8A',
+                        gold: '#D4AF37',
+                        lightBg: '#F8FAFC',
+                        darkText: '#111827',
+                        cardBorder: '#E5E7EB'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .font-display { font-family: 'Montserrat', sans-serif; }
         
-        /* Ашық Түркістан аспаны мен Күн шуағының градиенті */
-        .hero-gradient { 
-            background: radial-gradient(circle at top, #fefce8 0%, #f0fdfa 100%); 
-        }
         .animate-spin-slow { animation: spin 20s linear infinite; }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         
-        /* Ашық және жарқын карталар */
+        /* 10% Ережесіне негізделген кәсіби карталар */
         .glow-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(6, 182, 212, 0.15);
-            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glow-card:hover {
-            border-color: #06b6d4;
-            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.15);
-            transform: translateY(-4px);
+            border-color: #D4AF37;
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
         }
         
         /* Ашылу анимациясы */
         .agenda-collapse {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
             opacity: 0;
         }
         .agenda-collapse.open {
@@ -47,32 +58,32 @@
         }
     </style>
 </head>
-<body class="bg-[#fafaf9] text-slate-800 scroll-smooth antialiased">
+<body class="bg-lightBg text-darkText scroll-smooth antialiased">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-cyan-500/10 transition-all duration-300 shadow-sm">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-cardBorder transition-all duration-300 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3 group cursor-pointer">
-                    <div class="h-12 w-12 rounded-full bg-gradient-to-tr from-cyan-400 via-sky-400 to-yellow-400 flex items-center justify-center shadow-md shadow-cyan-500/20 group-hover:scale-110 transition-transform duration-500">
-                        <i class="fa-solid fa-globe text-2xl text-white animate-spin-slow"></i>
+                    <div class="h-12 w-12 rounded-full bg-navy flex items-center justify-center border border-gold shadow-sm group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-globe text-xl text-gold animate-spin-slow"></i>
                     </div>
                     <div>
-                        <span class="font-display font-black text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-500 to-amber-500 block">SUNMUN 2026</span>
-                        <span class="text-[9px] text-cyan-600/80 font-bold tracking-widest uppercase block">Southern Unity Nations</span>
+                        <span class="font-display font-black text-xl tracking-wider text-navy block">SUNMUN 2026</span>
+                        <span class="text-[9px] text-navy/70 font-bold tracking-widest uppercase block">Southern Unity Nations</span>
                     </div>
                 </div>
                 
                 <div class="hidden md:flex items-center gap-8 font-semibold text-xs uppercase tracking-wider text-slate-600">
-                    <a href="#about" class="hover:text-cyan-600 transition-colors duration-300">О конференции</a>
-                    <a href="#committees" class="hover:text-cyan-600 transition-colors duration-300">Комитеты</a>
-                    <a href="#summer-program" class="hover:text-cyan-600 transition-colors duration-300">Летняя программа</a>
-                    <a href="#rules" class="hover:text-cyan-600 transition-colors duration-300">Правила & Взносы</a>
-                    <a href="#safety" class="hover:text-cyan-600 transition-colors duration-300">Безопасность</a>
-                    <a href="#sponsors" class="hover:text-cyan-600 transition-colors duration-300">Спонсоры</a>
-                    <a href="#contacts" class="hover:text-cyan-600 transition-colors duration-300">Контакты</a>
+                    <a href="#about" class="hover:text-navy transition-colors duration-200">О конференции</a>
+                    <a href="#committees" class="hover:text-navy transition-colors duration-200">Комитеты</a>
+                    <a href="#summer-program" class="hover:text-navy transition-colors duration-200">Программа</a>
+                    <a href="#rules" class="hover:text-navy transition-colors duration-200">Правила & Взносы</a>
+                    <a href="#safety" class="hover:text-navy transition-colors duration-200">Безопасность</a>
+                    <a href="#sponsors" class="hover:text-navy transition-colors duration-200">Спонсоры</a>
+                    <a href="#contacts" class="hover:text-navy transition-colors duration-200">Контакты</a>
                 </div>
                 <div>
-                    <a href="#rules" class="bg-gradient-to-r from-cyan-500 via-sky-500 to-amber-500 hover:from-cyan-400 hover:to-amber-400 text-white font-display font-extrabold px-6 py-3 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-md shadow-cyan-500/20 text-sm inline-block">
+                    <a href="#rules" class="bg-navy hover:bg-deepBlue border border-gold/40 text-white font-display font-extrabold px-6 py-3 rounded-lg transition-all duration-200 text-sm inline-block">
                         Регистрация
                     </a>
                 </div>
@@ -80,138 +91,136 @@
         </div>
     </nav>
 
-    <header class="hero-gradient relative overflow-hidden py-28 lg:py-36 border-b border-cyan-500/10">
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-300/30 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-300/30 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute inset-0 opacity-[0.4] bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <header class="bg-white relative overflow-hidden py-28 lg:py-36 border-b border-cardBorder">
+        <div class="absolute inset-0 opacity-[0.2] bg-[radial-gradient(#0B1F4D_1px,transparent_1px)] [background-size:32px_32px]"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="lg:w-2/3">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur text-cyan-700 text-xs font-bold uppercase tracking-widest mb-8">
-                    <i class="fa-solid fa-sun text-sm animate-pulse text-amber-500"></i> Ұлы Дала елі • Түркістан
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lightBg border border-cardBorder text-navy text-xs font-bold uppercase tracking-widest mb-8">
+                    <i class="fa-solid fa-sun text-sm text-gold"></i> Ұлы Дала елі • Түркістан
                 </div>
-                <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none mb-8 text-slate-900">
-                    SOUTHERN UNITY NATIONS <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-500 to-amber-500 drop-shadow-sm">MODEL UN 2026</span>
+                <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none mb-8 text-navy">
+                    SOUTHERN UNITY NATIONS <br><span class="text-gold">MODEL UN 2026</span>
                 </h1>
                 <p class="text-lg text-slate-600 max-w-xl mb-12 leading-relaxed font-medium">
                     Түркі әлемінің рухани астанасы — Түркістан қаласында өтетін жастар дипломатиясының ең жарқын оқиғасы. Жаһандық мәселелерді бірге талқылайық!
                 </p>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12 max-w-3xl">
-                    <div class="bg-white/80 border border-cyan-500/15 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-cyan-500/40 shadow-sm">
-                        <div class="bg-amber-500/10 p-3.5 rounded-xl text-amber-600"><i class="fa-solid fa-calendar-days text-xl"></i></div>
+                    <div class="bg-white border border-cardBorder rounded-xl p-5 flex items-center gap-4 shadow-sm">
+                        <div class="bg-lightBg p-3 rounded-lg text-gold"><i class="fa-solid fa-calendar-days text-lg"></i></div>
                         <div>
-                            <p class="text-[10px] text-amber-600 uppercase tracking-widest font-bold">Когда</p>
-                            <p class="text-sm font-bold text-slate-800 mt-0.5">8-9 августа 2026</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Когда</p>
+                            <p class="text-sm font-bold text-navy mt-0.5">8-9 августа 2026</p>
                         </div>
                     </div>
-                    <div class="bg-white/80 border border-cyan-500/15 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-cyan-500/40 shadow-sm">
-                        <div class="bg-cyan-500/10 p-3.5 rounded-xl text-cyan-600"><i class="fa-solid fa-location-dot text-xl"></i></div>
+                    <div class="bg-white border border-cardBorder rounded-xl p-5 flex items-center gap-4 shadow-sm">
+                        <div class="bg-lightBg p-3 rounded-lg text-gold"><i class="fa-solid fa-location-dot text-lg"></i></div>
                         <div>
-                            <p class="text-[10px] text-cyan-600 uppercase tracking-widest font-bold">Где</p>
-                            <p class="text-sm font-bold text-slate-800 mt-0.5">г. Туркестан</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Где</p>
+                            <p class="text-sm font-bold text-navy mt-0.5">г. Туркестан</p>
                         </div>
                     </div>
-                    <div class="bg-white/80 border border-cyan-500/15 backdrop-blur rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:border-cyan-500/40 shadow-sm">
-                        <div class="bg-amber-500/10 p-3.5 rounded-xl text-amber-600"><i class="fa-solid fa-building-columns text-xl"></i></div>
+                    <div class="bg-white border border-cardBorder rounded-xl p-5 flex items-center gap-4 shadow-sm">
+                        <div class="bg-lightBg p-3 rounded-lg text-gold"><i class="fa-solid fa-building-columns text-lg"></i></div>
                         <div>
-                            <p class="text-[10px] text-amber-600 uppercase tracking-widest font-bold">База</p>
-                            <p class="text-sm font-bold text-slate-800 mt-0.5">Woosong University</p>
+                            <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">База</p>
+                            <p class="text-sm font-bold text-navy mt-0.5">Woosong University</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-wrap gap-4">
-                    <a href="#rules" class="bg-gradient-to-r from-cyan-500 via-sky-500 to-amber-500 hover:from-cyan-400 hover:to-amber-400 text-white font-display font-black px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-cyan-500/25 text-base transform hover:-translate-y-0.5">
+                    <a href="#rules" class="bg-navy hover:bg-deepBlue border border-gold/40 text-white font-display font-black px-8 py-4 rounded-lg transition-all duration-200 text-base shadow-md">
                         Подать заявку
                     </a>
-                    <a href="#about" class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 font-display font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-base flex items-center gap-2 transform hover:-translate-y-0.5 shadow-sm">
-                        Подробнее <i class="fa-solid fa-arrow-down text-sm animate-bounce mt-0.5 text-cyan-500"></i>
+                    <a href="#about" class="bg-white hover:bg-lightBg border border-cardBorder text-slate-700 font-display font-semibold px-8 py-4 rounded-lg transition-all duration-200 text-base flex items-center gap-2 shadow-sm">
+                        Подробнее <i class="fa-solid fa-arrow-down text-sm text-gold"></i>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-24 bg-white relative border-b border-cyan-500/10">
+    <section id="about" class="py-24 bg-white border-b border-cardBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-5 tracking-tight">О конференции SUNMUN 2026</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-cyan-500 to-amber-500 mx-auto rounded-full mb-6"></div>
+                <h2 class="font-display font-black text-3xl sm:text-4xl text-navy mb-5 tracking-tight">О конференции SUNMUN 2026</h2>
+                <div class="h-1 w-16 bg-gold mx-auto rounded-full mb-6"></div>
                 <p class="text-slate-600 leading-relaxed text-base font-medium">
                     Настоящее мероприятие регламентируется официальным Положением и представляет собой очную конференцию в формате модели Организации Объединенных Наций.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 glow-card rounded-3xl">
-                    <div class="h-14 w-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6 text-2xl"><i class="fa-solid fa-comments"></i></div>
-                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Дипломатия и переговоры</h3>
+                <div class="p-8 glow-card rounded-2xl">
+                    <div class="h-12 w-12 rounded-lg bg-lightBg text-gold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-comments"></i></div>
+                    <h3 class="font-display font-bold text-lg text-navy mb-3">Дипломатия и переговоры</h3>
                     <p class="text-slate-600 text-sm leading-relaxed font-medium">Совершенствование навыков ведения переговорного процесса, публичных выступлений и аргументированного отстаивания позиций.</p>
                 </div>
-                <div class="p-8 glow-card rounded-3xl">
-                    <div class="h-14 w-14 rounded-2xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center mb-6 text-2xl"><i class="fa-solid fa-seedling"></i></div>
-                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">ЦУР ООН и Глобальные темы</h3>
+                <div class="p-8 glow-card rounded-2xl">
+                    <div class="h-12 w-12 rounded-lg bg-lightBg text-gold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-seedling"></i></div>
+                    <h3 class="font-display font-bold text-lg text-navy mb-3">ЦУР ООН и Глобальные темы</h3>
                     <p class="text-slate-600 text-sm leading-relaxed font-medium">Углубление понимания актуальных проблем устойчивого развития, международной безопасности и прав человека.</p>
                 </div>
-                <div class="p-8 glow-card rounded-3xl">
-                    <div class="h-14 w-14 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6 text-2xl"><i class="fa-solid fa-users"></i></div>
-                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Сетевое взаимодействие</h3>
+                <div class="p-8 glow-card rounded-2xl">
+                    <div class="h-12 w-12 rounded-lg bg-lightBg text-gold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="font-display font-bold text-lg text-navy mb-3">Сетевое взаимодействие</h3>
                     <p class="text-slate-600 text-sm leading-relaxed font-medium">Развитие связей между студентами, исследователями и экспертами в области международных отношений Центральной Азии.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="committees" class="py-24 bg-[#fefefe] border-b border-cyan-500/10">
+    <section id="committees" class="py-24 bg-lightBg border-b border-cardBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-display font-black text-3xl sm:text-4xl text-slate-900 mb-5 tracking-tight">Комитеты конференции</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-cyan-500 to-amber-500 mx-auto rounded-full mb-5"></div>
-                <p class="text-cyan-600 font-bold text-xs uppercase tracking-wider">Ақпараттарды көру үшін төмендегі батырмаларды басыңыз</p>
+                <h2 class="font-display font-black text-3xl sm:text-4xl text-navy mb-5 tracking-tight">Комитеты конференции</h2>
+                <div class="h-1 w-16 bg-gold mx-auto rounded-full mb-5"></div>
+                <p class="text-slate-500 font-bold text-xs uppercase tracking-wider">Күн тәртібі мен толық ақпаратты көру үшін қажетті комитетті таңдаңыз</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
-                <div class="glow-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="glow-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-display font-black tracking-wider text-cyan-600 text-3xl block">UNGA</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1 block">БҰҰ Бас Ассамблеясы</span>
+                                <span class="font-display font-black tracking-wider text-navy text-2xl block">UNGA</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 block">БҰҰ Бас Ассамблеясы</span>
                             </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-cyan-500/10 text-cyan-700 border border-cyan-500/20 rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-lightBg text-navy border border-cardBorder rounded-full font-bold uppercase tracking-wider">Офлайн</span>
                         </div>
                         
                         <div class="mb-6">
                             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-1">Тіл:</span>
-                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-cyan-500"></i> Қазақ тілі</span>
+                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-gold"></i> Қазақ тілі</span>
                         </div>
                     </div>
 
                     <div class="my-4">
-                        <button onclick="toggleAgenda('unga')" class="w-full py-3.5 px-5 rounded-2xl bg-cyan-50/80 hover:bg-cyan-100 border border-cyan-500/20 hover:border-cyan-500 text-xs font-bold text-cyan-700 flex items-center justify-center gap-2 transition-all duration-300">
+                        <button onclick="toggleAgenda('unga')" class="w-full py-3 px-5 rounded-lg bg-lightBg hover:bg-slate-100 border border-cardBorder text-xs font-bold text-navy flex items-center justify-center gap-2 transition-all duration-200">
                             <span>Күн тәртібі мен президиум</span>
-                            <i id="icon-unga" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <i id="icon-unga" class="fa-solid fa-chevron-down transition-transform duration-200"></i>
                         </button>
                     </div>
 
                     <div id="agenda-unga" class="agenda-collapse">
-                        <div class="pt-4 border-t border-slate-200 space-y-6">
+                        <div class="pt-4 border-t border-cardBorder space-y-6">
                             <div>
                                 <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-2">Повестка:</span>
-                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-4 border-cyan-500 pl-3">
+                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-2 border-gold pl-3">
                                     БҰҰ Қауіпсіздік Кеңесін Жаңғырту: БҰҰ Жарғысын Қазіргі Заманғы Әлемнің Сын-Қатерлеріне Бейімдеу Мақсатында Вето Құқығы Механизмін Қайта Қарау.
                                 </p>
                             </div>
                             <div>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Президиум:</span>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
-                                        <span class="text-[9px] font-bold text-cyan-600 uppercase block mb-1">Chair</span>
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
+                                        <span class="text-[9px] font-bold text-navy uppercase block mb-1">Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Zhakyp Sussar</p>
                                     </div>
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
                                         <span class="text-[9px] font-bold text-slate-400 uppercase block mb-1">Co-Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Tneibay Nazik</p>
                                     </div>
@@ -221,45 +230,45 @@
                     </div>
                 </div>
 
-                <div class="glow-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="glow-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-display font-black tracking-wider text-amber-600 text-3xl block">COPUOS</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1 block">Committee on the Peaceful Uses of Outer Space</span>
+                                <span class="font-display font-black tracking-wider text-navy text-2xl block">COPUOS</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 block">Peaceful Uses of Outer Space</span>
                             </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-amber-500/10 text-amber-700 border border-amber-500/20 rounded-full font-bold uppercase tracking-wider">Online</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-lightBg text-navy border border-cardBorder rounded-full font-bold uppercase tracking-wider">Online</span>
                         </div>
                         
                         <div class="mb-6">
                             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-1">Language:</span>
-                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-amber-500"></i> English (Online)</span>
+                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-gold"></i> English (Online)</span>
                         </div>
                     </div>
 
                     <div class="my-4">
-                        <button onclick="toggleAgenda('copuos')" class="w-full py-3.5 px-5 rounded-2xl bg-amber-50/80 hover:bg-amber-100 border border-amber-500/20 hover:border-amber-500 text-xs font-bold text-amber-700 flex items-center justify-center gap-2 transition-all duration-300">
+                        <button onclick="toggleAgenda('copuos')" class="w-full py-3 px-5 rounded-lg bg-lightBg hover:bg-slate-100 border border-cardBorder text-xs font-bold text-navy flex items-center justify-center gap-2 transition-all duration-200">
                             <span>View Agenda & Chairs</span>
-                            <i id="icon-copuos" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <i id="icon-copuos" class="fa-solid fa-chevron-down transition-transform duration-200"></i>
                         </button>
                     </div>
 
                     <div id="agenda-copuos" class="agenda-collapse">
-                        <div class="pt-4 border-t border-slate-200 space-y-6">
+                        <div class="pt-4 border-t border-cardBorder space-y-6">
                             <div>
                                 <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-2">Agenda:</span>
-                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-4 border-amber-500 pl-3">
+                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-2 border-gold pl-3">
                                     Ensuring Equitable Access to Outer Space Resources Amid Increasing Commercial Competition.
                                 </p>
                             </div>
                             <div>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Presidium:</span>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
-                                        <span class="text-[9px] font-bold text-amber-600 uppercase block mb-1">Chair</span>
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
+                                        <span class="text-[9px] font-bold text-navy uppercase block mb-1">Chair</span>
                                         <p class="text-xs font-bold text-slate-500 italic">To be announced</p>
                                     </div>
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
                                         <span class="text-[9px] font-bold text-slate-400 uppercase block mb-1">Co-Chair</span>
                                         <p class="text-xs font-bold text-slate-500 italic">To be announced</p>
                                     </div>
@@ -269,47 +278,47 @@
                     </div>
                 </div>
 
-                <div class="glow-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="glow-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-display font-black tracking-wider text-amber-600 text-3xl block">WIPO</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1 block">World Intellectual Property Organization</span>
+                                <span class="font-display font-black tracking-wider text-navy text-2xl block">WIPO</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 block">Intellectual Property Organization</span>
                             </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-amber-500/10 text-amber-700 border border-amber-500/20 rounded-full font-bold uppercase tracking-wider">Offline</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-lightBg text-navy border border-cardBorder rounded-full font-bold uppercase tracking-wider">Offline</span>
                         </div>
                         
                         <div class="mb-6">
                             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-1">Language:</span>
-                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-amber-500"></i> English</span>
+                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-gold"></i> English</span>
                         </div>
                     </div>
 
                     <div class="my-4">
-                        <button onclick="toggleAgenda('wipo')" class="w-full py-3.5 px-5 rounded-2xl bg-amber-50/80 hover:bg-amber-100 border border-amber-500/20 hover:border-amber-500 text-xs font-bold text-amber-700 flex items-center justify-center gap-2 transition-all duration-300">
+                        <button onclick="toggleAgenda('wipo')" class="w-full py-3 px-5 rounded-lg bg-lightBg hover:bg-slate-100 border border-cardBorder text-xs font-bold text-navy flex items-center justify-center gap-2 transition-all duration-200">
                             <span>View Agenda & Chairs</span>
-                            <i id="icon-wipo" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <i id="icon-wipo" class="fa-solid fa-chevron-down transition-transform duration-200"></i>
                         </button>
                     </div>
 
                     <div id="agenda-wipo" class="agenda-collapse">
-                        <div class="pt-4 border-t border-slate-200 space-y-6">
+                        <div class="pt-4 border-t border-cardBorder space-y-6">
                             <div>
                                 <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-2">Agenda:</span>
-                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-4 border-amber-500 pl-3">
+                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-2 border-gold pl-3">
                                     The Quantum Tech Hegemony: Regulating Patent Monopolies, Forced Technology Transfers, and the Protection of National Security Assets.
                                 </p>
                             </div>
                             <div>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Presidium:</span>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
-                                        <span class="text-[9px] font-bold text-amber-600 uppercase block mb-1">Chair</span>
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
+                                        <span class="text-[9px] font-bold text-navy uppercase block mb-1">Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Pussurmanov Medeu</p>
                                     </div>
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
                                         <span class="text-[9px] font-bold text-slate-400 uppercase block mb-1">Co-Chair</span>
-                                        <p class="text-xs font-bold text-slate-500 italic">To be announced</p>
+                                        <p class="text-xs font-bold text-slate-505 italic">To be announced</p>
                                     </div>
                                 </div>
                             </div>
@@ -317,45 +326,45 @@
                     </div>
                 </div>
 
-                <div class="glow-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="glow-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-display font-black tracking-wider text-cyan-600 text-3xl block">UPU</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1 block">Всемирный почтовый союз</span>
+                                <span class="font-display font-black tracking-wider text-navy text-2xl block">UPU</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 block">Всемирный почтовый союз</span>
                             </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-cyan-500/10 text-cyan-700 border border-cyan-500/20 rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-lightBg text-navy border border-cardBorder rounded-full font-bold uppercase tracking-wider">Офлайн</span>
                         </div>
                         
                         <div class="mb-6">
                             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-1">Язык:</span>
-                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-cyan-500"></i> Русский язык</span>
+                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-gold"></i> Русский язык</span>
                         </div>
                     </div>
 
                     <div class="my-4">
-                        <button onclick="toggleAgenda('upu')" class="w-full py-3.5 px-5 rounded-2xl bg-cyan-50/80 hover:bg-cyan-100 border border-cyan-500/20 hover:border-cyan-500 text-xs font-bold text-cyan-700 flex items-center justify-center gap-2 transition-all duration-300">
+                        <button onclick="toggleAgenda('upu')" class="w-full py-3 px-5 rounded-lg bg-lightBg hover:bg-slate-100 border border-cardBorder text-xs font-bold text-navy flex items-center justify-center gap-2 transition-all duration-200">
                             <span>Показать повестку и президиум</span>
-                            <i id="icon-upu" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <i id="icon-upu" class="fa-solid fa-chevron-down transition-transform duration-200"></i>
                         </button>
                     </div>
 
                     <div id="agenda-upu" class="agenda-collapse">
-                        <div class="pt-4 border-t border-slate-200 space-y-6">
+                        <div class="pt-4 border-t border-cardBorder space-y-6">
                             <div>
                                 <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-2">Повестка:</span>
-                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-4 border-cyan-500 pl-3">
+                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-2 border-gold pl-3">
                                     Вейпонизация глобальной почтовой сети: Стандартизация электронных предварительных данных (EAD) для борьбы с контрабандой синтетических наркотиков и технологий двойного назначения.
                                 </p>
                             </div>
                             <div>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Президиум:</span>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
-                                        <span class="text-[9px] font-bold text-cyan-600 uppercase block mb-1">Chair</span>
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
+                                        <span class="text-[9px] font-bold text-navy uppercase block mb-1">Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Marat Koshmuratov</p>
                                     </div>
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
                                         <span class="text-[9px] font-bold text-slate-400 uppercase block mb-1">Co-Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Shakarbekov Akzhol</p>
                                     </div>
@@ -365,45 +374,45 @@
                     </div>
                 </div>
 
-                <div class="glow-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="glow-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-display font-black tracking-wider text-cyan-600 text-3xl block">UNHRC</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1 block">БҰҰ Адам құқықтары жөніндегі кеңесі</span>
+                                <span class="font-display font-black tracking-wider text-navy text-2xl block">UNHRC</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 block">БҰҰ Адам құқықтары кеңесі</span>
                             </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-cyan-500/10 text-cyan-700 border border-cyan-500/20 rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-lightBg text-navy border border-cardBorder rounded-full font-bold uppercase tracking-wider">Офлайн</span>
                         </div>
                         
                         <div class="mb-6">
                             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-1">Тіл:</span>
-                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-cyan-500"></i> Қазақ тілі</span>
+                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-gold"></i> Қазақ тілі</span>
                         </div>
                     </div>
 
                     <div class="my-4">
-                        <button onclick="toggleAgenda('unhrc')" class="w-full py-3.5 px-5 rounded-2xl bg-cyan-50/80 hover:bg-cyan-100 border border-cyan-500/20 hover:border-cyan-500 text-xs font-bold text-cyan-700 flex items-center justify-center gap-2 transition-all duration-300">
+                        <button onclick="toggleAgenda('unhrc')" class="w-full py-3 px-5 rounded-lg bg-lightBg hover:bg-slate-100 border border-cardBorder text-xs font-bold text-navy flex items-center justify-center gap-2 transition-all duration-200">
                             <span>Күн тәртібі мен президиум</span>
-                            <i id="icon-unhrc" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <i id="icon-unhrc" class="fa-solid fa-chevron-down transition-transform duration-200"></i>
                         </button>
                     </div>
 
                     <div id="agenda-unhrc" class="agenda-collapse">
-                        <div class="pt-4 border-t border-slate-200 space-y-6">
+                        <div class="pt-4 border-t border-cardBorder space-y-6">
                             <div>
                                 <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-2">Тақырыбы:</span>
-                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-4 border-cyan-500 pl-3">
+                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-2 border-gold pl-3">
                                     «Цифрлық паноптикон»: Мемлекеттік жаппай бақылау, әлеуметтік рейтинг жүйелері және жеке деректерді жинау жағдайында азаматтардың құпиялылық құқығын қорғау.
                                 </p>
                             </div>
                             <div>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Президиум:</span>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
-                                        <span class="text-[9px] font-bold text-cyan-600 uppercase block mb-1">Chair</span>
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
+                                        <span class="text-[9px] font-bold text-navy uppercase block mb-1">Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Kuandyk Moldiyar</p>
                                     </div>
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
                                         <span class="text-[9px] font-bold text-slate-400 uppercase block mb-1">Co-Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Abdikadirova Aizhanel</p>
                                     </div>
@@ -413,45 +422,45 @@
                     </div>
                 </div>
 
-                <div class="glow-card rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="glow-card rounded-2xl p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-display font-black tracking-wider text-amber-600 text-2xl block">Historical Crisis</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1 block">Исторический кризисный комитет</span>
+                                <span class="font-display font-black tracking-wider text-navy text-2xl block">Historical Crisis</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1 block">Исторический кризисный комитет</span>
                             </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-amber-500/10 text-amber-700 border border-amber-500/20 rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-lightBg text-navy border border-cardBorder rounded-full font-bold uppercase tracking-wider">Офлайн</span>
                         </div>
                         
                         <div class="mb-6">
                             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-1">Язык:</span>
-                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-amber-500"></i> Русский язык</span>
+                            <span class="text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="fa-solid fa-language text-gold"></i> Русский язык</span>
                         </div>
                     </div>
 
                     <div class="my-4">
-                        <button onclick="toggleAgenda('hcc')" class="w-full py-3.5 px-5 rounded-2xl bg-amber-50/80 hover:bg-amber-100 border border-amber-500/20 hover:border-amber-500 text-xs font-bold text-amber-700 flex items-center justify-center gap-2 transition-all duration-300">
+                        <button onclick="toggleAgenda('hcc')" class="w-full py-3 px-5 rounded-lg bg-lightBg hover:bg-slate-100 border border-cardBorder text-xs font-bold text-navy flex items-center justify-center gap-2 transition-all duration-200">
                             <span>Показать повестку и президиум</span>
-                            <i id="icon-hcc" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                            <i id="icon-hcc" class="fa-solid fa-chevron-down transition-transform duration-200"></i>
                         </button>
                     </div>
 
                     <div id="agenda-hcc" class="agenda-collapse">
-                        <div class="pt-4 border-t border-slate-200 space-y-6">
+                        <div class="pt-4 border-t border-cardBorder space-y-6">
                             <div>
                                 <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wide block mb-2">Повестка:</span>
-                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-4 border-amber-500 pl-3">
+                                <p class="text-slate-800 text-sm font-bold leading-relaxed border-l-2 border-gold pl-3">
                                     1936 год: «Накануне катастрофы: Хрупкий баланс Версальской системы и отчаянные попытки предотвратить мировую войну».
                                 </p>
                             </div>
                             <div>
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-3">Президиум:</span>
                                 <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
-                                        <span class="text-[9px] font-bold text-amber-600 uppercase block mb-1">Chair</span>
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
+                                        <span class="text-[9px] font-bold text-navy uppercase block mb-1">Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Abylaikhan Mukhtar</p>
                                     </div>
-                                    <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200">
+                                    <div class="bg-lightBg p-3 rounded-lg border border-cardBorder">
                                         <span class="text-[9px] font-bold text-slate-400 uppercase block mb-1">Co-Chair</span>
                                         <p class="text-xs font-bold text-slate-800">Serik Gulmerey</p>
                                     </div>
@@ -465,130 +474,134 @@
         </div>
     </section>
 
-    <section id="summer-program" class="py-24 bg-gradient-to-br from-yellow-50/40 via-cyan-50/30 to-white relative overflow-hidden border-b border-cyan-500/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="summer-program" class="py-24 bg-white border-b border-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-display font-black text-3xl text-slate-900 mb-5 tracking-tight">☀️ Летняя атмосфера и Культурная программа</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-cyan-500 to-amber-500 mx-auto rounded-full mb-6"></div>
-                <p class="text-cyan-700 text-sm font-bold uppercase tracking-wider">SUNMUN 2026 — это не только дебаты, но и яркий незабываемый летний вайб!</p>
+                <h2 class="font-display font-black text-3xl text-navy mb-5 tracking-tight">☀️ Летняя атмосфера и Культурная программа</h2>
+                <div class="h-1 w-16 bg-gold mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-wider">SUNMUN 2026 — дебаттардан бөлек ұмытылмас жазғы атмосфера сыйлайды!</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="glow-card p-8 rounded-3xl text-center bg-white">
-                    <div class="h-16 w-16 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl"><i class="fa-solid fa-soccer-ball"></i></div>
-                    <h3 class="font-display font-bold text-lg text-slate-900 mb-3">Мини-турнир по футболу</h3>
+                <div class="glow-card p-8 rounded-2xl text-center">
+                    <div class="h-12 w-12 bg-lightBg text-gold rounded-lg flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-soccer-ball"></i></div>
+                    <h3 class="font-display font-bold text-base text-navy mb-3">Мини-турнир по футболу</h3>
                     <p class="text-slate-600 text-xs leading-relaxed font-medium">Спортивный интерактив среди делегатов! Покажите свои навыки не только на заседаниях, но и на футбольном поле.</p>
                 </div>
 
-                <div class="glow-card p-8 rounded-3xl text-center bg-white">
-                    <div class="h-16 w-16 bg-cyan-500/10 text-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl"><i class="fa-solid fa-glass-martini-alt"></i></div>
-                    <h3 class="font-display font-bold text-lg text-slate-900 mb-3">Освежающие коктейли</h3>
+                <div class="glow-card p-8 rounded-2xl text-center">
+                    <div class="h-12 w-12 bg-lightBg text-gold rounded-lg flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-glass-martini-alt"></i></div>
+                    <h3 class="font-display font-bold text-base text-navy mb-3">Освежающие коктейли</h3>
                     <p class="text-slate-600 text-xs leading-relaxed font-medium">Жаркий август мы встретим прохладой! Вас ждут интерактивные летние коктейли и напитки на брейках.</p>
                 </div>
 
-                <div class="glow-card p-8 rounded-3xl text-center bg-white">
-                    <div class="h-16 w-16 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl"><i class="fa-solid fa-masks-theater"></i></div>
-                    <h3 class="font-display font-bold text-lg text-slate-900 mb-3">Культурная программа</h3>
+                <div class="glow-card p-8 rounded-2xl text-center">
+                    <div class="h-12 w-12 bg-lightBg text-gold rounded-lg flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-masks-theater"></i></div>
+                    <h3 class="font-display font-bold text-base text-navy mb-3">Культурная программа</h3>
                     <p class="text-slate-600 text-xs leading-relaxed font-medium">Насыщенные вечера, увлекательные интерактивы и знакомство с историческим Туркестаном.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="rules" class="py-24 bg-white border-b border-cyan-500/10">
+    <section id="rules" class="py-24 bg-white border-b border-cardBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-black text-3xl text-slate-900 mb-5 tracking-tight">Регистрация и Взносы</h2>
-                <div class="h-1 w-16 bg-gradient-to-r from-cyan-500 to-amber-500 mx-auto rounded-full mb-8"></div>
+                <h2 class="font-display font-black text-3xl text-navy mb-5 tracking-tight">Регистрация и Взносы</h2>
+                <div class="h-1 w-16 bg-gold mx-auto rounded-full mb-8"></div>
                 
-                <div class="flex flex-wrap justify-center gap-4 mb-4">
-                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-white font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md shadow-amber-500/20 text-sm transform hover:-translate-y-0.5"><i class="fa-solid fa-street-view mr-2"></i> Оффлайн Регистрация</a>
-                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md shadow-cyan-500/20 text-sm transform hover:-translate-y-0.5"><i class="fa-solid fa-laptop mr-2"></i> Онлайн Регистрация</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" class="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-500 hover:to-slate-600 text-white font-display font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-md shadow-slate-500/20 text-sm transform hover:-translate-y-0.5"><i class="fa-solid fa-handshake-angle mr-2"></i> Регистрация Волонтёров</a>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="bg-navy hover:bg-deepBlue text-white font-display font-bold px-7 py-3.5 rounded-lg transition-all duration-200 text-sm shadow-sm"><i class="fa-solid fa-street-view mr-2 text-gold"></i> Оффлайн Регистрация</a>
+                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="bg-navy hover:bg-deepBlue text-white font-display font-bold px-7 py-3.5 rounded-lg transition-all duration-200 text-sm shadow-sm"><i class="fa-solid fa-laptop mr-2 text-gold"></i> Онлайн Регистрация</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" class="bg-slate-600 hover:bg-slate-700 text-white font-display font-bold px-7 py-3.5 rounded-lg transition-all duration-200 text-sm shadow-sm"><i class="fa-solid fa-handshake-angle mr-2"></i> Волонтерство</a>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
-                <div>
-                    <h3 class="font-display font-bold text-xl text-slate-900 mb-6 border-l-4 border-amber-500 pl-4 tracking-tight">График организационных взносов</h3>
+                <div class="space-y-6">
+                    <h3 class="font-display font-bold text-xl text-navy mb-2 border-l-4 border-gold pl-4 tracking-tight">График взносов</h3>
+                    
                     <div class="space-y-4">
-                        <div class="p-5 bg-amber-500/5 border border-amber-500/15 rounded-2xl flex justify-between items-center transition-all duration-300 hover:border-amber-500/30">
+                        <div class="p-5 bg-white border border-cardBorder rounded-xl flex justify-between items-center transition-all duration-200 hover:border-gold">
                             <div>
-                                <span class="text-[9px] font-bold text-amber-700 bg-amber-500/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Early Bird (до 17 июля)</span>
-                                <h4 class="font-bold text-slate-800 text-base">Оффлайн участие</h4>
+                                <span class="text-[9px] font-bold text-navy bg-lightBg border border-cardBorder px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Early Bird (до 17 июля)</span>
+                                <h4 class="font-bold text-darkText text-sm">Оффлайн участие</h4>
                             </div>
-                            <div class="text-right font-display font-black text-xl text-amber-600">4500 тг</div>
+                            <div class="text-right font-display font-black text-lg text-navy">4500 тг</div>
                         </div>
-                        <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl flex justify-between items-center transition-all duration-300 hover:border-slate-300">
+                        
+                        <div class="p-5 bg-white border border-cardBorder rounded-xl flex justify-between items-center transition-all duration-200 hover:border-gold">
                             <div>
-                                <span class="text-[9px] font-bold text-slate-700 bg-slate-200 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Основной этап (после 17 июля)</span>
-                                <h4 class="font-bold text-slate-800 text-base">Оффлайн участие</h4>
+                                <span class="text-[9px] font-bold text-slate-400 bg-lightBg border border-cardBorder px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Основной этап (после 17 июля)</span>
+                                <h4 class="font-bold text-darkText text-sm">Оффлайн участие</h4>
                             </div>
-                            <div class="text-right font-display font-black text-xl text-slate-700">6000 тг</div>
+                            <div class="text-right font-display font-black text-lg text-slate-400">6000 тг</div>
                         </div>
-                        <div class="p-5 bg-cyan-500/5 border border-cyan-500/15 rounded-2xl flex justify-between items-center transition-all duration-300 hover:border-cyan-500/30">
+
+                        <div class="p-5 bg-white border border-cardBorder rounded-xl flex justify-between items-center transition-all duration-200 hover:border-gold">
                             <div>
-                                <span class="text-[9px] font-bold text-cyan-700 bg-cyan-500/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Фиксированная цена</span>
-                                <h4 class="font-bold text-slate-800 text-base">Онлайн комитет (COPUOS)</h4>
+                                <span class="text-[9px] font-bold text-navy bg-lightBg border border-cardBorder px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Фиксированная цена</span>
+                                <h4 class="font-bold text-darkText text-sm">Онлайн комитет (COPUOS)</h4>
                             </div>
-                            <div class="text-right font-display font-black text-xl text-cyan-600">1000 тг</div>
+                            <div class="text-right font-display font-black text-lg text-navy">1000 тг</div>
                         </div>
-                        <div class="p-5 bg-amber-500/5 border border-amber-500/15 rounded-2xl flex justify-between items-center transition-all duration-300 hover:border-amber-500/30">
+
+                        <div class="p-5 bg-white border border-cardBorder rounded-xl flex justify-between items-center transition-all duration-200 hover:border-gold">
                             <div>
-                                <span class="text-[9px] font-bold text-amber-700 bg-amber-500/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Организационный взнос</span>
-                                <h4 class="font-bold text-slate-800 text-base">Волонтерство на SUNMUN</h4>
+                                <span class="text-[9px] font-bold text-navy bg-lightBg border border-cardBorder px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Организационный взнос</span>
+                                <h4 class="font-bold text-darkText text-sm">Волонтерство на SUNMUN</h4>
                             </div>
-                            <div class="text-right font-display font-black text-xl text-amber-600">1000 тг</div>
+                            <div class="text-right font-display font-black text-lg text-navy">1000 тг</div>
                         </div>
                     </div>
-                    <p class="text-slate-500 text-xs mt-4 leading-relaxed"><i class="fa-solid fa-circle-info mr-1 text-amber-500"></i> Взнос покрывает полиграфические материалы, раздаточный инвентарь, брейки с прохладительными коктейлями и кофе.</p>
+                    <p class="text-slate-400 text-xs leading-relaxed"><i class="fa-solid fa-circle-info mr-1 text-gold"></i> Взнос покрывает полиграфические материалы, раздаточный инвентарь, кофе-брейки.</p>
                 </div>
 
                 <div class="space-y-6">
-                    <h3 class="font-display font-bold text-xl text-slate-900 mb-4 border-l-4 border-cyan-500 pl-4 tracking-tight">Обязанности Волонтёров</h3>
+                    <h3 class="font-display font-bold text-xl text-navy mb-4 border-l-4 border-gold pl-4 tracking-tight">Обязанности Волонтёров</h3>
                     
-                    <div class="p-6 rounded-2xl bg-cyan-50/50 border border-cyan-500/10 space-y-4 text-xs text-slate-600 font-medium">
+                    <div class="p-6 rounded-xl bg-white border border-cardBorder space-y-4 text-xs text-slate-600 font-medium">
                         <div class="flex gap-3.5">
-                            <div class="text-cyan-600 text-sm"><i class="fa-solid fa-address-card mt-0.5"></i></div>
-                            <div><strong class="text-slate-800">Логистика и встреча:</strong> Помощь в регистрации, координации и навигации делегатов на локации.</div>
+                            <div class="text-gold text-sm"><i class="fa-solid fa-address-card mt-0.5"></i></div>
+                            <div><strong class="text-darkText">Логистика и встреча:</strong> Помощь в регистрации, координации и навигации делегатов на локации.</div>
                         </div>
                         <div class="flex gap-3.5">
-                            <div class="text-cyan-600 text-sm"><i class="fa-solid fa-circle-check mt-0.5"></i></div>
-                            <div><strong class="text-slate-800">Поддержка комитетов:</strong> Контроль порядка, помощь президиуму и оперативное решение текущих вопросов в залах.</div>
+                            <div class="text-gold text-sm"><i class="fa-solid fa-circle-check mt-0.5"></i></div>
+                            <div><strong class="text-darkText">Поддержка комитетов:</strong> Контроль порядка, помощь президиуму и оперативное решение вопросов.</div>
                         </div>
                         <div class="flex gap-3.5">
-                            <div class="text-cyan-600 text-sm"><i class="fa-solid fa-mug-hot mt-0.5"></i></div>
-                            <div><strong class="text-slate-800">Интерактивы:</strong> Организация кофе-брейков с коктейлями и помощь в проведении летних программ.</div>
+                            <div class="text-gold text-sm"><i class="fa-solid fa-mug-hot mt-0.5"></i></div>
+                            <div><strong class="text-darkText">Интерактивы:</strong> Организация кофе-брейков с коктейлями и помощь в проведении программ.</div>
                         </div>
                     </div>
 
-                    <h3 class="font-display font-bold text-xl text-slate-900 pt-2 mb-4 border-l-4 border-amber-500 pl-4 tracking-tight">Обязательные требования</h3>
-                    <div class="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200">
-                        <div class="text-amber-500 mt-0.5"><i class="fa-solid fa-user-tie text-xl"></i></div>
+                    <h3 class="font-display font-bold text-lg text-navy pt-2 mb-4 border-l-4 border-gold pl-4 tracking-tight">Обязательные требования</h3>
+                    <div class="flex gap-4 p-5 rounded-xl bg-white border border-cardBorder">
+                        <div class="text-gold mt-0.5"><i class="fa-solid fa-user-tie text-lg"></i></div>
                         <div>
-                            <h4 class="font-bold text-slate-800 text-sm mb-1">Дресс-код: Smart Casual / Свободно-деловой</h4>
-                            <p class="text-slate-600 text-xs leading-relaxed font-medium">Участники обязаны придерживаться внешнего вида, соответствующего официальному статусу модели ООН.</p>
+                            <h4 class="font-bold text-darkText text-sm mb-1">Дресс-код: Smart Casual / Свободно-деловой</h4>
+                            <p class="text-slate-500 text-xs leading-relaxed font-medium">Участники обязаны придерживаться внешнего вида, соответствующего официальному статусу модели ООН.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-gradient-to-r from-cyan-50 via-sky-50 to-white rounded-3xl p-8 lg:p-12 shadow-md relative overflow-hidden max-w-4xl mx-auto border border-cyan-500/10">
-                <div class="absolute top-0 right-0 p-8 text-cyan-500/5 text-9xl font-black pointer-events-none"><i class="fa-solid fa-trophy"></i></div>
-                <h3 class="font-display font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-700 to-amber-600 mb-4">Номинации и Награды</h3>
-                <p class="text-slate-600 text-sm mb-8 leading-relaxed max-w-xl font-medium">По итогам упорной и конструктивной работы в комитетах, секретариат и президиум наградят лучших участников ценными призами и дипломами:</p>
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-sm border border-cardBorder relative overflow-hidden max-w-4xl mx-auto">
+                <div class="absolute top-0 right-0 p-8 text-slate-100 text-8xl font-black pointer-events-none"><i class="fa-solid fa-trophy"></i></div>
+                <h3 class="font-display font-black text-xl text-navy mb-4">Номинации и Награды</h3>
+                <p class="text-slate-500 text-xs mb-8 leading-relaxed max-w-xl font-medium">По итогам упорной и конструктивной работы в комитетах, секретариат и президиум наградят лучших участников ценными призами и дипломами:</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-700 font-semibold">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-darkText font-semibold">
                     <div class="space-y-4">
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-trophy text-amber-500 text-base"></i> <div><strong>Best Delegate</strong> (Лучший делегат)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-medal text-amber-500 text-base"></i> <div><strong>Outstanding Delegate</strong> (Выдающийся делегат)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-scroll text-cyan-600 text-base"></i> <div><strong>Best Position Paper</strong> (Лучшая позиция)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-trophy text-gold text-sm"></i> <div><strong>Best Delegate</strong> (Лучший делегат)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-medal text-gold text-sm"></i> <div><strong>Outstanding Delegate</strong> (Выдающийся делегат)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-scroll text-gold text-sm"></i> <div><strong>Best Position Paper</strong> (Лучшая позиция)</div></div>
                     </div>
                     <div class="space-y-4">
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-users-rectangle text-cyan-600 text-base"></i> <div><strong>Best Presidium</strong> (Лучший президиум)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-shirt text-amber-500 text-base"></i> <div><strong>Best National Costume</strong> (Лучший костюм)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-handshake-angle text-cyan-600 text-base"></i> <div><strong>Best Volunteer</strong> (Лучший волонтер)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-users-rectangle text-gold text-sm"></i> <div><strong>Best Presidium</strong> (Лучший президиум)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-shirt text-gold text-sm"></i> <div><strong>Best National Costume</strong> (Лучший костюм)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-handshake-angle text-gold text-sm"></i> <div><strong>Best Volunteer</strong> (Лучший волонтер)</div></div>
                     </div>
                 </div>
             </div>
@@ -596,101 +609,101 @@
         </div>
     </section>
 
-    <section id="safety" class="py-24 bg-[#fafaf9] border-b border-cyan-500/10">
+    <section id="safety" class="py-24 bg-lightBg border-b border-cardBorder">
         <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glow-card rounded-3xl p-8 lg:p-12 bg-white">
+            <div class="glow-card rounded-2xl p-8 lg:p-12">
                 <div class="flex items-center gap-4 mb-8">
-                    <div class="h-14 w-14 rounded-2xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center text-2xl">
+                    <div class="h-12 w-12 rounded-lg bg-lightBg text-gold flex items-center justify-center text-xl">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <h2 class="font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tight">Правила безопасности и участия</h2>
+                    <h2 class="font-display font-black text-2xl text-navy tracking-tight">Правила безопасности и участия</h2>
                 </div>
-                <div class="h-px w-full bg-slate-200 mb-8"></div>
+                <div class="h-px w-full bg-slate-100 mb-8"></div>
                 
-                <ol class="space-y-4 text-sm text-slate-600 font-medium leading-relaxed list-none">
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">1.</span> <span>Соблюдайте законодательство Республики Казахстан, правила конференции и нормы академической этики.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">2.</span> <span>Относитесь с уважением ко всем участникам, председателям, организаторам и гостям конференции.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">3.</span> <span>Запрещены нецензурная лексика, оскорбительное поведение, дискриминация и любые формы агрессии.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">4.</span> <span>Соблюдайте установленный дресс-код — Smart Casual.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">5.</span> <span>Используйте телефоны и ноутбуки только для работы, связанной с конференцией.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">6.</span> <span>Следуйте теме и официальному языку своего комитета.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">7.</span> <span>Выполняйте указания Организационного комитета, Chair и Co-Chair.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">8.</span> <span>В случае нарушения правил организаторы вправе вынести предупреждение или отстранить участника без возврата взноса.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">9.</span> <span>Организаторы не несут ответственности за утерю личных вещей или происшествия, возникшие по независящим от них причинам.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">10.</span> <span>Во время фото- и видеосъёмки участники дают согласие на использование материалов в информационных целях.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">11.</span> <span>При проживании в хостеле необходимо соблюдать правила проживания, бережно относиться к имуществу.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">12.</span> <span>Строго запрещаются курение, употребление алкоголя, наркотических веществ и любые действия, угрожающие безопасности.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">13.</span> <span>При возникновении чрезвычайной ситуации необходимо немедленно сообщить организаторам.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-cyan-600">14.</span> <span>Оплачивая регистрационный взнос, участник подтверждает своё согласие со всеми правилами SUNMUN 2026.</span></li>
+                <ol class="space-y-4 text-xs text-slate-500 font-medium leading-relaxed list-none">
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">1.</span> <span>Соблюдайте законодательство Республики Казахстан, правила конференции и нормы академической этики.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">2.</span> <span>Относитесь с уважением ко всем участникам, председателям, организаторам и гостям конференции.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">3.</span> <span>Запрещены нецензурная лексика, оскорбительное поведение, дискриминация и любые формы агрессии.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">4.</span> <span>Соблюдайте установленный дресс-код — Smart Casual.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">5.</span> <span>Используйте телефоны и ноутбуки только для работы, связанной с конференцией.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">6.</span> <span>Следуйте теме и официальному языку своего комитета.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">7.</span> <span>Выполняйте указания Организационного комитета, Chair и Co-Chair.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">8.</span> <span>В случае нарушения правил организаторы вправе вынести предупреждение или отстранить участника без возврата взноса.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">9.</span> <span>Организаторы не несут ответственности за утерю личных вещей или происшествия, возникшие по независящим от них причинам.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">10.</span> <span>Во время фото- и видеосъёмки участники дают согласие на использование материалов в информационных целях.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">11.</span> <span>При проживании в хостеле необходимо соблюдать правила проживания, бережно относиться к имуществу.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">12.</span> <span>Строго запрещаются курение, употребление алкоголя, наркотических веществ и любые действия, угрожающие безопасности.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">13.</span> <span>При возникновении чрезвычайной ситуации необходимо немедленно сообщить организаторам.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-gold">14.</span> <span>Оплачивая регистрационный взнос, участник подтверждает своё согласие со всеми правилами SUNMUN 2026.</span></li>
                 </ol>
             </div>
         </div>
     </section>
 
-    <section id="sponsors" class="py-24 bg-white border-t border-cyan-500/10">
+    <section id="sponsors" class="py-24 bg-white border-t border-cardBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-black text-3xl text-slate-900 mb-3 tracking-tight">Спонсоры & Партнеры</h2>
-                <div class="h-1 w-12 bg-gradient-to-r from-cyan-500 to-amber-500 mx-auto rounded-full mb-4"></div>
+                <h2 class="font-display font-black text-3xl text-navy mb-3 tracking-tight">Спонсоры & Партнеры</h2>
+                <div class="h-1 w-12 bg-gold mx-auto rounded-full mb-4"></div>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-                <div class="bg-slate-50 border border-cyan-500/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-cyan-500/40 transition-all duration-300">
-                    <h3 class="font-display font-black text-base text-slate-700 tracking-wider">GAVELLING</h3>
+                <div class="bg-lightBg border border-cardBorder rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-gold transition-all duration-300">
+                    <h3 class="font-display font-black text-sm text-navy tracking-wider">GAVELLING</h3>
                 </div>
 
-                <div class="bg-slate-50 border border-cyan-500/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-cyan-500/40 transition-all duration-300">
-                    <h3 class="font-display font-extrabold text-xs text-slate-700 leading-tight">Түркістан облысының оқушылар Альянсы</h3>
+                <div class="bg-lightBg border border-cardBorder rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-gold transition-all duration-300">
+                    <h3 class="font-display font-extrabold text-xs text-navy leading-tight">Түркістан облысының оқушылар Альянсы</h3>
                 </div>
 
-                <div class="bg-slate-50 border border-cyan-500/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-cyan-500/40 transition-all duration-300">
-                    <h3 class="font-display font-black text-base text-slate-700 tracking-wider">FOUNDATION</h3>
+                <div class="bg-lightBg border border-cardBorder rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-gold transition-all duration-300">
+                    <h3 class="font-display font-black text-sm text-navy tracking-wider">FOUNDATION</h3>
                 </div>
 
-                <div class="bg-slate-50 border border-cyan-500/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-cyan-500/40 transition-all duration-300">
-                    <h3 class="font-display font-extrabold text-sm text-cyan-600 tracking-wider">KAZYOUTHDIPLOMACY</h3>
+                <div class="bg-lightBg border border-cardBorder rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-gold transition-all duration-300">
+                    <h3 class="font-display font-extrabold text-xs text-navy tracking-wider">KAZYOUTHDIPLOMACY</h3>
                 </div>
 
-                <div class="bg-slate-50 border border-cyan-500/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-cyan-500/40 transition-all duration-300">
-                    <h3 class="font-display font-black text-base text-slate-700 tracking-wider">TurIS.SAT</h3>
+                <div class="bg-lightBg border border-cardBorder rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-gold transition-all duration-300">
+                    <h3 class="font-display font-black text-sm text-navy tracking-wider">TurIS.SAT</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contacts" class="bg-white text-slate-600 pt-20 pb-12 border-t border-slate-200 relative">
+    <footer id="contacts" class="bg-white text-slate-500 pt-20 pb-12 border-t border-cardBorder relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                 <div>
-                    <span class="font-display font-black text-xl tracking-wider text-cyan-600 block mb-5">SUNMUN 2026</span>
-                    <p class="text-slate-500 text-xs leading-relaxed">
+                    <span class="font-display font-black text-xl tracking-wider text-navy block mb-5">SUNMUN 2026</span>
+                    <p class="text-slate-400 text-xs leading-relaxed">
                         Southern Unity Nations Model United Nations. Woosong University Kazakhstan, город Туркестан.
                     </p>
                 </div>
 
                 <div>
-                    <h4 class="font-display font-bold text-xs uppercase tracking-widest text-slate-800 mb-5">Главные Организаторы</h4>
-                    <ul class="space-y-3 text-xs text-slate-500 font-medium">
-                        <li>Үсейін Анеля: <a href="tel:+77780715307" class="text-cyan-600 hover:text-cyan-500 transition-colors">+7 (778) 071-5307</a></li>
-                        <li>Егемберді Динара: <a href="tel:+77787952850" class="text-cyan-600 hover:text-cyan-500 transition-colors">+7 (778) 795-2850</a></li>
-                        <li>Қыдырбек Жания: <a href="tel:87762387933" class="text-cyan-600 hover:text-cyan-500 transition-colors">8 (776) 238-7933</a></li>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-widest text-navy mb-5">Главные Организаторы</h4>
+                    <ul class="space-y-3 text-xs text-slate-400 font-medium">
+                        <li>Үсейін Анеля: <a href="tel:+77780715307" class="text-navy hover:text-gold transition-colors">+7 (778) 071-5307</a></li>
+                        <li>Егемберді Динара: <a href="tel:+77787952850" class="text-navy hover:text-gold transition-colors">+7 (778) 795-2850</a></li>
+                        <li>Қыдырбек Жания: <a href="tel:87762387933" class="text-navy hover:text-gold transition-colors">8 (776) 238-7933</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-display font-bold text-xs uppercase tracking-widest text-slate-800 mb-5">Секретариат</h4>
-                    <ul class="space-y-3 text-xs text-slate-500 font-medium">
-                        <li>Мұхтарұлы Нұрсұлтан (Генсек): <a href="tel:+77055745272" class="text-cyan-600 hover:text-cyan-500 transition-colors">+7 (705) 574-5272</a></li>
-                        <li>Ақбай Нұрсәуле (Зам. генсека): <a href="tel:+77763239825" class="text-cyan-600 hover:text-cyan-500 transition-colors">+7 (776) 323-9825</a></li>
+                    <h4 class="font-display font-bold text-xs uppercase tracking-widest text-navy mb-5">Секретариат</h4>
+                    <ul class="space-y-3 text-xs text-slate-400 font-medium">
+                        <li>Мұхтарұлы Нұрсұлтан (Генсек): <a href="tel:+77055745272" class="text-navy hover:text-gold transition-colors">+7 (705) 574-5272</a></li>
+                        <li>Ақбай Нұрсәуле (Зам. генсека): <a href="tel:+77763239825" class="text-navy hover:text-gold transition-colors">+7 (776) 323-9825</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-slate-200 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-medium">
+            <div class="border-t border-cardBorder pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-medium">
                 <p>&copy; 2026 SUNMUN. Все права защищены. Положение регулируется законами РК.</p>
-                <div class="bg-slate-100 px-5 py-3 rounded-2xl border border-slate-200 flex items-center gap-2.5">
-                    <span class="text-slate-500"><i class="fa-solid fa-terminal text-cyan-500"></i> Разработка сайта:</span>
-                    <span class="font-display font-black tracking-wider text-sm text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-amber-500">
+                <div class="bg-lightBg px-5 py-3 rounded-lg border border-cardBorder flex items-center gap-2.5">
+                    <span class="text-slate-500"><i class="fa-solid fa-terminal text-gold"></i> Разработка сайта:</span>
+                    <span class="font-display font-black tracking-wider text-sm text-navy">
                         Zhaniya Kydyrbek
                     </span>
                 </div>
