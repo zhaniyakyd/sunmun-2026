@@ -14,11 +14,11 @@
             theme: {
                 extend: {
                     colors: {
-                        warmSand: '#FDFBF7', /* Өте нәзік кремді жылы фон */
+                        warmSand: '#FDFBF7', /* Эстетикалық кремді жылы фон */
                         luxuryGold: '#D4AF37', /* Премиум алтын */
                         softGold: '#F3E5AB', /* Жұмсақ ашық алтын */
-                        darkBronze: '#2C2212', /* Қою қоңыр/қола мәтін үшін */
-                        royalNavy: '#0F172A', /* Мәтінге арналған жұмсақ қара-көк */
+                        darkBronze: '#2C2212', /* Мәтіндер үшін */
+                        royalNavy: '#0F172A', 
                         cardBg: 'rgba(255, 255, 255, 0.8)'
                     },
                     fontFamily: {
@@ -37,7 +37,6 @@
                 radial-gradient(at 100% 100%, hsla(43,84%,93%,1) 0px, transparent 50%);
         }
         
-        /* Керемет жұмсақ градиент ауысулары (Transitions & Glows) */
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
@@ -67,7 +66,6 @@
             box-shadow: 0 8px 20px -6px rgba(212, 175, 55, 0.5);
         }
 
-        /* Тегіс ашылу эффектісі */
         .agenda-collapse {
             max-height: 0;
             overflow: hidden;
@@ -78,6 +76,8 @@
             max-height: 500px;
             opacity: 1;
         }
+        .animate-spin-slow { animation: spin 20s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="text-royalNavy scroll-smooth antialiased">
@@ -87,11 +87,11 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3 group cursor-pointer">
                     <div class="h-11 w-11 rounded-xl bg-gradient-to-tr from-luxuryGold to-softGold flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
-                        <i class="fa-solid fa-globe text-lg text-darkBronze"></i>
+                        <i class="fa-solid fa-globe text-lg text-darkBronze animate-spin-slow"></i>
                     </div>
                     <div>
                         <span class="font-sans font-extrabold text-lg tracking-wider text-darkBronze block">SUNMUN 2026</span>
-                        <span class="text-[9px] text-darkBronze/60 font-bold tracking-widest uppercase block">TURKESTAN</span>
+                        <span class="text-[9px] text-darkBronze/60 font-bold tracking-widest uppercase block">Southern Unity Nations</span>
                     </div>
                 </div>
                 
@@ -99,9 +99,10 @@
                     <a href="#about" class="hover:text-luxuryGold transition-colors duration-200">О конференции</a>
                     <a href="#committees" class="hover:text-luxuryGold transition-colors duration-200">Комитеты</a>
                     <a href="#summer-program" class="hover:text-luxuryGold transition-colors duration-200">Программа</a>
-                    <a href="#rules" class="hover:text-luxuryGold transition-colors duration-200">Взносы</a>
+                    <a href="#rules" class="hover:text-luxuryGold transition-colors duration-200">Правила & Взносы</a>
                     <a href="#safety" class="hover:text-luxuryGold transition-colors duration-200">Безопасность</a>
                     <a href="#sponsors" class="hover:text-luxuryGold transition-colors duration-200">Спонсоры</a>
+                    <a href="#contacts" class="hover:text-luxuryGold transition-colors duration-200">Контакты</a>
                 </div>
                 <div>
                     <a href="#rules" class="gold-btn text-white font-sans font-extrabold px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider inline-block">
@@ -116,89 +117,89 @@
         <div class="absolute inset-0 opacity-[0.4] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
+            <div class="lg:w-2/3">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-luxuryGold/20 text-darkBronze text-xs font-extrabold uppercase tracking-widest mb-8 shadow-sm">
-                    <i class="fa-solid fa-sun text-sm text-luxuryGold"></i> ҰЛЫ ДАЛА ЕЛІ • ТҮРКІСТАН
+                    <i class="fa-solid fa-sun text-sm text-luxuryGold"></i> Ұлы Дала елі • Түркістан
                 </div>
-                <h1 class="font-serif font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-tight mb-8 text-darkBronze">
-                    Southern Unity Nations <br>
-                    <span class="gold-gradient-text italic font-serif">Model UN 2026</span>
+                <h1 class="font-serif font-black text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none mb-8 text-darkBronze">
+                    SOUTHERN UNITY NATIONS <br><span class="gold-gradient-text italic font-serif">MODEL UN 2026</span>
                 </h1>
-                <p class="text-base sm:text-lg text-darkBronze/70 max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
-                    Түркі әлемінің рухани жүрегі — Түркістан қаласында өтетін жастар дипломатиясының ең сырлы әрі заманауи оқиғасы. Жаһандық мәселелердің талқысына қосылыңыз.
+                <p class="text-lg text-darkBronze/70 max-w-xl mb-12 leading-relaxed font-medium">
+                    Түркі әлемінің рухани астанасы — Түркістан қаласында өтетін жастар дипломатиясының ең жарқын оқиғасы. Жаһандық мәселелерді бірге талқылайық!
                 </p>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12 max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12 max-w-3xl">
                     <div class="bg-white/60 backdrop-blur-sm border border-luxuryGold/10 rounded-2xl p-5 flex items-center gap-4 shadow-sm">
                         <div class="bg-softGold/30 p-3 rounded-xl text-luxuryGold"><i class="fa-solid fa-calendar-days text-base"></i></div>
-                        <div class="text-left">
+                        <div>
                             <p class="text-[9px] text-darkBronze/50 uppercase tracking-widest font-bold">Когда</p>
-                            <p class="text-xs font-extrabold text-darkBronze mt-0.5">8-9 августа 2026</p>
+                            <p class="text-sm font-bold text-darkBronze mt-0.5">8-9 августа 2026</p>
                         </div>
                     </div>
                     <div class="bg-white/60 backdrop-blur-sm border border-luxuryGold/10 rounded-2xl p-5 flex items-center gap-4 shadow-sm">
                         <div class="bg-softGold/30 p-3 rounded-xl text-luxuryGold"><i class="fa-solid fa-location-dot text-base"></i></div>
-                        <div class="text-left">
+                        <div>
                             <p class="text-[9px] text-darkBronze/50 uppercase tracking-widest font-bold">Где</p>
-                            <p class="text-xs font-extrabold text-darkBronze mt-0.5">г. Туркестан</p>
+                            <p class="text-sm font-bold text-darkBronze mt-0.5">г. Туркестан</p>
                         </div>
                     </div>
                     <div class="bg-white/60 backdrop-blur-sm border border-luxuryGold/10 rounded-2xl p-5 flex items-center gap-4 shadow-sm">
                         <div class="bg-softGold/30 p-3 rounded-xl text-luxuryGold"><i class="fa-solid fa-building-columns text-base"></i></div>
-                        <div class="text-left">
-                            <p class="text-[9px] text-darkBronze/50 uppercase tracking-widest font-bold">Локация</p>
-                            <p class="text-xs font-extrabold text-darkBronze mt-0.5">Woosong Univ.</p>
+                        <div>
+                            <p class="text-[9px] text-darkBronze/50 uppercase tracking-widest font-bold">База</p>
+                            <p class="text-sm font-bold text-darkBronze mt-0.5">Woosong University</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#rules" class="gold-btn text-white font-sans font-extrabold px-8 py-4 rounded-xl transition-all duration-200 text-sm tracking-wider uppercase">
+                <div class="flex flex-wrap gap-4">
+                    <a href="#rules" class="gold-btn text-white font-sans font-black px-8 py-4 rounded-xl transition-all duration-200 text-base tracking-wider uppercase">
                         Подать заявку
                     </a>
-                    <a href="#about" class="bg-white/80 hover:bg-white border border-luxuryGold/20 text-darkBronze font-sans font-bold px-8 py-4 rounded-xl transition-all duration-200 text-sm flex items-center gap-2 shadow-sm">
-                        Подробнее <i class="fa-solid fa-arrow-down text-xs text-luxuryGold"></i>
+                    <a href="#about" class="bg-white/80 hover:bg-white border border-luxuryGold/20 text-darkBronze font-sans font-semibold px-8 py-4 rounded-xl transition-all duration-200 text-base flex items-center gap-2 shadow-sm">
+                        Подробнее <i class="fa-solid fa-arrow-down text-sm text-luxuryGold"></i>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-20">
+    <section id="about" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mb-4">О конференции SUNMUN</h2>
-                <div class="h-[2px] w-12 bg-luxuryGold mx-auto rounded-full mb-6"></div>
-                <p class="text-darkBronze/70 leading-relaxed text-sm font-medium">
-                    Очная дипломатическая игра, воспроизводящая работу органов Организации Объединенных Наций.
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mb-5">О конференции SUNMUN 2026</h2>
+                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-6"></div>
+                <p class="text-darkBronze/70 leading-relaxed text-base font-medium">
+                    Настоящее мероприятие регламентируется официальным Положением и представляет собой очную конференцию в формате модели Организации Объединенных Наций.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-8 glass-card rounded-3xl">
-                    <div class="h-11 w-11 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-lg"><i class="fa-solid fa-comments"></i></div>
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Дипломатия и дебаты</h3>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Ораторлық өнерді шыңдап, халықаралық келіссөздер жүргізу дағдыларын дамыту.</p>
+                    <div class="h-12 w-12 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-comments"></i></div>
+                    <h3 class="font-sans font-bold text-lg text-darkBronze mb-3">Дипломатия и переговоры</h3>
+                    <p class="text-darkBronze/60 text-sm leading-relaxed font-medium">Совершенствование навыков ведения переговорного процесса, публичных выступлений и аргументированного отстаивания позиций.</p>
                 </div>
                 <div class="p-8 glass-card rounded-3xl">
-                    <div class="h-11 w-11 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-lg"><i class="fa-solid fa-earth-americas"></i></div>
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Глобальные вызовы</h3>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">ЦУР БҰҰ аясындағы ең өзекті және маңызды мәселелерге шешім іздеу.</p>
+                    <div class="h-12 w-12 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-seedling"></i></div>
+                    <h3 class="font-sans font-bold text-lg text-darkBronze mb-3">ЦУР ООН и Глобальные темы</h3>
+                    <p class="text-darkBronze/60 text-sm leading-relaxed font-medium">Углубление понимания актуальных проблем устойчивого развития, международной безопасности и прав человека.</p>
                 </div>
                 <div class="p-8 glass-card rounded-3xl">
-                    <div class="h-11 w-11 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-lg"><i class="fa-solid fa-handshake"></i></div>
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Нетворкинг</h3>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Бүкіл елден жиналатын белсенді жастармен мықты байланыс орнату.</p>
+                    <div class="h-12 w-12 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="font-sans font-bold text-lg text-darkBronze mb-3">Сетевое взаимодействие</h3>
+                    <p class="text-darkBronze/60 text-sm leading-relaxed font-medium">Развитие связей между студентами, исследователями и экспертами в области международных отношений Центральной Азии.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="committees" class="py-20 relative">
+    <section id="committees" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mb-4">Комитеты SUNMUN</h2>
-                <div class="h-[2px] w-12 bg-luxuryGold mx-auto rounded-full"></div>
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mb-5">Комитеты конференции</h2>
+                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-5"></div>
+                <p class="text-darkBronze/50 font-bold text-xs uppercase tracking-wider">Күн тәртібі мен толық ақпаратты көру үшін қажетті комитетті таңдаңыз</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -207,28 +208,42 @@
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-sans font-black tracking-wider text-darkBronze text-xl block">UNGA</span>
-                                <span class="text-[9px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Генеральная Ассамблея</span>
+                                <span class="font-sans font-black tracking-wider text-darkBronze text-2xl block">UNGA</span>
+                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">БҰҰ Бас Ассамблеясы</span>
                             </div>
-                            <span class="text-[9px] px-3 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
                         </div>
                         <div class="mb-6">
-                            <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-1">Язык:</span>
-                            <span class="text-xs font-semibold text-darkBronze/80"><i class="fa-solid fa-language text-luxuryGold mr-1"></i> Қазақ тілі</span>
+                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Тіл:</span>
+                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Қазақ тілі</span>
                         </div>
                     </div>
-                    <button onclick="toggleAgenda('unga')" class="w-full py-2.5 rounded-xl bg-white border border-luxuryGold/10 text-[11px] font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                        <span>Показать Повестку</span>
-                        <i id="icon-unga" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                    </button>
+                    <div class="my-4">
+                        <button onclick="toggleAgenda('unga')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
+                            <span>Күн тәртібі мен президиум</span>
+                            <i id="icon-unga" class="fa-solid fa-chevron-down text-luxuryGold"></i>
+                        </button>
+                    </div>
                     <div id="agenda-unga" class="agenda-collapse">
-                        <div class="pt-4 mt-4 border-t border-luxuryGold/10 space-y-4 text-xs">
-                            <p class="text-darkBronze/80 leading-relaxed font-semibold">
-                                БҰҰ Қауіпсіздік Кеңесін Жаңғырту: БҰҰ Жарғысын Қазіргі Заманғы Әлемнің Сын-Қатерлеріне Бейімдеу.
-                            </p>
-                            <div class="grid grid-cols-2 gap-2 text-[10px] font-bold">
-                                <div class="bg-white/50 p-2.5 rounded-lg border border-luxuryGold/5">Chair: Zhakyp S.</div>
-                                <div class="bg-white/50 p-2.5 rounded-lg border border-luxuryGold/5">Co-Chair: Tneibay N.</div>
+                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
+                            <div>
+                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Повестка:</span>
+                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
+                                    БҰҰ Қауіпсіздік Кеңесін Жаңғырту: БҰҰ Жарғысын Қазіргі Заманғы Әлемнің Сын-Қатерлеріне Бейімдеу Мақсатында Вето Құқығы Механизмін Қайта Қарау.
+                                </p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Zhakyp Sussar</p>
+                                    </div>
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Tneibay Nazik</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -238,25 +253,43 @@
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-sans font-black tracking-wider text-darkBronze text-xl block">COPUOS</span>
-                                <span class="text-[9px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Outer Space Committee</span>
+                                <span class="font-sans font-black tracking-wider text-darkBronze text-2xl block">COPUOS</span>
+                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Peaceful Uses of Outer Space</span>
                             </div>
-                            <span class="text-[9px] px-3 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Online</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Online</span>
                         </div>
                         <div class="mb-6">
-                            <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-1">Language:</span>
-                            <span class="text-xs font-semibold text-darkBronze/80"><i class="fa-solid fa-language text-luxuryGold mr-1"></i> English</span>
+                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Language:</span>
+                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> English (Online)</span>
                         </div>
                     </div>
-                    <button onclick="toggleAgenda('copuos')" class="w-full py-2.5 rounded-xl bg-white border border-luxuryGold/10 text-[11px] font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                        <span>Показать Повестку</span>
-                        <i id="icon-copuos" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                    </button>
+                    <div class="my-4">
+                        <button onclick="toggleAgenda('copuos')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
+                            <span>View Agenda & Chairs</span>
+                            <i id="icon-copuos" class="fa-solid fa-chevron-down text-luxuryGold"></i>
+                        </button>
+                    </div>
                     <div id="agenda-copuos" class="agenda-collapse">
-                        <div class="pt-4 mt-4 border-t border-luxuryGold/10 space-y-4 text-xs">
-                            <p class="text-darkBronze/80 leading-relaxed font-semibold">
-                                Ensuring Equitable Access to Outer Space Resources Amid Increasing Commercial Competition.
-                            </p>
+                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
+                            <div>
+                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Agenda:</span>
+                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
+                                    Ensuring Equitable Access to Outer Space Resources Amid Increasing Commercial Competition.
+                                </p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Presidium:</span>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze/50 italic">To be announced</p>
+                                    </div>
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze/50 italic">To be announced</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -265,25 +298,43 @@
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-sans font-black tracking-wider text-darkBronze text-xl block">WIPO</span>
-                                <span class="text-[9px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Intellectual Property</span>
+                                <span class="font-sans font-black tracking-wider text-darkBronze text-2xl block">WIPO</span>
+                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Intellectual Property Organization</span>
                             </div>
-                            <span class="text-[9px] px-3 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Offline</span>
                         </div>
                         <div class="mb-6">
-                            <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-1">Language:</span>
-                            <span class="text-xs font-semibold text-darkBronze/80"><i class="fa-solid fa-language text-luxuryGold mr-1"></i> English</span>
+                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Language:</span>
+                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> English</span>
                         </div>
                     </div>
-                    <button onclick="toggleAgenda('wipo')" class="w-full py-2.5 rounded-xl bg-white border border-luxuryGold/10 text-[11px] font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                        <span>Показать Повестку</span>
-                        <i id="icon-wipo" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                    </button>
+                    <div class="my-4">
+                        <button onclick="toggleAgenda('wipo')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
+                            <span>View Agenda & Chairs</span>
+                            <i id="icon-wipo" class="fa-solid fa-chevron-down text-luxuryGold"></i>
+                        </button>
+                    </div>
                     <div id="agenda-wipo" class="agenda-collapse">
-                        <div class="pt-4 mt-4 border-t border-luxuryGold/10 space-y-4 text-xs">
-                            <p class="text-darkBronze/80 leading-relaxed font-semibold">
-                                The Quantum Tech Hegemony: Regulating Patent Monopolies and National Security Assets.
-                            </p>
+                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
+                            <div>
+                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Agenda:</span>
+                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
+                                    The Quantum Tech Hegemony: Regulating Patent Monopolies, Forced Technology Transfers, and the Protection of National Security Assets.
+                                </p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Presidium:</span>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Pussurmanov Medeu</p>
+                                    </div>
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze/50 italic">To be announced</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -292,25 +343,133 @@
                     <div>
                         <div class="flex justify-between items-start mb-6">
                             <div>
-                                <span class="font-sans font-black tracking-wider text-darkBronze text-xl block">UPU</span>
-                                <span class="text-[9px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Всемирный почтовый союз</span>
+                                <span class="font-sans font-black tracking-wider text-darkBronze text-2xl block">UPU</span>
+                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Всемирный почтовый союз</span>
                             </div>
-                            <span class="text-[9px] px-3 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
                         </div>
                         <div class="mb-6">
-                            <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-1">Язык:</span>
-                            <span class="text-xs font-semibold text-darkBronze/80"><i class="fa-solid fa-language text-luxuryGold mr-1"></i> Русский</span>
+                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Язык:</span>
+                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Русский язык</span>
                         </div>
                     </div>
-                    <button onclick="toggleAgenda('upu')" class="w-full py-2.5 rounded-xl bg-white border border-luxuryGold/10 text-[11px] font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                        <span>Показать Повестку</span>
-                        <i id="icon-upu" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                    </button>
+                    <div class="my-4">
+                        <button onclick="toggleAgenda('upu')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
+                            <span>Показать повестку и президиум</span>
+                            <i id="icon-upu" class="fa-solid fa-chevron-down text-luxuryGold"></i>
+                        </button>
+                    </div>
                     <div id="agenda-upu" class="agenda-collapse">
-                        <div class="pt-4 mt-4 border-t border-luxuryGold/10 space-y-4 text-xs">
-                            <p class="text-darkBronze/80 leading-relaxed font-semibold">
-                                Вейпонизация глобальной почтовой сети: Стандартизация EAD для борьбы с контрабандой.
-                            </p>
+                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
+                            <div>
+                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Повестка:</span>
+                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
+                                    Вейпонизация глобальной почтовой сети: Стандартизация электронных предварительных данных (EAD) для борьбы с контрабандой синтетических наркотиков и технологий двойного назначения.
+                                </p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Marat Koshmuratov</p>
+                                    </div>
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Shakarbekov Akzhol</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="font-sans font-black tracking-wider text-darkBronze text-2xl block">UNHRC</span>
+                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">БҰҰ Адам құқықтары кеңесі</span>
+                            </div>
+                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Тіл:</span>
+                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Қазақ тілі</span>
+                        </div>
+                    </div>
+                    <div class="my-4">
+                        <button onclick="toggleAgenda('unhrc')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
+                            <span>Күн тәртібі мен президиум</span>
+                            <i id="icon-unhrc" class="fa-solid fa-chevron-down text-luxuryGold"></i>
+                        </button>
+                    </div>
+                    <div id="agenda-unhrc" class="agenda-collapse">
+                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
+                            <div>
+                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Тақырыбы:</span>
+                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
+                                    «Цифрлық паноптикон»: Мемлекеттік жаппай бақылау, әлеуметтік рейтинг жүйелері және жеке деректерді жинау жағдайында азаматтардың құпиялылық құқығын қорғау.
+                                </p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Kuandyk Moldiyar</p>
+                                    </div>
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Abdikadirova Aizhanel</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="font-sans font-black tracking-wider text-darkBronze text-2xl block">Historical Crisis</span>
+                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Исторический кризисный комитет</span>
+                            </div>
+                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Язык:</span>
+                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Русский язык</span>
+                        </div>
+                    </div>
+                    <div class="my-4">
+                        <button onclick="toggleAgenda('hcc')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
+                            <span>Показать повестку и президиум</span>
+                            <i id="icon-hcc" class="fa-solid fa-chevron-down text-luxuryGold"></i>
+                        </button>
+                    </div>
+                    <div id="agenda-hcc" class="agenda-collapse">
+                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
+                            <div>
+                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Повестка:</span>
+                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
+                                    1936 год: «Накануне катастрофы: Хрупкий баланс Версальской системы и отчаянные попытки предотвратить мировую войну».
+                                </p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Abylaikhan Mukhtar</p>
+                                    </div>
+                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
+                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
+                                        <p class="text-xs font-bold text-darkBronze">Serik Gulmerey</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -319,102 +478,226 @@
         </div>
     </section>
 
-    <section id="summer-program" class="py-20">
+    <section id="summer-program" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-4">☀️ Атмосфера SUNMUN</h2>
-                <div class="h-[2px] w-12 bg-luxuryGold mx-auto rounded-full"></div>
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-5">☀️ Летняя атмосфера и Культурная программа</h2>
+                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-6"></div>
+                <p class="text-darkBronze/50 text-xs font-bold uppercase tracking-wider">SUNMUN 2026 — дебаттардан бөлек ұмытылмас жазғы атмосфера сыйлайды!</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="glass-card p-8 rounded-3xl text-center">
-                    <div class="h-11 w-11 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-6 text-lg"><i class="fa-solid fa-futbol"></i></div>
-                    <h4 class="font-sans font-bold text-base text-darkBronze mb-3">Мини-турнир</h4>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Спортивный интерактив и тимбилдинг среди делегатов.</p>
+                    <div class="h-12 w-12 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-soccer-ball"></i></div>
+                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Мини-турнир по футболу</h3>
+                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Спортивный интерактив среди делегатов! Покажите свои навыки не только на заседаниях, но и на футбольном поле.</p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl text-center">
-                    <div class="h-11 w-11 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-6 text-lg"><i class="fa-solid fa-martini-glass-citrus"></i></div>
-                    <h4 class="font-sans font-bold text-base text-darkBronze mb-3">Летний вайб</h4>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Кофе-брейки с освежающими прохладными коктейлями.</p>
+                    <div class="h-12 w-12 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-glass-martini-alt"></i></div>
+                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Освежающие коктейли</h3>
+                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Жаркий август мы встретим прохладой! Вас ждут интерактивные летние коктейли и напитки на брейках.</p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl text-center">
-                    <div class="h-11 w-11 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-6 text-lg"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <h4 class="font-sans font-bold text-base text-darkBronze mb-3">Тур по Туркестану</h4>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Увлекательная экскурсия по историческим местам города.</p>
+                    <div class="h-12 w-12 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-masks-theater"></i></div>
+                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Культурная программа</h3>
+                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Насыщенные вечера, увлекательные интерактивы и знакомство с историческим Туркестаном.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="rules" class="py-20">
+    <section id="rules" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-4">Регистрация & Взносы</h2>
-                <div class="h-[2px] w-12 bg-luxuryGold mx-auto rounded-full mb-8"></div>
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-5">Регистрация и Взносы</h2>
+                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-8"></div>
                 
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="gold-btn text-white font-sans font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider"><i class="fa-solid fa-user-tie mr-2"></i> Оффлайн участие</a>
-                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="bg-white border border-luxuryGold/30 text-darkBronze font-sans font-bold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider hover:border-luxuryGold transition-all"><i class="fa-solid fa-laptop mr-2 text-luxuryGold"></i> Онлайн (COPUOS)</a>
+                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="gold-btn text-white font-sans font-bold px-7 py-3.5 rounded-xl text-sm tracking-wider uppercase"><i class="fa-solid fa-street-view mr-2 text-white"></i> Оффлайн Регистрация</a>
+                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="gold-btn text-white font-sans font-bold px-7 py-3.5 rounded-xl text-sm tracking-wider uppercase"><i class="fa-solid fa-laptop mr-2 text-white"></i> Онлайн Регистрация</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" class="bg-slate-600 hover:bg-slate-700 text-white font-sans font-bold px-7 py-3.5 rounded-xl text-sm tracking-wider uppercase"><i class="fa-solid fa-handshake-angle mr-2"></i> Волонтерство</a>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <div class="space-y-4">
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-2 border-l-2 border-luxuryGold pl-3">Организационные взносы</h3>
-                    
-                    <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold/30 transition-all">
-                        <div>
-                            <span class="text-[9px] font-bold text-luxuryGold uppercase tracking-widest block mb-1">Early Bird (до 17 июля)</span>
-                            <h4 class="font-bold text-darkBronze text-xs">Оффлайн делегат</h4>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
+                <div class="space-y-6">
+                    <h3 class="font-sans font-bold text-xl text-darkBronze mb-2 border-l-4 border-luxuryGold pl-4 tracking-tight">Graphic of Fees</h3>
+                    <div class="space-y-4">
+                        <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold transition-all">
+                            <div>
+                                <span class="text-[9px] font-bold text-luxuryGold bg-white border border-luxuryGold/20 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Early Bird (до 17 июля)</span>
+                                <h4 class="font-bold text-darkBronze text-sm">Оффлайн участие</h4>
+                            </div>
+                            <div class="font-sans font-black text-lg text-darkBronze">4500 тг</div>
                         </div>
-                        <div class="font-sans font-black text-base text-darkBronze">4 500 ₸</div>
-                    </div>
-                    
-                    <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold/30 transition-all">
-                        <div>
-                            <span class="text-[9px] font-bold text-darkBronze/40 uppercase tracking-widest block mb-1">Обычный этап</span>
-                            <h4 class="font-bold text-darkBronze text-xs">Оффлайн делегат</h4>
+                        <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold transition-all">
+                            <div>
+                                <span class="text-[9px] font-bold text-darkBronze/40 bg-white border border-luxuryGold/10 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Основной этап (после 17 июля)</span>
+                                <h4 class="font-bold text-darkBronze text-sm">Оффлайн участие</h4>
+                            </div>
+                            <div class="font-sans font-black text-lg text-darkBronze/50">6000 тг</div>
                         </div>
-                        <div class="font-sans font-black text-base text-darkBronze/50">6 000 ₸</div>
-                    </div>
-
-                    <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold/30 transition-all">
-                        <div>
-                            <span class="text-[9px] font-bold text-luxuryGold uppercase tracking-widest block mb-1">Фиксированный тариф</span>
-                            <h4 class="font-bold text-darkBronze text-xs">Онлайн делегат</h4>
+                        <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold transition-all">
+                            <div>
+                                <span class="text-[9px] font-bold text-luxuryGold bg-white border border-luxuryGold/20 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Фиксированная цена</span>
+                                <h4 class="font-bold text-darkBronze text-sm">Онлайн комитет (COPUOS)</h4>
+                            </div>
+                            <div class="font-sans font-black text-lg text-darkBronze">1000 тг</div>
                         </div>
-                        <div class="font-sans font-black text-base text-darkBronze">1 000 ₸</div>
+                        <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold transition-all">
+                            <div>
+                                <span class="text-[9px] font-bold text-luxuryGold bg-white border border-luxuryGold/20 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Организационный взнос</span>
+                                <h4 class="font-bold text-darkBronze text-sm">Волонтерство на SUNMUN</h4>
+                            </div>
+                            <div class="font-sans font-black text-lg text-darkBronze">1000 тг</div>
+                        </div>
                     </div>
+                    <p class="text-darkBronze/50 text-xs leading-relaxed"><i class="fa-solid fa-circle-info mr-1 text-luxuryGold"></i> Взнос покрывает полиграфические материалы, раздаточный инвентарь, кофе-брейки.</p>
                 </div>
 
-                <div class="space-y-4">
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-2 border-l-2 border-luxuryGold pl-3">Награды SUNMUN</h3>
-                    <div class="p-6 rounded-2xl bg-white/60 border border-luxuryGold/10 space-y-3.5 text-xs text-darkBronze/70 font-medium">
-                        <div class="flex items-center gap-3"><i class="fa-solid fa-trophy text-luxuryGold"></i> <span>Best Delegate (Диплом + кубок)</span></div>
-                        <div class="flex items-center gap-3"><i class="fa-solid fa-medal text-luxuryGold"></i> <span>Outstanding Delegate</span></div>
-                        <div class="flex items-center gap-3"><i class="fa-solid fa-scroll text-luxuryGold"></i> <span>Best Position Paper</span></div>
+                <div class="space-y-6">
+                    <h3 class="font-sans font-bold text-xl text-darkBronze mb-4 border-l-4 border-luxuryGold pl-4 tracking-tight">Обязанности Волонтёров</h3>
+                    <div class="p-6 rounded-2xl bg-white/60 border border-luxuryGold/10 space-y-4 text-xs text-darkBronze/70 font-medium">
+                        <div class="flex gap-3.5">
+                            <div class="text-luxuryGold text-sm"><i class="fa-solid fa-address-card mt-0.5"></i></div>
+                            <div><strong class="text-darkBronze">Логистика и встреча:</strong> Помощь в регистрации, координации и навигации делегатов на локации.</div>
+                        </div>
+                        <div class="flex gap-3.5">
+                            <div class="text-luxuryGold text-sm"><i class="fa-solid fa-circle-check mt-0.5"></i></div>
+                            <div><strong class="text-darkBronze">Поддержка комитетов:</strong> Контроль порядка, помощь президиуму и оперативное решение вопросов.</div>
+                        </div>
+                        <div class="flex gap-3.5">
+                            <div class="text-luxuryGold text-sm"><i class="fa-solid fa-mug-hot mt-0.5"></i></div>
+                            <div><strong class="text-darkBronze">Интерактивы:</strong> Организация кофе-брейков с коктейлями и помощь в проведении программ.</div>
+                        </div>
                     </div>
+
+                    <h3 class="font-sans font-bold text-lg text-darkBronze pt-2 mb-4 border-l-4 border-luxuryGold pl-4 tracking-tight">Обязательные требования</h3>
+                    <div class="flex gap-4 p-5 rounded-2xl bg-white/60 border border-luxuryGold/10">
+                        <div class="text-luxuryGold mt-0.5"><i class="fa-solid fa-user-tie text-lg"></i></div>
+                        <div>
+                            <h4 class="font-bold text-darkBronze text-sm mb-1">Дресс-код: Smart Casual / Свободно-деловой</h4>
+                            <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Участники обязаны придерживаться внешнего вида, соответствующего официальному статусу модели ООН.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 lg:p-12 relative overflow-hidden max-w-4xl mx-auto">
+                <h3 class="font-sans font-black text-xl text-darkBronze mb-4">Номинации и Награды</h3>
+                <p class="text-darkBronze/60 text-xs mb-8 leading-relaxed max-w-xl font-medium">По итогам упорной и конструктивной работы в комитетах, секретариат и президиум наградят лучших участников ценными призами и дипломами:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-darkBronze font-semibold">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-trophy text-luxuryGold text-sm"></i> <div><strong>Best Delegate</strong> (Лучший делегат)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-medal text-luxuryGold text-sm"></i> <div><strong>Outstanding Delegate</strong> (Выдающийся делегат)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-scroll text-luxuryGold text-sm"></i> <div><strong>Best Position Paper</strong> (Лучшая позиция)</div></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-users-rectangle text-luxuryGold text-sm"></i> <div><strong>Best Presidium</strong> (Лучший президиум)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-shirt text-luxuryGold text-sm"></i> <div><strong>Best National Costume</strong> (Лучший костюм)</div></div>
+                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-handshake-angle text-luxuryGold text-sm"></i> <div><strong>Best Volunteer</strong> (Лучший волонтер)</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="safety" class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="glass-card rounded-3xl p-8 lg:p-12">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-12 w-12 rounded-xl bg-softGold/30 text-luxuryGold flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h2 class="font-serif font-bold text-2xl text-darkBronze">Правила безопасности и участия</h2>
+                </div>
+                <div class="h-px w-full bg-luxuryGold/10 mb-8"></div>
+                
+                <ol class="space-y-4 text-xs text-darkBronze/60 font-medium leading-relaxed list-none">
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">1.</span> <span>Соблюдайте законодательство Республики Казахстан, правила конференции и нормы академической этики.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">2.</span> <span>Относитесь с уважением ко всем участникам, председателям, организаторам и гостям конференции.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">3.</span> <span>Запрещены нецензурная лексика, оскорбительное поведение, дискриминация и любые формы агрессии.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">4.</span> <span>Соблюдайте установленный дресс-код — Smart Casual.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">5.</span> <span>Используйте телефоны и ноутбуки только для работы, связанной с конференцией.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">6.</span> <span>Следуйте теме и официальному языку своего комитета.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">7.</span> <span>Выполняйте указания Организационного комитета, Chair и Co-Chair.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">8.</span> <span>В случае нарушения правил организаторы вправе вынести предупреждение или отстранить участника без возврата взноса.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">9.</span> <span>Организаторы не несут ответственности за утерю личных вещей или происшествия, возникшие по независящим от них причинам.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">10.</span> <span>Во время фото- и видеосъёмки участники дают согласие на использование материалов в информационных целях.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">11.</span> <span>При проживании в хостеле необходимо соблюдать правила проживания, бережно относиться к имуществу.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">12.</span> <span>Строго запрещаются курение, употребление алкоголя, наркотических веществ и любые действия, угрожающие безопасности.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">13.</span> <span>При возникновении чрезвычайной ситуации необходимо немедленно сообщить организаторам.</span></li>
+                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">14.</span> <span>Оплачивая регистрационный взнос, участник подтверждает своё согласие со всеми правилами SUNMUN 2026.</span></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-3">Спонсоры & Партнеры</h2>
+                <div class="h-[2px] w-12 bg-luxuryGold mx-auto rounded-full mb-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white/60 border border-luxuryGold/10 rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-luxuryGold transition-all duration-300">
+                    <h3 class="font-sans font-black text-sm text-darkBronze tracking-wider">GAVELLING</h3>
+                </div>
+                <div class="bg-white/60 border border-luxuryGold/10 rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-luxuryGold transition-all duration-300">
+                    <h3 class="font-sans font-extrabold text-xs text-darkBronze leading-tight">Түркістан облысының оқушылар Альянсы</h3>
+                </div>
+                <div class="bg-white/60 border border-luxuryGold/10 rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-luxuryGold transition-all duration-300">
+                    <h3 class="font-sans font-black text-sm text-darkBronze tracking-wider">FOUNDATION</h3>
+                </div>
+                <div class="bg-white/60 border border-luxuryGold/10 rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-luxuryGold transition-all duration-300">
+                    <h3 class="font-sans font-extrabold text-xs text-darkBronze tracking-wider">KAZYOUTHDIPLOMACY</h3>
+                </div>
+                <div class="bg-white/60 border border-luxuryGold/10 rounded-xl p-8 text-center flex items-center justify-center min-h-[100px] shadow-sm hover:border-luxuryGold transition-all duration-300">
+                    <h3 class="font-sans font-black text-sm text-darkBronze tracking-wider">TurIS.SAT</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sponsors" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="font-serif font-bold text-2xl text-darkBronze mb-10">Спонсоры & Партнеры</h2>
-            <div class="flex flex-wrap justify-center gap-6">
-                <div class="bg-white/60 border border-luxuryGold/10 rounded-2xl py-6 px-8 text-xs font-extrabold tracking-wider text-darkBronze hover:border-luxuryGold transition-all">GAVELLING</div>
-                <div class="bg-white/60 border border-luxuryGold/10 rounded-2xl py-6 px-8 text-xs font-extrabold tracking-wider text-darkBronze hover:border-luxuryGold transition-all">Альянс Оқушылары</div>
-                <div class="bg-white/60 border border-luxuryGold/10 rounded-2xl py-6 px-8 text-xs font-extrabold tracking-wider text-darkBronze hover:border-luxuryGold transition-all">FOUNDATION</div>
-            </div>
-        </div>
-    </section>
+    <footer id="contacts" class="bg-white/40 border-t border-luxuryGold/10 pt-20 pb-12 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <span class="font-sans font-black text-xl tracking-wider text-darkBronze block mb-5">SUNMUN 2026</span>
+                    <p class="text-darkBronze/50 text-xs leading-relaxed">
+                        Southern Unity Nations Model United Nations. Woosong University Kazakhstan, город Туркестан.
+                    </p>
+                </div>
 
-    <footer class="bg-white/40 border-t border-luxuryGold/10 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-darkBronze/60">
-            <p>&copy; 2026 SUNMUN. Все права защищены.</p>
-            <div class="bg-white/80 border border-luxuryGold/10 px-4 py-2 rounded-xl text-[10px] font-bold">
-                Разработка сайта: <span class="text-luxuryGold">Zhaniya Kydyrbek</span>
+                <div>
+                    <h4 class="font-sans font-bold text-xs uppercase tracking-widest text-darkBronze mb-5">Главные Организаторы</h4>
+                    <ul class="space-y-3 text-xs text-darkBronze/60 font-medium">
+                        <li>Үсейін Анеля: <a href="tel:+77780715307" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (778) 071-5307</a></li>
+                        <li>Егемберді Динара: <a href="tel:+77787952850" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (778) 795-2850</a></li>
+                        <li>Қыдырбек Жания: <a href="tel:87762387933" class="text-darkBronze hover:text-luxuryGold transition-colors">8 (776) 238-7933</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-sans font-bold text-xs uppercase tracking-widest text-darkBronze mb-5">Секретариат</h4>
+                    <ul class="space-y-3 text-xs text-darkBronze/60 font-medium">
+                        <li>Мұхтарұлы Нұрсұлтан (Генсек): <a href="tel:+77055745272" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (705) 574-5272</a></li>
+                        <li>Ақбай Нұрсәуле (Зам. генсека): <a href="tel:+77763239825" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (776) 323-9825</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-luxuryGold/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-darkBronze/50 font-medium">
+                <p>&copy; 2026 SUNMUN. Все права защищены. Положение регулируется законами РК.</p>
+                <div class="bg-white/80 px-5 py-3 rounded-xl border border-luxuryGold/10 flex items-center gap-2.5">
+                    <span class="text-darkBronze/60"><i class="fa-solid fa-terminal text-luxuryGold"></i> Разработка сайта:</span>
+                    <span class="font-sans font-black tracking-wider text-sm text-darkBronze">
+                        Zhaniya Kydyrbek
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
