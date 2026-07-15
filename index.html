@@ -370,6 +370,41 @@
             .reveal, .stagger > * { opacity: 1 !important; transform: none !important; }
         }
 
+
+        .team-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(243,229,171,.22), transparent 55%),
+                radial-gradient(circle at 100% 0%, rgba(212,175,55,.16), transparent 35%);
+            pointer-events: none;
+        }
+
+        .team-avatar {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .team-avatar::after {
+            content: "";
+            position: absolute;
+            inset: -5px;
+            border: 1px dashed rgba(212,175,55,.35);
+            border-radius: 20px;
+            animation: avatarOrbit 14s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes avatarOrbit {
+            to { transform: rotate(360deg); }
+        }
+
     </style>
 </head>
 <body class="text-royalNavy scroll-smooth antialiased">
@@ -410,6 +445,7 @@
                     <a href="#rules" class="hover:text-luxuryGold transition-colors duration-200">Правила & Взносы</a>
                     <a href="#safety" class="hover:text-luxuryGold transition-colors duration-200">Безопасность</a>
                     <a href="#sponsors" class="hover:text-luxuryGold transition-colors duration-200">Спонсоры</a>
+                    <a href="#team" class="hover:text-luxuryGold transition-colors duration-200">Команда</a>
                     <a href="#contacts" class="hover:text-luxuryGold transition-colors duration-200">Контакты</a>
                 </div>
                 <div>
@@ -1021,38 +1057,124 @@
         </div>
     </section>
 
+
+    <section id="team" class="py-24 reveal relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.16] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:30px_30px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[10px] font-extrabold tracking-[0.24em] uppercase text-luxuryGold">Organizing Team</span>
+                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mt-3 mb-5">Главные организаторы и Секретариат</h2>
+                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-5"></div>
+                <p class="text-darkBronze/60 text-sm font-medium">
+                    Команда, которая отвечает за подготовку, координацию и проведение SUNMUN 2026.
+                </p>
+            </div>
+
+            <div class="mb-14">
+                <div class="flex items-center justify-center gap-3 mb-8">
+                    <div class="h-px w-16 bg-luxuryGold/30"></div>
+                    <h3 class="font-sans font-extrabold text-sm uppercase tracking-[0.18em] text-darkBronze">Главные организаторы</h3>
+                    <div class="h-px w-16 bg-luxuryGold/30"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-7 stagger"><article class="team-card glass-card rounded-3xl p-8 text-center">
+                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center mx-auto mb-6 text-2xl">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Главный организатор</span>
+                        <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Үсейін Анеля</h4>
+                        <a href="tel:+77780715307" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
+                            <i class="fa-solid fa-phone"></i> +7 (778) 071-5307
+                        </a>
+                    </article>
+<article class="team-card glass-card rounded-3xl p-8 text-center">
+                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center mx-auto mb-6 text-2xl">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Главный организатор</span>
+                        <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Қыдырбек Жания</h4>
+                        <a href="tel:+77762387933" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
+                            <i class="fa-solid fa-phone"></i> +7 (776) 238-7933
+                        </a>
+                    </article>
+<article class="team-card glass-card rounded-3xl p-8 text-center">
+                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center mx-auto mb-6 text-2xl">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Главный организатор</span>
+                        <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Егемберді Динара</h4>
+                        <a href="tel:+77787952850" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
+                            <i class="fa-solid fa-phone"></i> +7 (778) 795-2850
+                        </a>
+                    </article></div>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-center gap-3 mb-8">
+                    <div class="h-px w-16 bg-luxuryGold/30"></div>
+                    <h3 class="font-sans font-extrabold text-sm uppercase tracking-[0.18em] text-darkBronze">Секретариат</h3>
+                    <div class="h-px w-16 bg-luxuryGold/30"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-7 max-w-4xl mx-auto stagger">
+                    <article class="team-card glass-card rounded-3xl p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center shrink-0 text-2xl">
+                            <i class="fa-solid fa-landmark-flag"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Генеральный секретарь</span>
+                            <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Мұхтарұлы Нұрсұлтан</h4>
+                            <a href="tel:+77055745272" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
+                                <i class="fa-solid fa-phone"></i> +7 (705) 574-5272
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="team-card glass-card rounded-3xl p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center shrink-0 text-2xl">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Заместитель генерального секретаря</span>
+                            <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Ақбай Нұрсәуле</h4>
+                            <a href="tel:+77763239825" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
+                                <i class="fa-solid fa-phone"></i> +7 (776) 323-9825
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contacts" class="reveal bg-white/40 border-t border-luxuryGold/10 pt-20 pb-12 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 max-w-4xl">
                 <div>
                     <span class="font-sans font-black text-xl tracking-wider text-darkBronze block mb-5">SUNMUN 2026</span>
                     <p class="text-darkBronze/50 text-xs leading-relaxed">
                         Southern Unity Nations Model United Nations. Woosong University Kazakhstan, город Туркестан.
                     </p>
                 </div>
-
                 <div>
-                    <h4 class="font-sans font-bold text-xs uppercase tracking-widest text-darkBronze mb-5">Главные Организаторы</h4>
-                    <ul class="space-y-3 text-xs text-darkBronze/60 font-medium">
-                        <li>Үсейін Анеля: <a href="tel:+77780715307" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (778) 071-5307</a></li>
-                        <li>Егемберді Динара: <a href="tel:+77787952850" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (778) 795-2850</a></li>
-                        <li>Қыдырбек Жания: <a href="tel:87762387933" class="text-darkBronze hover:text-luxuryGold transition-colors">8 (776) 238-7933</a></li>
-                    </ul>
+                    <h4 class="font-sans font-bold text-xs uppercase tracking-widest text-darkBronze mb-5">Навигация</h4>
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-xs font-medium">
+                        <a href="#committees" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Комитеты</a>
+                        <a href="#experts" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Эксперты</a>
+                        <a href="#rules" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Регистрация</a>
+                        <a href="#team" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Команда</a>
+                    </div>
                 </div>
 
-                <div>
-                    <h4 class="font-sans font-bold text-xs uppercase tracking-widest text-darkBronze mb-5">Секретариат</h4>
-                    <ul class="space-y-3 text-xs text-darkBronze/60 font-medium">
-                        <li>Мұхтарұлы Нұрсұлтан (Генсек): <a href="tel:+77055745272" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (705) 574-5272</a></li>
-                        <li>Ақбай Нұрсәуле (Зам. генсека): <a href="tel:+77763239825" class="text-darkBronze hover:text-luxuryGold transition-colors">+7 (776) 323-9825</a></li>
-                    </ul>
-                </div>
+                
+
+                
             </div>
 
             <div class="border-t border-luxuryGold/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-darkBronze/50 font-medium">
                 <p>&copy; 2026 SUNMUN. Все права защищены. Положение регулируется законами РК.</p>
                 <div class="bg-white/80 px-5 py-3 rounded-xl border border-luxuryGold/10 flex items-center gap-2.5">
-                    <span class="text-darkBronze/60"><i class="fa-solid fa-terminal text-luxuryGold"></i> Разработка сайта:</span>
+                    <span class="text-darkBronze/60"><i class="fa-solid fa-terminal text-luxuryGold"></i> Created by</span>
                     <span class="font-sans font-black tracking-wider text-sm text-darkBronze">
                         Zhaniya Kydyrbek
                     </span>
@@ -1120,4 +1242,3 @@
     </script>
 </body>
 </html>
-
