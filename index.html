@@ -1,1244 +1,630 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUNMUN 2026 | Southern Unity Nations Model UN</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        warmSand: '#FDFBF7', /* Эстетикалық кремді жылы фон */
-                        luxuryGold: '#D4AF37', /* Премиум алтын */
-                        softGold: '#F3E5AB', /* Жұмсақ ашық алтын */
-                        darkBronze: '#2C2212', /* Мәтіндер үшін */
-                        royalNavy: '#0F172A', 
-                        cardBg: 'rgba(255, 255, 255, 0.8)'
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #FDFBF7;
-            background-image: 
-                radial-gradient(at 0% 0%, hsla(36,72%,95%,1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(43,84%,93%,1) 0px, transparent 50%);
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.15);
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SUNMUN 2026 — международная молодёжная конференция Model United Nations в Туркестане 8–9 августа 2026 года. Шесть комитетов на русском, казахском и английском языках.">
+  <meta name="theme-color" content="#17231d">
+  <meta property="og:title" content="SUNMUN 2026 — Model United Nations в Туркестане">
+  <meta property="og:description" content="Два дня дипломатии, дебатов и новых знакомств. 8–9 августа 2026, Woosong University Kazakhstan.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sunmun-2026.vercel.app/">
+  <title>SUNMUN 2026 | Model United Nations in Turkistan</title>
+  <link rel="icon" href="assets/logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <style>
+    :root {
+      --ink: #17231d;
+      --muted: #667068;
+      --paper: #fbfaf6;
+      --white: #fff;
+      --gold: #c79b2b;
+      --gold-dark: #9d7412;
+      --line: #dedbd0;
+      --sage: #dce4dc;
+      --blue: #dce7ec;
+      --rose: #eadfdc;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.55;
+    }
+    body.locked { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { font-family: "Playfair Display", serif; line-height: 1.05; margin: 0; }
+    h2 { font-size: clamp(34px, 5vw, 58px); max-width: 760px; }
+    .section-lead { max-width: 680px; margin: 18px 0 0; color: var(--muted); font-size: 18px; }
+    .section { padding: 104px 0; }
+    .section-head { margin-bottom: 48px; }
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--gold); color: #17150d; }
+    .btn-primary:hover { background: #d6aa3b; }
+    .btn-dark { background: var(--ink); color: var(--white); }
+    .btn-outline { border-color: rgba(255,255,255,.45); color: var(--white); background: transparent; }
+    .icon { width: 18px; height: 18px; flex: none; }
 
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #A17B16 0%, #D4AF37 50%, #F3E5AB 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .site-nav {
+      position: sticky;
+      z-index: 50;
+      top: 0;
+      background: rgba(251,250,246,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; gap: 34px; }
+    .brand { display: flex; align-items: center; gap: 11px; margin-right: auto; }
+    .brand img { width: 44px; height: 44px; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); }
+    .brand-copy { line-height: 1.1; }
+    .brand-copy strong { display: block; font-size: 18px; letter-spacing: .04em; }
+    .brand-copy span { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: var(--gold-dark); }
 
-        .gold-btn {
-            background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%);
-            transition: all 0.3s ease;
-        }
-        .gold-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px -6px rgba(212, 175, 55, 0.5);
-        }
+    .hero {
+      min-height: calc(100svh - 76px);
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--white);
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .13;
+      background-image:
+        linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+      gap: 70px;
+      align-items: center;
+      padding: 76px 0;
+    }
+    .hero-badge {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    h1 { max-width: 820px; font-size: clamp(48px, 7.2vw, 98px); }
+    h1 em { display: block; color: #d9b85e; font-weight: 600; }
+    .hero-copy { max-width: 660px; margin: 25px 0 32px; color: #d9dedb; font-size: clamp(17px, 2vw, 21px); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-seal {
+      aspect-ratio: 1;
+      width: min(100%, 370px);
+      justify-self: end;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 50%;
+      position: relative;
+    }
+    .hero-seal::before, .hero-seal::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(199,155,43,.6);
+    }
+    .hero-seal::before { inset: 18px; }
+    .hero-seal::after { inset: 44px; }
+    .hero-seal img { width: 48%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; filter: saturate(.8); }
+    .hero-facts {
+      position: absolute;
+      z-index: 2;
+      bottom: 26px;
+      left: 0;
+      right: 0;
+      display: flex;
+      gap: 32px;
+      color: #d9dedb;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .hero-facts span { display: flex; align-items: center; gap: 8px; }
 
-        .agenda-collapse {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-            opacity: 0;
-        }
-        .agenda-collapse.open {
-            max-height: 500px;
-            opacity: 1;
-        }
-        .animate-spin-slow { animation: spin 20s linear infinite; }
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .trust-strip { background: var(--gold); }
+    .trust-grid { min-height: 94px; display: grid; grid-template-columns: repeat(4,1fr); }
+    .trust-item { padding: 22px 26px; border-right: 1px solid rgba(23,35,29,.18); }
+    .trust-item:first-child { border-left: 1px solid rgba(23,35,29,.18); }
+    .trust-item small { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .trust-item strong { font-family: "Playfair Display", serif; font-size: 20px; }
 
-        html { scroll-behavior: smooth; }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: start; }
+    .about-note {
+      background: var(--ink);
+      color: var(--white);
+      padding: 32px;
+      border-radius: 6px;
+      position: sticky;
+      top: 104px;
+    }
+    .about-note strong { display: block; margin: 18px 0 8px; font: 600 28px/1.1 "Playfair Display", serif; }
+    .about-note p { margin: 0; color: #ced5d1; }
+    .feature-list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .feature { background: var(--paper); display: grid; grid-template-columns: 52px 1fr; gap: 20px; padding: 28px; }
+    .feature-icon { width: 48px; height: 48px; display: grid; place-items: center; background: var(--sage); border-radius: 6px; }
+    .feature h3 { margin: 1px 0 8px; font-size: 23px; }
+    .feature p { margin: 0; color: var(--muted); }
 
-        body {
-            overflow-x: hidden;
-        }
+    .committees { background: #f1f0ea; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .filter {
+      min-height: 40px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .filter.active { background: var(--ink); border-color: var(--ink); color: var(--white); }
+    .committee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .committee-card { min-height: 310px; display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 25px; }
+    .committee-card[hidden] { display: none; }
+    .committee-top { display: flex; justify-content: space-between; gap: 12px; }
+    .committee-code { font: 700 34px/1 "Playfair Display", serif; }
+    .tag { width: fit-content; padding: 5px 9px; border-radius: 999px; background: var(--sage); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .committee-card h3 { margin: 18px 0 12px; font-size: 21px; }
+    .committee-card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .committee-meta { display: flex; gap: 12px; margin: auto 0 18px; padding-top: 22px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .committee-meta span { display: flex; align-items: center; gap: 5px; }
+    .agenda-toggle { width: 100%; min-height: 43px; display: flex; align-items: center; justify-content: space-between; border: 0; border-top: 1px solid var(--line); background: transparent; padding: 14px 0 0; cursor: pointer; font-weight: 700; }
+    .agenda { display: none; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .agenda.open { display: block; }
+    .agenda strong { display: block; margin-top: 12px; font-size: 12px; text-transform: uppercase; }
 
-        ::selection {
-            background: rgba(212, 175, 55, 0.28);
-            color: #2C2212;
-        }
+    .program-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .day { border: 1px solid var(--line); background: var(--white); border-radius: 6px; padding: 30px; }
+    .day-date { color: var(--gold-dark); font-weight: 700; text-transform: uppercase; font-size: 12px; }
+    .day h3 { font-size: 30px; margin: 8px 0 24px; }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li { display: grid; grid-template-columns: 66px 1fr; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+    .timeline time { color: var(--gold-dark); font-weight: 700; }
 
-        .site-progress {
-            position: fixed;
-            inset: 0 auto auto 0;
-            width: 0%;
-            height: 3px;
-            z-index: 100;
-            background: linear-gradient(90deg, #A17B16, #D4AF37, #F3E5AB);
-            box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
-        }
+    .register { background: var(--ink); color: var(--white); }
+    .register-head { display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: end; }
+    .register .section-lead { color: #cbd2ce; }
+    .deadline { display: flex; align-items: center; gap: 14px; padding: 20px; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; }
+    .deadline strong { display: block; }
+    .deadline span { color: #cbd2ce; font-size: 14px; }
+    .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 42px; }
+    .price-card { display: flex; flex-direction: column; min-height: 285px; padding: 28px; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; background: rgba(255,255,255,.04); }
+    .price-card.featured { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .price-card h3 { font-size: 27px; margin: 14px 0 4px; }
+    .price { font: 700 42px/1 "Playfair Display", serif; margin: 12px 0; }
+    .price-card p { color: #cbd2ce; font-size: 14px; margin: 0 0 24px; }
+    .price-card.featured p { color: #3f3b2c; }
+    .price-card .btn { margin-top: auto; width: 100%; }
 
-        .nav-scrolled {
-            box-shadow: 0 12px 35px -28px rgba(44, 34, 18, 0.65);
-            border-bottom-color: rgba(212, 175, 55, 0.22) !important;
-        }
+    .rules-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
+    .rules-summary { color: var(--muted); font-size: 18px; }
+    .accordion { border-top: 1px solid var(--line); }
+    .accordion-item { border-bottom: 1px solid var(--line); }
+    .accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; border: 0; background: transparent; text-align: left; cursor: pointer; color: var(--ink); font-weight: 700; }
+    .accordion-content { display: none; padding: 0 0 22px; color: var(--muted); }
+    .accordion-content.open { display: block; }
+    .accordion-content ul { margin: 0; padding-left: 20px; }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(34px) scale(0.985);
-            transition:
-                opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    .people { background: #e7ece8; }
+    .people-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .person { background: var(--white); border: 1px solid #d3dcd5; border-radius: 6px; padding: 24px; }
+    .person-role { color: var(--gold-dark); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .person h3 { font-size: 23px; margin: 9px 0 16px; }
+    .person a { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font-size: 14px; }
+    .partners { margin-top: 58px; padding-top: 38px; border-top: 1px solid #cbd6ce; }
+    .partner-list { display: flex; flex-wrap: wrap; gap: 12px 28px; color: #536259; font-weight: 700; }
 
-        .reveal.revealed {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+    footer { background: #111915; color: var(--white); padding: 54px 0 90px; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; }
+    .footer-grid p { color: #aeb8b2; max-width: 520px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 22px; justify-content: flex-end; }
+    .copyright { margin-top: 42px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14); color: #88948d; font-size: 12px; }
 
-        .stagger > * {
-            opacity: 0;
-            transform: translateY(24px);
-            transition:
-                opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    .mobile-cta { display: none; }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      padding: 20px;
+      background: rgba(9,15,12,.75);
+      place-items: center;
+    }
+    .modal.open { display: grid; }
+    .modal-panel { width: min(100%, 620px); max-height: calc(100svh - 40px); overflow: auto; background: var(--paper); border-radius: 6px; padding: 30px; }
+    .modal-head { display: flex; justify-content: space-between; gap: 20px; }
+    .modal h2 { font-size: 38px; }
+    .close { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: transparent; cursor: pointer; flex: none; }
+    .choice-list { display: grid; gap: 10px; margin-top: 26px; }
+    .choice { display: grid; grid-template-columns: 46px 1fr auto; gap: 14px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--white); }
+    .choice:hover { border-color: var(--gold); }
+    .choice-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 6px; background: var(--sage); }
+    .choice strong, .choice small { display: block; }
+    .choice small { color: var(--muted); }
+    .choice-price { color: var(--gold-dark); font-weight: 700; }
 
-        .stagger.revealed > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .stagger.revealed > *:nth-child(2) { transition-delay: .08s; }
-        .stagger.revealed > *:nth-child(3) { transition-delay: .16s; }
-        .stagger.revealed > *:nth-child(4) { transition-delay: .24s; }
-        .stagger.revealed > *:nth-child(5) { transition-delay: .32s; }
-        .stagger.revealed > *:nth-child(6) { transition-delay: .40s; }
-
-        .hero-orb {
-            position: absolute;
-            border-radius: 9999px;
-            pointer-events: none;
-            filter: blur(2px);
-            will-change: transform;
-        }
-
-        .hero-orb.one {
-            width: 320px;
-            height: 320px;
-            right: -80px;
-            top: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.24);
-            animation: floatOrbOne 9s ease-in-out infinite;
-        }
-
-        .hero-orb.two {
-            width: 190px;
-            height: 190px;
-            right: 16%;
-            bottom: 10%;
-            background: radial-gradient(circle, rgba(243, 229, 171, .5), rgba(212, 175, 55, .04) 70%);
-            animation: floatOrbTwo 7s ease-in-out infinite;
-        }
-
-        .hero-orb.three {
-            width: 76px;
-            height: 76px;
-            left: 5%;
-            bottom: 15%;
-            border: 1px solid rgba(212, 175, 55, 0.32);
-            animation: floatOrbThree 6s ease-in-out infinite;
-        }
-
-        @keyframes floatOrbOne {
-            0%, 100% { transform: translate3d(0,0,0) rotate(0deg); }
-            50% { transform: translate3d(-26px,32px,0) rotate(7deg); }
-        }
-        @keyframes floatOrbTwo {
-            0%, 100% { transform: translate3d(0,0,0) scale(1); }
-            50% { transform: translate3d(20px,-24px,0) scale(1.07); }
-        }
-        @keyframes floatOrbThree {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-22px); }
-        }
-
-        .hero-kicker {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-kicker::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -120%;
-            width: 80%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,.8), transparent);
-            animation: shimmer 4.8s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 60% { left: -120%; }
-            100% { left: 150%; }
-        }
-
-        .marquee-wrap {
-            border-top: 1px solid rgba(212, 175, 55, 0.12);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.12);
-            background: rgba(255,255,255,.5);
-            overflow: hidden;
-        }
-
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: marquee 28s linear infinite;
-        }
-
-        .marquee-track:hover { animation-play-state: paused; }
-
-        .marquee-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 2.2rem;
-            white-space: nowrap;
-            color: rgba(44,34,18,.72);
-            font-size: .72rem;
-            font-weight: 800;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-        }
-
-        .marquee-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 9999px;
-            background: #D4AF37;
-            box-shadow: 0 0 10px rgba(212,175,55,.6);
-        }
-
-        @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-
-        .magnetic {
-            will-change: transform;
-            transition: transform .22s ease, box-shadow .3s ease;
-        }
-
-        .committee-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .committee-card::before {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            border-radius: inherit;
-            background: linear-gradient(120deg, transparent 20%, rgba(212,175,55,.25), transparent 75%);
-            transform: translateX(-110%);
-            transition: transform .8s cubic-bezier(.16,1,.3,1);
-            pointer-events: none;
-        }
-
-        .committee-card:hover::before {
-            transform: translateX(110%);
-        }
-
-        .committee-card:hover .committee-code {
-            transform: translateX(4px);
-        }
-
-        .committee-code {
-            transition: transform .35s cubic-bezier(.16,1,.3,1);
-        }
-
-        .logo-mark {
-            width: 46px;
-            height: 46px;
-            flex: 0 0 auto;
-            filter: drop-shadow(0 8px 18px rgba(212,175,55,.18));
-        }
-
-        .logo-ring {
-            transform-origin: 50% 50%;
-            animation: logoOrbit 18s linear infinite;
-        }
-
-        @keyframes logoOrbit {
-            to { transform: rotate(360deg); }
-        }
-
-        .expert-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .expert-card::after {
-            content: "";
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            right: -55px;
-            bottom: -55px;
-            border-radius: 999px;
-            background: radial-gradient(circle, rgba(243,229,171,.72), transparent 70%);
-            transition: transform .5s ease;
-        }
-
-        .expert-card:hover::after {
-            transform: scale(1.3);
-        }
-
-        .sponsor-card {
-            position: relative;
-            overflow: hidden;
-            transition: transform .4s cubic-bezier(.16,1,.3,1), border-color .3s ease, box-shadow .4s ease;
-        }
-
-        .sponsor-card:hover {
-            transform: translateY(-6px) scale(1.015);
-            box-shadow: 0 18px 35px -22px rgba(44,34,18,.45);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            right: 2rem;
-            bottom: 2rem;
-            display: none;
-            align-items: center;
-            gap: .7rem;
-            color: rgba(44,34,18,.5);
-            font-size: .62rem;
-            font-weight: 800;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            writing-mode: vertical-rl;
-        }
-
-        .scroll-indicator::after {
-            content: "";
-            width: 1px;
-            height: 54px;
-            background: linear-gradient(#D4AF37, transparent);
-            animation: scrollLine 1.8s ease-in-out infinite;
-        }
-
-        @keyframes scrollLine {
-            0%,100% { transform: scaleY(.45); transform-origin: top; opacity: .45; }
-            50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-        }
-
-        @media (min-width: 1024px) {
-            .scroll-indicator { display: flex; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: .01ms !important;
-            }
-            .reveal, .stagger > * { opacity: 1 !important; transform: none !important; }
-        }
-
-
-        .team-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .team-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(135deg, rgba(243,229,171,.22), transparent 55%),
-                radial-gradient(circle at 100% 0%, rgba(212,175,55,.16), transparent 35%);
-            pointer-events: none;
-        }
-
-        .team-avatar {
-            position: relative;
-            isolation: isolate;
-        }
-
-        .team-avatar::after {
-            content: "";
-            position: absolute;
-            inset: -5px;
-            border: 1px dashed rgba(212,175,55,.35);
-            border-radius: 20px;
-            animation: avatarOrbit 14s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes avatarOrbit {
-            to { transform: rotate(360deg); }
-        }
-
-    </style>
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hero { min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; padding: 80px 0 130px; }
+      .hero-seal { display: none; }
+      .about-grid, .rules-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-note { position: static; }
+      .committee-grid, .people-grid { grid-template-columns: repeat(2,1fr); }
+      .register-head { grid-template-columns: 1fr; }
+      .price-grid { grid-template-columns: 1fr; }
+      .price-card { min-height: 0; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .section { padding: 76px 0; }
+      .section-head { margin-bottom: 34px; }
+      .nav-inner { height: 68px; }
+      .brand-copy span { display: none; }
+      .site-nav .btn { min-height: 42px; padding: 0 14px; font-size: 12px; }
+      .hero-inner { padding: 64px 0 128px; }
+      h1 { font-size: clamp(45px, 13vw, 62px); }
+      .hero-copy { margin: 20px 0 26px; }
+      .hero-actions .btn { width: 100%; }
+      .hero-actions .btn-outline { display: none; }
+      .hero-facts { gap: 15px; flex-wrap: wrap; bottom: 22px; font-size: 11px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item { border-bottom: 1px solid rgba(23,35,29,.18); }
+      .committee-grid, .program-grid, .people-grid { grid-template-columns: 1fr; }
+      .committee-card { min-height: 285px; }
+      .feature { grid-template-columns: 42px 1fr; padding: 22px; }
+      .feature-icon { width: 42px; height: 42px; }
+      .register-head { gap: 28px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+      .mobile-cta {
+        display: flex;
+        position: fixed;
+        z-index: 45;
+        bottom: 10px;
+        left: 14px;
+        right: 14px;
+        min-height: 54px;
+        box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      }
+      .modal-panel { padding: 24px 18px; }
+      .choice { grid-template-columns: 42px 1fr; }
+      .choice-price { grid-column: 2; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
-<body class="text-royalNavy scroll-smooth antialiased">
-    <div id="site-progress" class="site-progress"></div>
+<body>
+  <nav class="site-nav" aria-label="Основная навигация">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="SUNMUN 2026 — на главную">
+        <img src="assets/logo.jpeg" alt="Логотип SUNMUN">
+        <span class="brand-copy"><strong>SUNMUN 2026</strong><span>Southern Unity Nations</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">О конференции</a>
+        <a href="#committees">Комитеты</a>
+        <a href="#program">Программа</a>
+        <a href="#team">Команда</a>
+      </div>
+      <button class="btn btn-primary js-register"><i data-lucide="send" class="icon"></i>Регистрация</button>
+    </div>
+  </nav>
 
-    <nav class="sticky top-0 z-50 bg-warmSand/80 backdrop-blur-md border-b border-luxuryGold/10 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-3 group cursor-pointer">
-                    <svg class="logo-mark group-hover:scale-105 transition-transform duration-300" viewBox="0 0 64 64" aria-label="SUNMUN logo" role="img">
-                        <defs>
-                            <linearGradient id="sunmunGold" x1="8" y1="6" x2="55" y2="58" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#F3E5AB"/>
-                                <stop offset=".48" stop-color="#D4AF37"/>
-                                <stop offset="1" stop-color="#A17B16"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="32" cy="32" r="29" fill="white" stroke="url(#sunmunGold)" stroke-width="1.4"/>
-                        <g class="logo-ring">
-                            <circle cx="32" cy="32" r="23.5" fill="none" stroke="#D4AF37" stroke-opacity=".34" stroke-dasharray="2 5"/>
-                            <path d="M32 7.8V13M32 51V56.2M7.8 32H13M51 32H56.2M14.9 14.9L18.6 18.6M45.4 45.4L49.1 49.1M49.1 14.9L45.4 18.6M18.6 45.4L14.9 49.1" stroke="#D4AF37" stroke-width="1.4" stroke-linecap="round"/>
-                        </g>
-                        <circle cx="32" cy="32" r="16.5" fill="url(#sunmunGold)" fill-opacity=".13"/>
-                        <path d="M20.8 39.5c3.5 3.1 7.2 4.6 11.2 4.6 4 0 7.8-1.5 11.2-4.6M20.8 24.5c3.5-3.1 7.2-4.6 11.2-4.6 4 0 7.8 1.5 11.2 4.6M17.8 32h28.4M32 16.8c-4 4.1-6 9.2-6 15.2s2 11.1 6 15.2M32 16.8c4 4.1 6 9.2 6 15.2s-2 11.1-6 15.2" fill="none" stroke="#A17B16" stroke-width="1.35" stroke-linecap="round"/>
-                        <text x="32" y="35.2" text-anchor="middle" font-size="8.2" font-weight="900" font-family="Plus Jakarta Sans, sans-serif" fill="#2C2212">SUN</text>
-                    </svg>
-                    <div>
-                        <span class="font-sans font-extrabold text-lg tracking-wider text-darkBronze block">SUNMUN 2026</span>
-                        <span class="text-[9px] text-darkBronze/60 font-bold tracking-widest uppercase block">Southern Unity Nations</span>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-8 font-bold text-xs uppercase tracking-wider text-darkBronze/70">
-                    <a href="#about" class="hover:text-luxuryGold transition-colors duration-200">О конференции</a>
-                    <a href="#committees" class="hover:text-luxuryGold transition-colors duration-200">Комитеты</a>
-                    <a href="#experts" class="hover:text-luxuryGold transition-colors duration-200">Эксперты</a>
-                    <a href="#summer-program" class="hover:text-luxuryGold transition-colors duration-200">Программа</a>
-                    <a href="#rules" class="hover:text-luxuryGold transition-colors duration-200">Правила & Взносы</a>
-                    <a href="#safety" class="hover:text-luxuryGold transition-colors duration-200">Безопасность</a>
-                    <a href="#sponsors" class="hover:text-luxuryGold transition-colors duration-200">Спонсоры</a>
-                    <a href="#team" class="hover:text-luxuryGold transition-colors duration-200">Команда</a>
-                    <a href="#contacts" class="hover:text-luxuryGold transition-colors duration-200">Контакты</a>
-                </div>
-                <div>
-                    <a href="#rules" class="magnetic gold-btn text-white font-sans font-extrabold px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider inline-block">
-                        Регистрация
-                    </a>
-                </div>
-            </div>
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-inner">
+        <div>
+          <div class="hero-badge"><i data-lucide="sun" class="icon"></i>Ұлы Дала елі · Түркістан</div>
+          <h1>Southern Unity Nations <em>Model UN 2026</em></h1>
+          <p class="hero-copy">Два дня дипломатии, смелых идей и новых знакомств в духовной столице тюркского мира.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary js-register"><i data-lucide="send" class="icon"></i>Подать заявку</button>
+            <a class="btn btn-outline" href="#committees">Выбрать комитет <i data-lucide="arrow-down" class="icon"></i></a>
+          </div>
         </div>
-    </nav>
-
-    <header class="relative overflow-hidden py-24 lg:py-32">
-        <div class="hero-orb one" data-parallax="0.05"></div>
-        <div class="hero-orb two" data-parallax="-0.08"></div>
-        <div class="hero-orb three" data-parallax="0.12"></div>
-        <div class="absolute inset-0 opacity-[0.4] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="lg:w-2/3">
-                <div class="hero-kicker inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-luxuryGold/20 text-darkBronze text-xs font-extrabold uppercase tracking-widest mb-8 shadow-sm">
-                    <i class="fa-solid fa-sun text-sm text-luxuryGold"></i> Ұлы Дала елі • Түркістан
-                </div>
-                <h1 class="font-serif font-black text-4xl sm:text-5xl lg:text-7xl tracking-tight leading-none mb-8 text-darkBronze">
-                    SOUTHERN UNITY NATIONS <br><span class="gold-gradient-text italic font-serif">MODEL UN 2026</span>
-                </h1>
-                <p class="text-lg text-darkBronze/70 max-w-xl mb-12 leading-relaxed font-medium">
-                    Түркі әлемінің рухани астанасы — Түркістан қаласында өтетін жастар дипломатиясының ең жарқын оқиғасы. Жаһандық мәселелерді бірге талқылайық!
-                </p>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12 max-w-3xl">
-                    <div class="bg-white/60 backdrop-blur-sm border border-luxuryGold/10 rounded-2xl p-5 flex items-center gap-4 shadow-sm">
-                        <div class="bg-softGold/30 p-3 rounded-xl text-luxuryGold"><i class="fa-solid fa-calendar-days text-base"></i></div>
-                        <div>
-                            <p class="text-[9px] text-darkBronze/50 uppercase tracking-widest font-bold">Когда</p>
-                            <p class="text-sm font-bold text-darkBronze mt-0.5">8-9 августа 2026</p>
-                        </div>
-                    </div>
-                    <div class="bg-white/60 backdrop-blur-sm border border-luxuryGold/10 rounded-2xl p-5 flex items-center gap-4 shadow-sm">
-                        <div class="bg-softGold/30 p-3 rounded-xl text-luxuryGold"><i class="fa-solid fa-location-dot text-base"></i></div>
-                        <div>
-                            <p class="text-[9px] text-darkBronze/50 uppercase tracking-widest font-bold">Где</p>
-                            <p class="text-sm font-bold text-darkBronze mt-0.5">г. Туркестан</p>
-                        </div>
-                    </div>
-                    <div class="bg-white/60 backdrop-blur-sm border border-luxuryGold/10 rounded-2xl p-5 flex items-center gap-4 shadow-sm">
-                        <div class="bg-softGold/30 p-3 rounded-xl text-luxuryGold"><i class="fa-solid fa-building-columns text-base"></i></div>
-                        <div>
-                            <p class="text-[9px] text-darkBronze/50 uppercase tracking-widest font-bold">База</p>
-                            <p class="text-sm font-bold text-darkBronze mt-0.5">Woosong University</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-4">
-                    <a href="#rules" class="magnetic gold-btn text-white font-sans font-black px-8 py-4 rounded-xl transition-all duration-200 text-base tracking-wider uppercase">
-                        Подать заявку
-                    </a>
-                    <a href="#about" class="bg-white/80 hover:bg-white border border-luxuryGold/20 text-darkBronze font-sans font-semibold px-8 py-4 rounded-xl transition-all duration-200 text-base flex items-center gap-2 shadow-sm">
-                        Подробнее <i class="fa-solid fa-arrow-down text-sm text-luxuryGold"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">Scroll</div>
+        <div class="hero-seal" aria-hidden="true"><img src="assets/logo.jpeg" alt=""></div>
+      </div>
+      <div class="container hero-facts">
+        <span><i data-lucide="calendar-days" class="icon"></i>8–9 августа</span>
+        <span><i data-lucide="map-pin" class="icon"></i>Туркестан</span>
+        <span><i data-lucide="languages" class="icon"></i>3 языка</span>
+      </div>
     </header>
 
-    <div class="marquee-wrap" aria-hidden="true">
-        <div class="marquee-track">
-            <div class="marquee-item"><span class="marquee-dot"></span>SUNMUN 2026</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Turkistan</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>8–9 August</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Diplomacy</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Six Committees</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Three Languages</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>SUNMUN 2026</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Turkistan</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>8–9 August</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Diplomacy</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Six Committees</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Three Languages</div>
-        </div>
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><small>Формат</small><strong>Онлайн + офлайн</strong></div>
+        <div class="trust-item"><small>Комитеты</small><strong>6 направлений</strong></div>
+        <div class="trust-item"><small>Площадка</small><strong>Woosong University</strong></div>
+        <div class="trust-item"><small>Стоимость</small><strong>от 1 000 ₸</strong></div>
+      </div>
     </div>
 
-
-    <section id="about" class="py-24 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mb-5">О конференции SUNMUN 2026</h2>
-                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-6"></div>
-                <p class="text-darkBronze/70 leading-relaxed text-base font-medium">
-                    Настоящее мероприятие регламентируется официальным Положением и представляет собой очную конференцию в формате модели Организации Объединенных Наций.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 glass-card rounded-3xl">
-                    <div class="h-12 w-12 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-comments"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-darkBronze mb-3">Дипломатия и переговоры</h3>
-                    <p class="text-darkBronze/60 text-sm leading-relaxed font-medium">Совершенствование навыков ведения переговорного процесса, публичных выступлений и аргументированного отстаивания позиций.</p>
-                </div>
-                <div class="p-8 glass-card rounded-3xl">
-                    <div class="h-12 w-12 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-seedling"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-darkBronze mb-3">ЦУР ООН и Глобальные темы</h3>
-                    <p class="text-darkBronze/60 text-sm leading-relaxed font-medium">Углубление понимания актуальных проблем устойчивого развития, международной безопасности и прав человека.</p>
-                </div>
-                <div class="p-8 glass-card rounded-3xl">
-                    <div class="h-12 w-12 rounded-xl bg-softGold/40 text-luxuryGold flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-users"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-darkBronze mb-3">Сетевое взаимодействие</h3>
-                    <p class="text-darkBronze/60 text-sm leading-relaxed font-medium">Развитие связей между студентами, исследователями и экспертами в области международных отношений Центральной Азии.</p>
-                </div>
-            </div>
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">О конференции</p>
+          <h2>Место, где идеи становятся резолюциями</h2>
+          <p class="section-lead">SUNMUN — очная конференция в формате модели ООН для молодых людей, готовых обсуждать глобальные проблемы и отстаивать позицию своей страны.</p>
+          <div class="about-note">
+            <i data-lucide="landmark" class="icon"></i>
+            <strong>Не нужен предыдущий опыт</strong>
+            <p>Президиум поможет разобраться в процедуре, а главное от участника — интерес, подготовка и готовность говорить.</p>
+          </div>
         </div>
+        <div class="feature-list">
+          <article class="feature">
+            <div class="feature-icon"><i data-lucide="messages-square" class="icon"></i></div>
+            <div><h3>Дипломатия и переговоры</h3><p>Практика публичных выступлений, аргументации и поиска решений в команде.</p></div>
+          </article>
+          <article class="feature">
+            <div class="feature-icon"><i data-lucide="globe-2" class="icon"></i></div>
+            <div><h3>Глобальные темы</h3><p>Международная безопасность, права человека, технологии и устойчивое развитие.</p></div>
+          </article>
+          <article class="feature">
+            <div class="feature-icon"><i data-lucide="users" class="icon"></i></div>
+            <div><h3>Новое окружение</h3><p>Знакомства со студентами, исследователями и молодыми лидерами Центральной Азии.</p></div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="committees" class="py-24 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mb-5">Комитеты конференции</h2>
-                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-5"></div>
-                <p class="text-darkBronze/50 font-bold text-xs uppercase tracking-wider">Күн тәртібі мен толық ақпаратты көру үшін қажетті комитетті таңдаңыз</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <div class="committee-card glass-card rounded-3xl p-8 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="committee-code font-sans font-black tracking-wider text-darkBronze text-2xl block">UNGA</span>
-                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">БҰҰ Бас Ассамблеясы</span>
-                            </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Тіл:</span>
-                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Қазақ тілі</span>
-                        </div>
-                    </div>
-                    <div class="my-4">
-                        <button onclick="toggleAgenda('unga')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                            <span>Күн тәртібі мен президиум</span>
-                            <i id="icon-unga" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                        </button>
-                    </div>
-                    <div id="agenda-unga" class="agenda-collapse">
-                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
-                            <div>
-                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Повестка:</span>
-                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
-                                    БҰҰ Қауіпсіздік Кеңесін Жаңғырту: БҰҰ Жарғысын Қазіргі Заманғы Әлемнің Сын-Қатерлеріне Бейімдеу Мақсатында Вето Құқығы Механизмін Қайта Қарау.
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Zhakyp Sussar</p>
-                                    </div>
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Tneibay Nazik</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="committee-card glass-card rounded-3xl p-8 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="committee-code font-sans font-black tracking-wider text-darkBronze text-2xl block">COPUOS</span>
-                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Peaceful Uses of Outer Space</span>
-                            </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Online</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Language:</span>
-                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> English (Online)</span>
-                        </div>
-                    </div>
-                    <div class="my-4">
-                        <button onclick="toggleAgenda('copuos')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                            <span>View Agenda & Chairs</span>
-                            <i id="icon-copuos" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                        </button>
-                    </div>
-                    <div id="agenda-copuos" class="agenda-collapse">
-                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
-                            <div>
-                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Agenda:</span>
-                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
-                                    Ensuring Equitable Access to Outer Space Resources Amid Increasing Commercial Competition.
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Presidium:</span>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze/50 italic">To be announced</p>
-                                    </div>
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze/50 italic">To be announced</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="committee-card glass-card rounded-3xl p-8 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="committee-code font-sans font-black tracking-wider text-darkBronze text-2xl block">WIPO</span>
-                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Intellectual Property Organization</span>
-                            </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Offline</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Language:</span>
-                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> English</span>
-                        </div>
-                    </div>
-                    <div class="my-4">
-                        <button onclick="toggleAgenda('wipo')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                            <span>View Agenda & Chairs</span>
-                            <i id="icon-wipo" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                        </button>
-                    </div>
-                    <div id="agenda-wipo" class="agenda-collapse">
-                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
-                            <div>
-                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Agenda:</span>
-                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
-                                    The Quantum Tech Hegemony: Regulating Patent Monopolies, Forced Technology Transfers, and the Protection of National Security Assets.
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Presidium:</span>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Pussurmanov Medeu</p>
-                                    </div>
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Mamadzhanova Shodiyona</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="committee-card glass-card rounded-3xl p-8 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="committee-code font-sans font-black tracking-wider text-darkBronze text-2xl block">UPU</span>
-                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Всемирный почтовый союз</span>
-                            </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Язык:</span>
-                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Русский язык</span>
-                        </div>
-                    </div>
-                    <div class="my-4">
-                        <button onclick="toggleAgenda('upu')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                            <span>Показать повестку и президиум</span>
-                            <i id="icon-upu" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                        </button>
-                    </div>
-                    <div id="agenda-upu" class="agenda-collapse">
-                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
-                            <div>
-                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Повестка:</span>
-                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
-                                    Вейпонизация глобальной почтовой сети: Стандартизация электронных предварительных данных (EAD) для борьбы с контрабандой синтетических наркотиков и технологий двойного назначения.
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Marat Koshmuratov</p>
-                                    </div>
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Shakarbekov Akzhol</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="committee-card glass-card rounded-3xl p-8 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="committee-code font-sans font-black tracking-wider text-darkBronze text-2xl block">UNHRC</span>
-                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">БҰҰ Адам құқықтары кеңесі</span>
-                            </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Тіл:</span>
-                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Қазақ тілі</span>
-                        </div>
-                    </div>
-                    <div class="my-4">
-                        <button onclick="toggleAgenda('unhrc')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                            <span>Күн тәртібі мен президиум</span>
-                            <i id="icon-unhrc" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                        </button>
-                    </div>
-                    <div id="agenda-unhrc" class="agenda-collapse">
-                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
-                            <div>
-                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Тақырыбы:</span>
-                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
-                                    «Цифрлық паноптикон»: Мемлекеттік жаппай бақылау, әлеуметтік рейтинг жүйелері және жеке деректерді жинау жағдайында азаматтардың құпиялылық құқығын қорғау.
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Kuandyk Moldiyar</p>
-                                    </div>
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Abdikadirova Aizhanel</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="committee-card glass-card rounded-3xl p-8 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="committee-code font-sans font-black tracking-wider text-darkBronze text-2xl block">Historical Crisis</span>
-                                <span class="text-[10px] font-bold text-luxuryGold uppercase tracking-widest mt-1 block">Исторический кризисный комитет</span>
-                            </div>
-                            <span class="text-[10px] px-3.5 py-1 bg-white border border-luxuryGold/20 text-darkBronze rounded-full font-bold uppercase tracking-wider">Офлайн</span>
-                        </div>
-                        <div class="mb-6">
-                            <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-1">Язык:</span>
-                            <span class="text-sm font-semibold text-darkBronze/80 flex items-center gap-1.5"><i class="fa-solid fa-language text-luxuryGold"></i> Русский язык</span>
-                        </div>
-                    </div>
-                    <div class="my-4">
-                        <button onclick="toggleAgenda('hcc')" class="w-full py-3 px-5 rounded-xl bg-white border border-luxuryGold/10 text-xs font-bold text-darkBronze flex items-center justify-center gap-2 hover:border-luxuryGold transition-colors">
-                            <span>Показать повестку и президиум</span>
-                            <i id="icon-hcc" class="fa-solid fa-chevron-down text-luxuryGold"></i>
-                        </button>
-                    </div>
-                    <div id="agenda-hcc" class="agenda-collapse">
-                        <div class="pt-4 border-t border-luxuryGold/10 space-y-6">
-                            <div>
-                                <span class="text-[11px] font-bold text-darkBronze/40 uppercase block mb-2">Повестка:</span>
-                                <p class="text-darkBronze text-sm font-bold leading-relaxed border-l-2 border-luxuryGold pl-3">
-                                    1936 год: «Накануне катастрофы: Хрупкий баланс Версальской системы и отчаянные попытки предотвратить мировую войну».
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-bold text-darkBronze/40 uppercase block mb-3">Президиум:</span>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-luxuryGold uppercase block mb-1">Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Abylaikhan Mukhtar</p>
-                                    </div>
-                                    <div class="bg-white/50 p-3 rounded-xl border border-luxuryGold/5">
-                                        <span class="text-[9px] font-bold text-darkBronze/40 uppercase block mb-1">Co-Chair</span>
-                                        <p class="text-xs font-bold text-darkBronze">Serik Gulmerey</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <section class="section committees" id="committees">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Выберите направление</p>
+          <h2>Комитеты конференции</h2>
+          <p class="section-lead">Отфильтруйте комитеты по языку или формату. Нажмите на карточку, чтобы увидеть полную повестку и президиум.</p>
+          <div class="filters" role="group" aria-label="Фильтры комитетов">
+            <button class="filter active" data-filter="all">Все</button>
+            <button class="filter" data-filter="kz">Қазақша</button>
+            <button class="filter" data-filter="ru">Русский</button>
+            <button class="filter" data-filter="en">English</button>
+            <button class="filter" data-filter="online">Онлайн</button>
+          </div>
         </div>
+        <div class="committee-grid">
+          <article class="committee-card" data-tags="kz offline">
+            <div class="committee-top"><span class="committee-code">UNGA</span><span class="tag">Қазақша</span></div>
+            <h3>БҰҰ Бас Ассамблеясы</h3>
+            <p>Реформа Совета Безопасности ООН и пересмотр механизма права вето.</p>
+            <div class="committee-meta"><span><i data-lucide="map-pin" class="icon"></i>Офлайн</span><span><i data-lucide="users" class="icon"></i>Chair + Co-Chair</span></div>
+            <button class="agenda-toggle" aria-expanded="false">Повестка и президиум <i data-lucide="chevron-down" class="icon"></i></button>
+            <div class="agenda"><p>БҰҰ Жарғысын қазіргі заманғы әлемнің сын-қатерлеріне бейімдеу мақсатында вето құқығы механизмін қайта қарау.</p><strong>Президиум</strong><p>Zhakyp Sussar · Tneibay Nazik</p></div>
+          </article>
+          <article class="committee-card" data-tags="en online">
+            <div class="committee-top"><span class="committee-code">COPUOS</span><span class="tag">English</span></div>
+            <h3>Peaceful Uses of Outer Space</h3>
+            <p>Equitable access to outer space resources amid commercial competition.</p>
+            <div class="committee-meta"><span><i data-lucide="wifi" class="icon"></i>Online</span><span><i data-lucide="languages" class="icon"></i>English</span></div>
+            <button class="agenda-toggle" aria-expanded="false">Agenda & chairs <i data-lucide="chevron-down" class="icon"></i></button>
+            <div class="agenda"><p>Ensuring equitable access to outer space resources amid increasing commercial competition.</p><strong>Presidium</strong><p>To be announced</p></div>
+          </article>
+          <article class="committee-card" data-tags="en offline">
+            <div class="committee-top"><span class="committee-code">WIPO</span><span class="tag">English</span></div>
+            <h3>Intellectual Property Organization</h3>
+            <p>Quantum technology, patent monopolies and national security assets.</p>
+            <div class="committee-meta"><span><i data-lucide="map-pin" class="icon"></i>Offline</span><span><i data-lucide="languages" class="icon"></i>English</span></div>
+            <button class="agenda-toggle" aria-expanded="false">Agenda & chairs <i data-lucide="chevron-down" class="icon"></i></button>
+            <div class="agenda"><p>Regulating patent monopolies, forced technology transfers, and the protection of national security assets.</p><strong>Presidium</strong><p>Pussurmanov Medeu · Mamadzhanova Shodiyona</p></div>
+          </article>
+          <article class="committee-card" data-tags="ru offline">
+            <div class="committee-top"><span class="committee-code">UPU</span><span class="tag">Русский</span></div>
+            <h3>Всемирный почтовый союз</h3>
+            <p>Безопасность глобальной почтовой сети и борьба с контрабандой.</p>
+            <div class="committee-meta"><span><i data-lucide="map-pin" class="icon"></i>Офлайн</span><span><i data-lucide="languages" class="icon"></i>Русский</span></div>
+            <button class="agenda-toggle" aria-expanded="false">Повестка и президиум <i data-lucide="chevron-down" class="icon"></i></button>
+            <div class="agenda"><p>Стандартизация электронных предварительных данных для борьбы с контрабандой синтетических наркотиков и технологий двойного назначения.</p><strong>Президиум</strong><p>Marat Koshmuratov · Shakarbekov Akzhol</p></div>
+          </article>
+          <article class="committee-card" data-tags="kz offline">
+            <div class="committee-top"><span class="committee-code">UNHRC</span><span class="tag">Қазақша</span></div>
+            <h3>БҰҰ Адам құқықтары кеңесі</h3>
+            <p>Массовое наблюдение, социальные рейтинги и право на приватность.</p>
+            <div class="committee-meta"><span><i data-lucide="map-pin" class="icon"></i>Офлайн</span><span><i data-lucide="languages" class="icon"></i>Қазақша</span></div>
+            <button class="agenda-toggle" aria-expanded="false">Повестка и президиум <i data-lucide="chevron-down" class="icon"></i></button>
+            <div class="agenda"><p>Мемлекеттік жаппай бақылау, әлеуметтік рейтинг жүйелері және жеке деректерді жинау жағдайында азаматтардың құпиялылық құқығын қорғау.</p><strong>Президиум</strong><p>Kuandyk Moldiyar · Abdikadirova Aizhanel</p></div>
+          </article>
+          <article class="committee-card" data-tags="ru offline">
+            <div class="committee-top"><span class="committee-code">CRISIS</span><span class="tag">Русский</span></div>
+            <h3>Исторический кризисный комитет</h3>
+            <p>1936 год: хрупкий баланс Версальской системы накануне катастрофы.</p>
+            <div class="committee-meta"><span><i data-lucide="map-pin" class="icon"></i>Офлайн</span><span><i data-lucide="languages" class="icon"></i>Русский</span></div>
+            <button class="agenda-toggle" aria-expanded="false">Повестка и президиум <i data-lucide="chevron-down" class="icon"></i></button>
+            <div class="agenda"><p>Отчаянные попытки сохранить баланс сил и предотвратить мировую войну.</p><strong>Президиум</strong><p>Abylaikhan Mukhtar · Serik Gulmerey</p></div>
+          </article>
+        </div>
+      </div>
     </section>
 
-
-    <section id="experts" class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-[0.18] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:28px_28px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 reveal">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[10px] font-extrabold tracking-[0.24em] uppercase text-luxuryGold">Academic guidance</span>
-                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mt-3 mb-5">Эксперты конференции</h2>
-                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-5"></div>
-                <p class="text-darkBronze/60 text-sm font-medium">Экспертная поддержка делегатов и содержательное сопровождение работы комитетов SUNMUN 2026.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto stagger">
-                <div class="expert-card glass-card rounded-3xl p-8 flex items-center gap-5">
-                    <div class="h-14 w-14 rounded-2xl bg-softGold/40 text-luxuryGold flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-user-graduate"></i>
-                    </div>
-                    <div class="relative z-10">
-                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.2em]">Conference Expert</span>
-                        <h3 class="font-sans font-extrabold text-lg text-darkBronze mt-1">Darkhanuly Imangali</h3>
-                    </div>
-                </div>
-                <div class="expert-card glass-card rounded-3xl p-8 flex items-center gap-5">
-                    <div class="h-14 w-14 rounded-2xl bg-softGold/40 text-luxuryGold flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid fa-user-graduate"></i>
-                    </div>
-                    <div class="relative z-10">
-                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.2em]">Conference Expert</span>
-                        <h3 class="font-sans font-extrabold text-lg text-darkBronze mt-1">Jamil Baizhan</h3>
-                    </div>
-                </div>
-            </div>
+    <section class="section" id="program">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Два насыщенных дня</p>
+          <h2>Программа SUNMUN</h2>
+          <p class="section-lead">Рабочие сессии дополнят спортивные активности, культурная программа и знакомство с Туркестаном.</p>
         </div>
+        <div class="program-grid">
+          <article class="day"><span class="day-date">8 августа · День 1</span><h3>Знакомство и старт</h3><ul class="timeline"><li><time>09:00</time><span>Регистрация участников</span></li><li><time>10:00</time><span>Церемония открытия</span></li><li><time>11:00</time><span>Комитетские сессии</span></li><li><time>17:00</time><span>Культурная и спортивная программа</span></li></ul></article>
+          <article class="day"><span class="day-date">9 августа · День 2</span><h3>Решения и награды</h3><ul class="timeline"><li><time>09:30</time><span>Продолжение дебатов</span></li><li><time>13:00</time><span>Подготовка резолюций</span></li><li><time>15:30</time><span>Финальное голосование</span></li><li><time>17:00</time><span>Награждение и закрытие</span></li></ul></article>
+        </div>
+      </div>
     </section>
 
-    <section id="summer-program" class="py-24 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-5">☀️ Летняя атмосфера и Культурная программа</h2>
-                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-6"></div>
-                <p class="text-darkBronze/50 text-xs font-bold uppercase tracking-wider">SUNMUN 2026 — дебаттардан бөлек ұмытылмас жазғы атмосфера сыйлайды!</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="glass-card p-8 rounded-3xl text-center">
-                    <div class="h-12 w-12 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-soccer-ball"></i></div>
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Мини-турнир по футболу</h3>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Спортивный интерактив среди делегатов! Покажите свои навыки не только на заседаниях, но и на футбольном поле.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl text-center">
-                    <div class="h-12 w-12 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-glass-martini-alt"></i></div>
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Освежающие коктейли</h3>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Жаркий август мы встретим прохладой! Вас ждут интерактивные летние коктейли и напитки на брейках.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl text-center">
-                    <div class="h-12 w-12 bg-softGold/30 text-luxuryGold rounded-xl flex items-center justify-center mx-auto mb-5 text-xl"><i class="fa-solid fa-masks-theater"></i></div>
-                    <h3 class="font-sans font-bold text-base text-darkBronze mb-3">Культурная программа</h3>
-                    <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Насыщенные вечера, увлекательные интерактивы и знакомство с историческим Туркестаном.</p>
-                </div>
-            </div>
+    <section class="section register" id="register">
+      <div class="container">
+        <div class="register-head">
+          <div><p class="eyebrow">Регистрация открыта</p><h2>Выберите свой формат участия</h2><p class="section-lead">Заявка займёт несколько минут. После заполнения формы команда свяжется с вами и расскажет о следующих шагах.</p></div>
+          <div class="deadline"><i data-lucide="calendar-clock" class="icon"></i><div><strong>Проверьте дедлайн в форме</strong><span>Количество мест в офлайн-комитетах ограничено</span></div></div>
         </div>
+        <div class="price-grid">
+          <article class="price-card"><i data-lucide="laptop" class="icon"></i><h3>Онлайн</h3><div class="price">1 000 ₸</div><p>COPUOS на английском языке. Участвуйте из любой точки мира.</p><a class="btn btn-outline" href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" rel="noopener">Выбрать онлайн <i data-lucide="arrow-up-right" class="icon"></i></a></article>
+          <article class="price-card featured"><i data-lucide="map-pin" class="icon"></i><h3>Офлайн</h3><div class="price">5 500 ₸</div><p>Полный доступ к конференции, материалы, кофе-брейки и культурная программа.</p><a class="btn btn-dark" href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" rel="noopener">Подать заявку <i data-lucide="arrow-up-right" class="icon"></i></a></article>
+          <article class="price-card"><i data-lucide="heart-handshake" class="icon"></i><h3>Волонтёр</h3><div class="price">1 000 ₸</div><p>Станьте частью команды и помогите участникам, президиуму и организаторам.</p><a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" rel="noopener">Стать волонтёром <i data-lucide="arrow-up-right" class="icon"></i></a></article>
+        </div>
+      </div>
     </section>
 
-    <section id="rules" class="py-24 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-5">Регистрация и Взносы</h2>
-                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-8"></div>
-                
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" class="gold-btn text-white font-sans font-bold px-7 py-3.5 rounded-xl text-sm tracking-wider uppercase"><i class="fa-solid fa-street-view mr-2 text-white"></i> Оффлайн Регистрация</a>
-                    <a href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" class="gold-btn text-white font-sans font-bold px-7 py-3.5 rounded-xl text-sm tracking-wider uppercase"><i class="fa-solid fa-laptop mr-2 text-white"></i> Онлайн Регистрация</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" class="bg-slate-600 hover:bg-slate-700 text-white font-sans font-bold px-7 py-3.5 rounded-xl text-sm tracking-wider uppercase"><i class="fa-solid fa-handshake-angle mr-2"></i> Волонтерство</a>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-20">
-                <div class="space-y-6">
-                    <h3 class="font-sans font-bold text-xl text-darkBronze mb-2 border-l-4 border-luxuryGold pl-4 tracking-tight">Graphic of Fees</h3>
-                    <div class="space-y-4">
-                        <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold transition-all">
-                            <div>
-                                <span class="text-[9px] font-bold text-luxuryGold bg-white border border-luxuryGold/20 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Фиксированная цена</span>
-                                <h4 class="font-bold text-darkBronze text-sm">Оффлайн участие</h4>
-                            </div>
-                            <div class="font-sans font-black text-lg text-darkBronze">5500 тг</div>
-                        </div>
-                        <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold transition-all">
-                            <div>
-                                <span class="text-[9px] font-bold text-luxuryGold bg-white border border-luxuryGold/20 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Фиксированная цена</span>
-                                <h4 class="font-bold text-darkBronze text-sm">Онлайн комитет (COPUOS)</h4>
-                            </div>
-                            <div class="font-sans font-black text-lg text-darkBronze">1000 тг</div>
-                        </div>
-                        <div class="p-5 bg-white/70 border border-luxuryGold/10 rounded-2xl flex justify-between items-center hover:border-luxuryGold transition-all">
-                            <div>
-                                <span class="text-[9px] font-bold text-luxuryGold bg-white border border-luxuryGold/20 px-2.5 py-0.5 rounded-md uppercase tracking-wider mb-1.5 inline-block">Организационный взнос</span>
-                                <h4 class="font-bold text-darkBronze text-sm">Волонтерство на SUNMUN</h4>
-                            </div>
-                            <div class="font-sans font-black text-lg text-darkBronze">1000 тг</div>
-                        </div>
-                    </div>
-                    <p class="text-darkBronze/50 text-xs leading-relaxed"><i class="fa-solid fa-circle-info mr-1 text-luxuryGold"></i> Взнос покрывает полиграфические материалы, раздаточный инвентарь, кофе-брейки.</p>
-                </div>
-
-                <div class="space-y-6">
-                    <h3 class="font-sans font-bold text-xl text-darkBronze mb-4 border-l-4 border-luxuryGold pl-4 tracking-tight">Обязанности Волонтёров</h3>
-                    <div class="p-6 rounded-2xl bg-white/60 border border-luxuryGold/10 space-y-4 text-xs text-darkBronze/70 font-medium">
-                        <div class="flex gap-3.5">
-                            <div class="text-luxuryGold text-sm"><i class="fa-solid fa-address-card mt-0.5"></i></div>
-                            <div><strong class="text-darkBronze">Логистика и встреча:</strong> Помощь в регистрации, координации и навигации делегатов на локации.</div>
-                        </div>
-                        <div class="flex gap-3.5">
-                            <div class="text-luxuryGold text-sm"><i class="fa-solid fa-circle-check mt-0.5"></i></div>
-                            <div><strong class="text-darkBronze">Поддержка комитетов:</strong> Контроль порядка, помощь президиуму и оперативное решение вопросов.</div>
-                        </div>
-                        <div class="flex gap-3.5">
-                            <div class="text-luxuryGold text-sm"><i class="fa-solid fa-mug-hot mt-0.5"></i></div>
-                            <div><strong class="text-darkBronze">Интерактивы:</strong> Организация кофе-брейков с коктейлями и помощь в проведении программ.</div>
-                        </div>
-                    </div>
-
-                    <h3 class="font-sans font-bold text-lg text-darkBronze pt-2 mb-4 border-l-4 border-luxuryGold pl-4 tracking-tight">Обязательные требования</h3>
-                    <div class="flex gap-4 p-5 rounded-2xl bg-white/60 border border-luxuryGold/10">
-                        <div class="text-luxuryGold mt-0.5"><i class="fa-solid fa-user-tie text-lg"></i></div>
-                        <div>
-                            <h4 class="font-bold text-darkBronze text-sm mb-1">Дресс-код: Smart Casual / Свободно-деловой</h4>
-                            <p class="text-darkBronze/60 text-xs leading-relaxed font-medium">Участники обязаны придерживаться внешнего вида, соответствующего официальному статусу модели ООН.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-3xl p-8 lg:p-12 relative overflow-hidden max-w-4xl mx-auto">
-                <h3 class="font-sans font-black text-xl text-darkBronze mb-4">Номинации и Награды</h3>
-                <p class="text-darkBronze/60 text-xs mb-8 leading-relaxed max-w-xl font-medium">По итогам упорной и конструктивной работы в комитетах, секретариат и президиум наградят лучших участников ценными призами и дипломами:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-darkBronze font-semibold">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-trophy text-luxuryGold text-sm"></i> <div><strong>Best Delegate</strong> (Лучший делегат)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-medal text-luxuryGold text-sm"></i> <div><strong>Outstanding Delegate</strong> (Выдающийся делегат)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-scroll text-luxuryGold text-sm"></i> <div><strong>Best Position Paper</strong> (Лучшая позиция)</div></div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-users-rectangle text-luxuryGold text-sm"></i> <div><strong>Best Presidium</strong> (Лучший президиум)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-shirt text-luxuryGold text-sm"></i> <div><strong>Best National Costume</strong> (Лучший костюм)</div></div>
-                        <div class="flex items-center gap-3.5"><i class="fa-solid fa-handshake-angle text-luxuryGold text-sm"></i> <div><strong>Best Volunteer</strong> (Лучший волонтер)</div></div>
-                    </div>
-                </div>
-            </div>
-
+    <section class="section" id="rules">
+      <div class="container rules-grid">
+        <div><p class="eyebrow">Перед участием</p><h2>Главное о правилах</h2><p class="rules-summary">Мы собрали длинные условия в четыре понятных блока. Оплачивая взнос, участник подтверждает согласие с правилами конференции.</p></div>
+        <div class="accordion">
+          <div class="accordion-item"><button class="accordion-trigger" aria-expanded="false">Этика и уважение <i data-lucide="plus" class="icon"></i></button><div class="accordion-content"><ul><li>Соблюдайте законодательство РК, правила конференции и академическую этику.</li><li>Уважайте участников, президиум, организаторов и гостей.</li><li>Дискриминация, агрессия и оскорбительное поведение запрещены.</li></ul></div></div>
+          <div class="accordion-item"><button class="accordion-trigger" aria-expanded="false">Работа в комитетах <i data-lucide="plus" class="icon"></i></button><div class="accordion-content"><ul><li>Следуйте теме и официальному языку своего комитета.</li><li>Используйте устройства только для работы конференции.</li><li>Выполняйте указания Chair, Co-Chair и оргкомитета.</li></ul></div></div>
+          <div class="accordion-item"><button class="accordion-trigger" aria-expanded="false">Дресс-код и безопасность <i data-lucide="plus" class="icon"></i></button><div class="accordion-content"><ul><li>Дресс-код — Smart Casual.</li><li>Курение, алкоголь и запрещённые вещества не допускаются.</li><li>При чрезвычайной ситуации немедленно сообщите организаторам.</li></ul></div></div>
+          <div class="accordion-item"><button class="accordion-trigger" aria-expanded="false">Фото, вещи и ответственность <i data-lucide="plus" class="icon"></i></button><div class="accordion-content"><ul><li>Участник соглашается на информационное использование фото и видео с мероприятия.</li><li>Организаторы не отвечают за утерю личных вещей.</li><li>При серьёзном нарушении участник может быть отстранён без возврата взноса.</li></ul></div></div>
         </div>
+      </div>
     </section>
 
-    <section id="safety" class="py-24 reveal">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="glass-card rounded-3xl p-8 lg:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="h-12 w-12 rounded-xl bg-softGold/30 text-luxuryGold flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h2 class="font-serif font-bold text-2xl text-darkBronze">Правила безопасности и участия</h2>
-                </div>
-                <div class="h-px w-full bg-luxuryGold/10 mb-8"></div>
-                
-                <ol class="space-y-4 text-xs text-darkBronze/60 font-medium leading-relaxed list-none">
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">1.</span> <span>Соблюдайте законодательство Республики Казахстан, правила конференции и нормы академической этики.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">2.</span> <span>Относитесь с уважением ко всем участникам, председателям, организаторам и гостям конференции.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">3.</span> <span>Запрещены нецензурная лексика, оскорбительное поведение, дискриминация и любые формы агрессии.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">4.</span> <span>Соблюдайте установленный дресс-код — Smart Casual.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">5.</span> <span>Используйте телефоны и ноутбуки только для работы, связанной с конференцией.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">6.</span> <span>Следуйте теме и официальному языку своего комитета.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">7.</span> <span>Выполняйте указания Организационного комитета, Chair и Co-Chair.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">8.</span> <span>В случае нарушения правил организаторы вправе вынести предупреждение или отстранить участника без возврата взноса.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">9.</span> <span>Организаторы не несут ответственности за утерю личных вещей или происшествия, возникшие по независящим от них причинам.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">10.</span> <span>Во время фото- и видеосъёмки участники дают согласие на использование материалов в информационных целях.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">11.</span> <span>При проживании в хостеле необходимо соблюдать правила проживания, бережно относиться к имуществу.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">12.</span> <span>Строго запрещаются курение, употребление алкоголя, наркотических веществ и любые действия, угрожающие безопасности.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">13.</span> <span>При возникновении чрезвычайной ситуации необходимо немедленно сообщить организаторам.</span></li>
-                    <li class="flex gap-3"><span class="font-extrabold text-luxuryGold">14.</span> <span>Оплачивая регистрационный взнос, участник подтверждает своё согласие со всеми правилами SUNMUN 2026.</span></li>
-                </ol>
-            </div>
+    <section class="section people" id="team">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Организационная команда</p><h2>Люди, которые создают SUNMUN</h2><p class="section-lead">По вопросам участия свяжитесь с одним из главных организаторов.</p></div>
+        <div class="people-grid">
+          <article class="person"><span class="person-role">Главный организатор</span><h3>Үсейін Анеля</h3><a href="tel:+77780715307"><i data-lucide="phone" class="icon"></i>+7 778 071 5307</a></article>
+          <article class="person"><span class="person-role">Главный организатор</span><h3>Қыдырбек Жания</h3><a href="tel:+77762387933"><i data-lucide="phone" class="icon"></i>+7 776 238 7933</a></article>
+          <article class="person"><span class="person-role">Главный организатор</span><h3>Егемберді Динара</h3><a href="tel:+77787952850"><i data-lucide="phone" class="icon"></i>+7 778 795 2850</a></article>
+          <article class="person"><span class="person-role">Генеральный секретарь</span><h3>Мұхтарұлы Нұрсұлтан</h3><a href="tel:+77055745272"><i data-lucide="phone" class="icon"></i>+7 705 574 5272</a></article>
+          <article class="person"><span class="person-role">Заместитель генсека</span><h3>Ақбай Нұрсәуле</h3><a href="tel:+77763239825"><i data-lucide="phone" class="icon"></i>+7 776 323 9825</a></article>
+          <article class="person"><span class="person-role">Эксперт конференции</span><h3>Darkhanuly Imangali</h3><span>Academic guidance</span></article>
         </div>
+        <div class="partners"><p class="eyebrow">Партнёры и спонсоры</p><div class="partner-list"><span>Woosong University Kazakhstan</span><span>Gavelling</span><span>TurIS.SAT Foundation</span><span>Түркістан оқушылар альянсы</span><span>KazYouthDiplomacy</span></div></div>
+      </div>
     </section>
+  </main>
 
-    <section id="sponsors" class="py-24 reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-serif font-bold text-3xl text-darkBronze mb-3">Спонсоры & Партнеры</h2>
-                <div class="h-[2px] w-12 bg-luxuryGold mx-auto rounded-full mb-4"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto stagger">
-                <div class="sponsor-card bg-white/60 border border-luxuryGold/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[112px] shadow-sm">
-                    <h3 class="font-sans font-black text-sm text-darkBronze tracking-wider">GAVELLING</h3>
-                </div>
-                <div class="sponsor-card bg-white/60 border border-luxuryGold/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[112px] shadow-sm">
-                    <h3 class="font-sans font-black text-sm text-darkBronze tracking-wider">TurIS.SAT</h3>
-                </div>
-                <div class="sponsor-card bg-white/60 border border-luxuryGold/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[112px] shadow-sm">
-                    <h3 class="font-sans font-black text-sm text-darkBronze tracking-wider">FOUNDATION</h3>
-                </div>
-                <div class="sponsor-card bg-white/60 border border-luxuryGold/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[112px] shadow-sm">
-                    <h3 class="font-sans font-extrabold text-xs text-darkBronze leading-tight uppercase">Түркістан оқушылар альянсы</h3>
-                </div>
-                <div class="sponsor-card bg-white/60 border border-luxuryGold/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[112px] shadow-sm">
-                    <h3 class="font-sans font-extrabold text-xs text-darkBronze tracking-wider">KAZYOUTHDIPLOMACY</h3>
-                </div>
-                <div class="sponsor-card bg-white/60 border border-luxuryGold/10 rounded-2xl p-8 text-center flex items-center justify-center min-h-[112px] shadow-sm">
-                    <h3 class="font-sans font-black text-sm text-darkBronze leading-tight">WOOSONG UNIVERSITY<br>KAZAKHSTAN</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="brand" href="#top"><img src="assets/logo.jpeg" alt=""><span class="brand-copy"><strong>SUNMUN 2026</strong><span>Southern Unity Nations</span></span></a><p>Молодёжная конференция Model United Nations в Woosong University Kazakhstan, Туркестан.</p></div>
+        <div class="footer-links"><a href="#about">О конференции</a><a href="#committees">Комитеты</a><a href="#program">Программа</a><a href="#rules">Правила</a><a href="#team">Контакты</a></div>
+      </div>
+      <div class="copyright">© 2026 SUNMUN. Все права защищены. Создано командой SUNMUN.</div>
+    </div>
+  </footer>
 
+  <button class="btn btn-primary mobile-cta js-register"><i data-lucide="send" class="icon"></i>Подать заявку</button>
 
-    <section id="team" class="py-24 reveal relative overflow-hidden">
-        <div class="absolute inset-0 opacity-[0.16] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:30px_30px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-[10px] font-extrabold tracking-[0.24em] uppercase text-luxuryGold">Organizing Team</span>
-                <h2 class="font-serif font-bold text-3xl sm:text-4xl text-darkBronze mt-3 mb-5">Главные организаторы и Секретариат</h2>
-                <div class="h-[2px] w-16 bg-luxuryGold mx-auto rounded-full mb-5"></div>
-                <p class="text-darkBronze/60 text-sm font-medium">
-                    Команда, которая отвечает за подготовку, координацию и проведение SUNMUN 2026.
-                </p>
-            </div>
+  <div class="modal" id="registration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <div class="modal-head"><div><p class="eyebrow">Регистрация SUNMUN</p><h2 id="modal-title">Как вы хотите участвовать?</h2></div><button class="close" aria-label="Закрыть окно"><i data-lucide="x" class="icon"></i></button></div>
+      <div class="choice-list">
+        <a class="choice" href="https://forms.gle/rW7SJ56SJXG9RG7j9" target="_blank" rel="noopener"><span class="choice-icon"><i data-lucide="map-pin" class="icon"></i></span><span><strong>Офлайн-делегат</strong><small>Туркестан, Woosong University</small></span><span class="choice-price">5 500 ₸</span></a>
+        <a class="choice" href="https://forms.gle/9eT1PhqaeUL864Rm9" target="_blank" rel="noopener"><span class="choice-icon"><i data-lucide="laptop" class="icon"></i></span><span><strong>Онлайн-делегат</strong><small>COPUOS, English</small></span><span class="choice-price">1 000 ₸</span></a>
+        <a class="choice" href="https://docs.google.com/forms/d/e/1FAIpQLSfZPOow5KyCMSfsopoRrRoPaIRIIZ1XAqI_wlnT1ivnF5gGlg/viewform" target="_blank" rel="noopener"><span class="choice-icon"><i data-lucide="heart-handshake" class="icon"></i></span><span><strong>Волонтёр</strong><small>Присоединиться к оргкоманде</small></span><span class="choice-price">1 000 ₸</span></a>
+      </div>
+    </div>
+  </div>
 
-            <div class="mb-14">
-                <div class="flex items-center justify-center gap-3 mb-8">
-                    <div class="h-px w-16 bg-luxuryGold/30"></div>
-                    <h3 class="font-sans font-extrabold text-sm uppercase tracking-[0.18em] text-darkBronze">Главные организаторы</h3>
-                    <div class="h-px w-16 bg-luxuryGold/30"></div>
-                </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) lucide.createIcons();
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-7 stagger"><article class="team-card glass-card rounded-3xl p-8 text-center">
-                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center mx-auto mb-6 text-2xl">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Главный организатор</span>
-                        <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Үсейін Анеля</h4>
-                        <a href="tel:+77780715307" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
-                            <i class="fa-solid fa-phone"></i> +7 (778) 071-5307
-                        </a>
-                    </article>
-<article class="team-card glass-card rounded-3xl p-8 text-center">
-                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center mx-auto mb-6 text-2xl">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Главный организатор</span>
-                        <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Қыдырбек Жания</h4>
-                        <a href="tel:+77762387933" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
-                            <i class="fa-solid fa-phone"></i> +7 (776) 238-7933
-                        </a>
-                    </article>
-<article class="team-card glass-card rounded-3xl p-8 text-center">
-                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center mx-auto mb-6 text-2xl">
-                            <i class="fa-solid fa-user-tie"></i>
-                        </div>
-                        <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Главный организатор</span>
-                        <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Егемберді Динара</h4>
-                        <a href="tel:+77787952850" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
-                            <i class="fa-solid fa-phone"></i> +7 (778) 795-2850
-                        </a>
-                    </article></div>
-            </div>
+      const modal = document.querySelector("#registration-modal");
+      const closeButton = modal.querySelector(".close");
+      const openModal = () => {
+        modal.classList.add("open");
+        document.body.classList.add("locked");
+        closeButton.focus();
+      };
+      const closeModal = () => {
+        modal.classList.remove("open");
+        document.body.classList.remove("locked");
+      };
+      document.querySelectorAll(".js-register").forEach(button => button.addEventListener("click", openModal));
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+      document.addEventListener("keydown", event => { if (event.key === "Escape") closeModal(); });
 
-            <div>
-                <div class="flex items-center justify-center gap-3 mb-8">
-                    <div class="h-px w-16 bg-luxuryGold/30"></div>
-                    <h3 class="font-sans font-extrabold text-sm uppercase tracking-[0.18em] text-darkBronze">Секретариат</h3>
-                    <div class="h-px w-16 bg-luxuryGold/30"></div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-7 max-w-4xl mx-auto stagger">
-                    <article class="team-card glass-card rounded-3xl p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
-                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center shrink-0 text-2xl">
-                            <i class="fa-solid fa-landmark-flag"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Генеральный секретарь</span>
-                            <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Мұхтарұлы Нұрсұлтан</h4>
-                            <a href="tel:+77055745272" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
-                                <i class="fa-solid fa-phone"></i> +7 (705) 574-5272
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="team-card glass-card rounded-3xl p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
-                        <div class="team-avatar h-16 w-16 rounded-2xl bg-softGold/35 text-luxuryGold flex items-center justify-center shrink-0 text-2xl">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                        <div class="relative z-10">
-                            <span class="text-[9px] font-extrabold text-luxuryGold uppercase tracking-[0.18em]">Заместитель генерального секретаря</span>
-                            <h4 class="font-sans font-extrabold text-lg text-darkBronze mt-2 mb-3">Ақбай Нұрсәуле</h4>
-                            <a href="tel:+77763239825" class="inline-flex items-center gap-2 text-sm font-semibold text-darkBronze/65 hover:text-luxuryGold transition-colors">
-                                <i class="fa-solid fa-phone"></i> +7 (776) 323-9825
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contacts" class="reveal bg-white/40 border-t border-luxuryGold/10 pt-20 pb-12 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 max-w-4xl">
-                <div>
-                    <span class="font-sans font-black text-xl tracking-wider text-darkBronze block mb-5">SUNMUN 2026</span>
-                    <p class="text-darkBronze/50 text-xs leading-relaxed">
-                        Southern Unity Nations Model United Nations. Woosong University Kazakhstan, город Туркестан.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-sans font-bold text-xs uppercase tracking-widest text-darkBronze mb-5">Навигация</h4>
-                    <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-xs font-medium">
-                        <a href="#committees" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Комитеты</a>
-                        <a href="#experts" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Эксперты</a>
-                        <a href="#rules" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Регистрация</a>
-                        <a href="#team" class="text-darkBronze/60 hover:text-luxuryGold transition-colors">Команда</a>
-                    </div>
-                </div>
-
-                
-
-                
-            </div>
-
-            <div class="border-t border-luxuryGold/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-darkBronze/50 font-medium">
-                <p>&copy; 2026 SUNMUN. Все права защищены. Положение регулируется законами РК.</p>
-                <div class="bg-white/80 px-5 py-3 rounded-xl border border-luxuryGold/10 flex items-center gap-2.5">
-                    <span class="text-darkBronze/60"><i class="fa-solid fa-terminal text-luxuryGold"></i> Created by</span>
-                    <span class="font-sans font-black tracking-wider text-sm text-darkBronze">
-                        Zhaniya Kydyrbek
-                    </span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function toggleAgenda(committeeId) {
-            const agenda = document.getElementById(`agenda-${committeeId}`);
-            const icon = document.getElementById(`icon-${committeeId}`);
-            const isOpen = agenda.classList.toggle('open');
-            icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-            icon.style.transition = 'transform .3s ease';
-        }
-
-        const progressBar = document.getElementById('site-progress');
-        const nav = document.querySelector('nav');
-
-        function updateScrollEffects() {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            progressBar.style.width = `${docHeight > 0 ? (scrollTop / docHeight) * 100 : 0}%`;
-            nav.classList.toggle('nav-scrolled', scrollTop > 18);
-
-            document.querySelectorAll('[data-parallax]').forEach((item) => {
-                const speed = Number(item.dataset.parallax || 0);
-                item.style.translate = `0 ${scrollTop * speed}px`;
-            });
-        }
-
-        updateScrollEffects();
-        window.addEventListener('scroll', updateScrollEffects, { passive: true });
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.13, rootMargin: '0px 0px -45px 0px' });
-
-        document.querySelectorAll('.reveal, .stagger').forEach((el) => revealObserver.observe(el));
-
-        document.querySelectorAll('.magnetic').forEach((button) => {
-            button.addEventListener('mousemove', (event) => {
-                const rect = button.getBoundingClientRect();
-                const x = event.clientX - rect.left - rect.width / 2;
-                const y = event.clientY - rect.top - rect.height / 2;
-                button.style.transform = `translate(${x * .08}px, ${y * .12}px)`;
-            });
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = '';
-            });
+      document.querySelectorAll(".filter").forEach(button => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
+          button.classList.add("active");
+          const filter = button.dataset.filter;
+          document.querySelectorAll(".committee-card").forEach(card => {
+            card.hidden = filter !== "all" && !card.dataset.tags.includes(filter);
+          });
         });
+      });
 
-        document.querySelectorAll('a[href^="#"]').forEach((link) => {
-            link.addEventListener('click', () => {
-                document.querySelectorAll('a[href^="#"]').forEach((item) => item.classList.remove('text-luxuryGold'));
-                link.classList.add('text-luxuryGold');
-            });
+      document.querySelectorAll(".agenda-toggle").forEach(button => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const willOpen = !content.classList.contains("open");
+          content.classList.toggle("open", willOpen);
+          button.setAttribute("aria-expanded", String(willOpen));
+          button.querySelector("svg")?.setAttribute("data-lucide", willOpen ? "chevron-up" : "chevron-down");
+          if (window.lucide) lucide.createIcons();
         });
-    </script>
+      });
+
+      document.querySelectorAll(".accordion-trigger").forEach(button => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const willOpen = !content.classList.contains("open");
+          content.classList.toggle("open", willOpen);
+          button.setAttribute("aria-expanded", String(willOpen));
+          button.querySelector("svg")?.setAttribute("data-lucide", willOpen ? "minus" : "plus");
+          if (window.lucide) lucide.createIcons();
+        });
+      });
+    });
+  </script>
 </body>
 </html>
