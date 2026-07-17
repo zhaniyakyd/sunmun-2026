@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="SUNMUN 2026 — международная молодёжная конференция Model United Nations в Туркестане 8–9 августа 2026 года. Шесть комитетов на русском, казахском и английском языках.">
-  <meta name="theme-color" content="#17231d">
+  <meta name="theme-color" content="#101b33">
   <meta property="og:title" content="SUNMUN 2026 — Model United Nations в Туркестане">
   <meta property="og:description" content="Два дня дипломатии, дебатов и новых знакомств. 8–9 августа 2026, Woosong University Kazakhstan.">
   <meta property="og:type" content="website">
@@ -17,16 +17,17 @@
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
   <style>
     :root {
-      --ink: #17231d;
-      --muted: #667068;
-      --paper: #fbfaf6;
+      --ink: #101b33;
+      --muted: #626979;
+      --paper: #f8f6f0;
       --white: #fff;
-      --gold: #c79b2b;
-      --gold-dark: #9d7412;
-      --line: #dedbd0;
-      --sage: #dce4dc;
-      --blue: #dce7ec;
-      --rose: #eadfdc;
+      --gold: #c7a34b;
+      --gold-dark: #8e6c1e;
+      --line: #ddd8cc;
+      --sage: #e8edf3;
+      --blue: #dfe8f2;
+      --rose: #eee2e4;
+      --burgundy: #7b2d3b;
       --max: 1160px;
     }
     * { box-sizing: border-box; }
@@ -100,7 +101,7 @@
       display: grid;
       align-items: center;
       overflow: hidden;
-      background: var(--ink);
+      background: #101b33;
       color: var(--white);
       position: relative;
     }
@@ -176,8 +177,8 @@
 
     .trust-strip { background: var(--gold); }
     .trust-grid { min-height: 94px; display: grid; grid-template-columns: repeat(4,1fr); }
-    .trust-item { padding: 22px 26px; border-right: 1px solid rgba(23,35,29,.18); }
-    .trust-item:first-child { border-left: 1px solid rgba(23,35,29,.18); }
+    .trust-item { padding: 22px 26px; border-right: 1px solid rgba(16,27,51,.18); }
+    .trust-item:first-child { border-left: 1px solid rgba(16,27,51,.18); }
     .trust-item small { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; }
     .trust-item strong { font-family: "Playfair Display", serif; font-size: 20px; }
 
@@ -191,7 +192,7 @@
       top: 104px;
     }
     .about-note strong { display: block; margin: 18px 0 8px; font: 600 28px/1.1 "Playfair Display", serif; }
-    .about-note p { margin: 0; color: #ced5d1; }
+    .about-note p { margin: 0; color: #d7dce7; }
     .feature-list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
     .feature { background: var(--paper); display: grid; grid-template-columns: 52px 1fr; gap: 20px; padding: 28px; }
     .feature-icon { width: 48px; height: 48px; display: grid; place-items: center; background: var(--sage); border-radius: 6px; }
@@ -216,7 +217,7 @@
     .committee-card[hidden] { display: none; }
     .committee-top { display: flex; justify-content: space-between; gap: 12px; }
     .committee-code { font: 700 34px/1 "Playfair Display", serif; }
-    .tag { width: fit-content; padding: 5px 9px; border-radius: 999px; background: var(--sage); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .tag { width: fit-content; padding: 5px 9px; border-radius: 999px; background: var(--rose); color: var(--burgundy); font-size: 11px; font-weight: 700; text-transform: uppercase; }
     .committee-card h3 { margin: 18px 0 12px; font-size: 21px; }
     .committee-card p { margin: 0; color: var(--muted); font-size: 14px; }
     .committee-meta { display: flex; gap: 12px; margin: auto 0 18px; padding-top: 22px; color: var(--muted); font-size: 12px; font-weight: 700; }
@@ -236,17 +237,17 @@
 
     .register { background: var(--ink); color: var(--white); }
     .register-head { display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: end; }
-    .register .section-lead { color: #cbd2ce; }
+    .register .section-lead { color: #d3d8e4; }
     .deadline { display: flex; align-items: center; gap: 14px; padding: 20px; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; }
     .deadline strong { display: block; }
-    .deadline span { color: #cbd2ce; font-size: 14px; }
+    .deadline span { color: #d3d8e4; font-size: 14px; }
     .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 42px; }
     .price-card { display: flex; flex-direction: column; min-height: 285px; padding: 28px; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; background: rgba(255,255,255,.04); }
     .price-card.featured { background: var(--gold); color: var(--ink); border-color: var(--gold); }
     .price-card h3 { font-size: 27px; margin: 14px 0 4px; }
     .price { font: 700 42px/1 "Playfair Display", serif; margin: 12px 0; }
-    .price-card p { color: #cbd2ce; font-size: 14px; margin: 0 0 24px; }
-    .price-card.featured p { color: #3f3b2c; }
+    .price-card p { color: #d3d8e4; font-size: 14px; margin: 0 0 24px; }
+    .price-card.featured p { color: #393528; }
     .price-card .btn { margin-top: auto; width: 100%; }
 
     .rules-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
@@ -258,20 +259,28 @@
     .accordion-content.open { display: block; }
     .accordion-content ul { margin: 0; padding-left: 20px; }
 
-    .people { background: #e7ece8; }
+    .people { background: #e9edf3; }
+    .team-group + .team-group { margin-top: 46px; }
+    .team-group-title { margin: 0 0 18px; font: 600 28px/1.1 "Playfair Display", serif; }
     .people-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .people-grid.two { grid-template-columns: repeat(2,1fr); }
     .person { background: var(--white); border: 1px solid #d3dcd5; border-radius: 6px; padding: 24px; }
     .person-role { color: var(--gold-dark); font-size: 11px; font-weight: 700; text-transform: uppercase; }
     .person h3 { font-size: 23px; margin: 9px 0 16px; }
     .person a { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font-size: 14px; }
     .partners { margin-top: 58px; padding-top: 38px; border-top: 1px solid #cbd6ce; }
-    .partner-list { display: flex; flex-wrap: wrap; gap: 12px 28px; color: #536259; font-weight: 700; }
+    .experts-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .expert-card { min-height: 190px; padding: 28px; color: var(--white); background: var(--ink); border-radius: 6px; border-top: 4px solid var(--gold); }
+    .expert-card .person-role { color: #e1c677; }
+    .expert-card h3 { margin: 26px 0 8px; font-size: 28px; }
+    .expert-card p { margin: 0; color: #d3d8e4; }
+    .partner-list { display: flex; flex-wrap: wrap; gap: 12px 28px; color: #555f73; font-weight: 700; }
 
-    footer { background: #111915; color: var(--white); padding: 54px 0 90px; }
+    footer { background: #0a1224; color: var(--white); padding: 54px 0 90px; }
     .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; }
-    .footer-grid p { color: #aeb8b2; max-width: 520px; }
+    .footer-grid p { color: #b9c0cf; max-width: 520px; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 12px 22px; justify-content: flex-end; }
-    .copyright { margin-top: 42px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14); color: #88948d; font-size: 12px; }
+    .copyright { margin-top: 42px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.14); color: #929bad; font-size: 12px; }
 
     .mobile-cta { display: none; }
     .modal {
@@ -280,7 +289,7 @@
       z-index: 100;
       inset: 0;
       padding: 20px;
-      background: rgba(9,15,12,.75);
+      background: rgba(8,14,29,.78);
       place-items: center;
     }
     .modal.open { display: grid; }
@@ -322,8 +331,8 @@
       .hero-actions .btn-outline { display: none; }
       .hero-facts { gap: 15px; flex-wrap: wrap; bottom: 22px; font-size: 11px; }
       .trust-grid { grid-template-columns: 1fr 1fr; }
-      .trust-item { border-bottom: 1px solid rgba(23,35,29,.18); }
-      .committee-grid, .program-grid, .people-grid { grid-template-columns: 1fr; }
+      .trust-item { border-bottom: 1px solid rgba(16,27,51,.18); }
+      .committee-grid, .program-grid, .people-grid, .people-grid.two, .experts-grid { grid-template-columns: 1fr; }
       .committee-card { min-height: 285px; }
       .feature { grid-template-columns: 42px 1fr; padding: 22px; }
       .feature-icon { width: 42px; height: 42px; }
@@ -535,14 +544,31 @@
 
     <section class="section people" id="team">
       <div class="container">
-        <div class="section-head"><p class="eyebrow">Организационная команда</p><h2>Люди, которые создают SUNMUN</h2><p class="section-lead">По вопросам участия свяжитесь с одним из главных организаторов.</p></div>
-        <div class="people-grid">
-          <article class="person"><span class="person-role">Главный организатор</span><h3>Үсейін Анеля</h3><a href="tel:+77780715307"><i data-lucide="phone" class="icon"></i>+7 778 071 5307</a></article>
-          <article class="person"><span class="person-role">Главный организатор</span><h3>Қыдырбек Жания</h3><a href="tel:+77762387933"><i data-lucide="phone" class="icon"></i>+7 776 238 7933</a></article>
-          <article class="person"><span class="person-role">Главный организатор</span><h3>Егемберді Динара</h3><a href="tel:+77787952850"><i data-lucide="phone" class="icon"></i>+7 778 795 2850</a></article>
-          <article class="person"><span class="person-role">Генеральный секретарь</span><h3>Мұхтарұлы Нұрсұлтан</h3><a href="tel:+77055745272"><i data-lucide="phone" class="icon"></i>+7 705 574 5272</a></article>
-          <article class="person"><span class="person-role">Заместитель генсека</span><h3>Ақбай Нұрсәуле</h3><a href="tel:+77763239825"><i data-lucide="phone" class="icon"></i>+7 776 323 9825</a></article>
-          <article class="person"><span class="person-role">Эксперт конференции</span><h3>Darkhanuly Imangali</h3><span>Academic guidance</span></article>
+        <div class="section-head"><p class="eyebrow">Команда и эксперты</p><h2>Люди, которые создают SUNMUN</h2><p class="section-lead">Организаторы отвечают за проведение конференции, секретариат — за её работу, а эксперты помогают с академической частью.</p></div>
+
+        <div class="team-group">
+          <h3 class="team-group-title">Главные организаторы</h3>
+          <div class="people-grid">
+            <article class="person"><span class="person-role">Главный организатор</span><h3>Үсейін Анеля</h3><a href="tel:+77780715307"><i data-lucide="phone" class="icon"></i>+7 778 071 5307</a></article>
+            <article class="person"><span class="person-role">Главный организатор</span><h3>Қыдырбек Жания</h3><a href="tel:+77762387933"><i data-lucide="phone" class="icon"></i>+7 776 238 7933</a></article>
+            <article class="person"><span class="person-role">Главный организатор</span><h3>Егемберді Динара</h3><a href="tel:+77787952850"><i data-lucide="phone" class="icon"></i>+7 778 795 2850</a></article>
+          </div>
+        </div>
+
+        <div class="team-group">
+          <h3 class="team-group-title">Секретариат</h3>
+          <div class="people-grid two">
+            <article class="person"><span class="person-role">Генеральный секретарь</span><h3>Мұхтарұлы Нұрсұлтан</h3><a href="tel:+77055745272"><i data-lucide="phone" class="icon"></i>+7 705 574 5272</a></article>
+            <article class="person"><span class="person-role">Заместитель генерального секретаря</span><h3>Ақбай Нұрсәуле</h3><a href="tel:+77763239825"><i data-lucide="phone" class="icon"></i>+7 776 323 9825</a></article>
+          </div>
+        </div>
+
+        <div class="team-group" id="experts">
+          <h3 class="team-group-title">Эксперты конференции</h3>
+          <div class="experts-grid">
+            <article class="expert-card"><span class="person-role">Conference Expert</span><h3>Darkhanuly Imangali</h3><p>Академическое сопровождение делегатов и комитетов.</p></article>
+            <article class="expert-card"><span class="person-role">Conference Expert</span><h3>Jamil Baizhan</h3><p>Экспертная поддержка и содержательная работа конференции.</p></article>
+          </div>
         </div>
         <div class="partners"><p class="eyebrow">Партнёры и спонсоры</p><div class="partner-list"><span>Woosong University Kazakhstan</span><span>Gavelling</span><span>TurIS.SAT Foundation</span><span>Түркістан оқушылар альянсы</span><span>KazYouthDiplomacy</span></div></div>
       </div>
